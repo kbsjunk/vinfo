@@ -4,7 +4,7 @@ namespace Vinfo\Policies;
 
 use Vinfo\User;
 
-class CountryPolicy
+class CurrencyPolicy
 {
 	public function before($user, $ability)
 	{

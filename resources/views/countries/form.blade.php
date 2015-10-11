@@ -20,3 +20,14 @@
 		<span class="help-block">{{ $errors->first('name') }}</span>
 	</div>
 </div>
+
+@if (App::getLocale() != 'en')
+<div class="form-group{{ $errors->first('name', ' has-error') }}">
+	<label for="name" class="col-md-2 col-sm-3 control-label">
+		{{ trans('models/country.attributes.name') }} ({{ Punic\Language::getName('en', App::getLocale()) }})
+	</label>
+	<div class="col-md-8 col-sm-7">
+		<p class="form-control-static">{{ $country->name_en }}</p>
+	</div>
+</div>
+@endif

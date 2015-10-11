@@ -2,7 +2,6 @@
 <div class="form-group{{ $errors->first('code', ' has-error') }}">
 	<label for="code" class="col-md-2 col-sm-3 control-label">
 		{{ trans('models/currency.attributes.code') }}
-		{{-- <i class="fa fa-info-circle" data-toggle="popover" data-content="{{{ trans('models/currency.attributes.code_help') }}}"></i> --}}
 	</label>
 	<div class="col-md-8 col-sm-7">
 		{!! Form::text('code', null, ['class' => 'form-control', 'placeholder' => trans('models/currency.attributes.code')]) !!}
@@ -13,10 +12,20 @@
 <div class="form-group{{ $errors->first('name', ' has-error') }}">
 	<label for="name" class="col-md-2 col-sm-3 control-label">
 		{{ trans('models/currency.attributes.name') }}
-		{{-- <i class="fa fa-info-circle" data-toggle="popover" data-content="{{{ trans('models/currency.attributes.name_help') }}}"></i> --}}
 	</label>
 	<div class="col-md-8 col-sm-7">
 		{!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => trans('models/currency.attributes.name')]) !!}
 		<span class="help-block">{{ $errors->first('name') }}</span>
 	</div>
 </div>
+
+@if (App::getLocale() != 'en')
+<div class="form-group{{ $errors->first('name', ' has-error') }}">
+	<label for="name" class="col-md-2 col-sm-3 control-label">
+		{{ trans('models/currency.attributes.name') }} ({{ Punic\Language::getName('en', App::getLocale()) }})
+	</label>
+	<div class="col-md-8 col-sm-7">
+		<p class="form-control-static">{{ $currency->name_en }}</p>
+	</div>
+</div>
+@endif

@@ -49,7 +49,7 @@
 					{{ trans('models/user.attributes.country_id') }}
 				</label>
 				<div class="col-md-8 col-sm-7">
-					{!! Form::select('country_id', $countries, null, ['class' => 'form-control', 'placeholder' => trans('models/user.attributes.country_id'), 'data-selectize' => 'single']) !!}
+					{!! Form::select('country_id', $countries, null, ['class' => 'form-control', 'placeholder' => trans('models/user.attributes.country_id'), 'data-selectize' => 'country', 'id' => 'country_id']) !!}
 					<span class="help-block">{{ $errors->first('country_id') }}</span>
 				</div>
 			</div>
@@ -59,7 +59,7 @@
 					{{ trans('models/user.attributes.language_id') }}
 				</label>
 				<div class="col-md-8 col-sm-7">
-					{!! Form::select('language_id', $languages, null, ['class' => 'form-control', 'placeholder' => trans('models/user.attributes.language_id'), 'data-selectize' => 'single']) !!}
+					{!! Form::select('language_id', $languages, null, ['class' => 'form-control', 'placeholder' => trans('models/user.attributes.language_id'), 'data-selectize' => 'single', 'id' => 'language_id']) !!}
 					<span class="help-block">{{ $errors->first('language_id') }}</span>
 				</div>
 			</div>
@@ -69,10 +69,14 @@
 					{{ trans('models/user.attributes.currency_id') }}
 				</label>
 				<div class="col-md-8 col-sm-7">
-					{!! Form::select('currency_id', $currencies, null, ['class' => 'form-control', 'placeholder' => trans('models/user.attributes.currency_id'), 'data-selectize' => 'single']) !!}
+					{!! Form::select('currency_id', $currencies, null, ['class' => 'form-control', 'placeholder' => trans('models/user.attributes.currency_id'), 'data-selectize' => 'single', 'id' => 'currency_id']) !!}
 					<span class="help-block">{{ $errors->first('currency_id') }}</span>
 				</div>
 			</div>
 		</fieldset>
 	</div>
 </div>
+
+@section('scripts')
+<script src="{{ asset('js/users.js') }}"></script>
+@endsection

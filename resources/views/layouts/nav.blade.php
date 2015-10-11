@@ -42,6 +42,8 @@
           <ul class="dropdown-menu">
             <li><a href="{{ route('admin.countries.index') }}">{{ trans('sections.countries') }}</a></li>
             <li><a href="{{ route('admin.currencies.index') }}">{{ trans('sections.currencies') }}</a></li>
+            <li><a href="{{ route('admin.languages.index') }}">{{ trans('sections.languages') }}</a></li>
+            <li role="separator" class="divider"></li>
             <li><a href="{{ route('admin.bottle_sizes.index') }}">{{ trans('sections.bottle_sizes') }}</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="{{ route('admin.users.index') }}">{{ trans('sections.users') }}</a></li>

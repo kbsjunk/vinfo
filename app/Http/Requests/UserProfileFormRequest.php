@@ -26,7 +26,7 @@ class UserProfileFormRequest extends Request
     public function rules()
     {
 
-        $id = $this->route('users') ?: 'NULL';
+        $id = $this->user()->id;
 
         $rules = [
             'email'       => 'required|email|unique:users,email,'.$id,

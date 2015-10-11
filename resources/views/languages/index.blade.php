@@ -9,6 +9,7 @@
 			<tr>
 				<th class="col-sm-1">{{ trans('models/language.attributes.code') }}</th>
 				<th>{{ trans('models/language.attributes.name') }}</th>
+				{{-- <th>{{ trans('models/language.attributes.name') }}</th> --}}
 			</tr>
 		</thead>
 		<tbody>
@@ -16,6 +17,7 @@
 			<tr>
 				<td>{{ $language->code }}</td>
 				<td><a href="{{ action('LanguagesController@edit', $language->id) }}">{{ $language->name }}</a></td>
+				{{-- <td>{{ Punic\Language::getName($language->code, App::getLocale()) }}</td> --}}
 			</tr>
 			@endforeach
 		</tbody>

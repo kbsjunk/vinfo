@@ -37,6 +37,8 @@ class UsersFormRequest extends Request
             'currency_id' => 'required|exists:currencies,id',
         ];
 
+        // dd($rules);
+
         return $rules;
     }
 

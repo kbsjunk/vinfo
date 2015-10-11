@@ -20,7 +20,7 @@ use Locale;
 class ApiController extends Controller
 {
 
-    public function languageNameByLanguageId($code)
+    public function languageNameByLanguageCode($code)
     {
         return [
             'name' => PunicLanguage::getName($code, $code),

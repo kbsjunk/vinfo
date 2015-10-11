@@ -15,6 +15,17 @@ use Auth;
 class UsersController extends Controller
 {
 
+    private function getDropdowns()
+    {
+        $countries = Country::orderByTranslation('name')->get()->lists('name', 'id');
+        $languages = Language::orderBy('name')->get()->lists('name', 'id');
+        $currencies = Currency::orderByTranslation('name')->get()->lists('name', 'id');
+
+        view()->share('countries', $countries);
+        view()->share('languages', $languages);
+        view()->share('currencies', $currencies);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -37,6 +48,8 @@ class UsersController extends Controller
     public function create()
     {
         $this->authorize('create', new User);
+
+        $this->getDropdowns();
 
         return view('users.create');
     }
@@ -91,11 +104,9 @@ class UsersController extends Controller
 
         $this->authorize('update', $user);
 
-        $countries = Country::orderByTranslation('name')->get()->lists('name', 'id');
-        $languages = Language::orderBy('name')->get()->lists('name', 'id');
-        $currencies = Currency::orderByTranslation('name')->get()->lists('name', 'id');
+        $this->getDropdowns();
 
-        return view('users.edit', compact('user', 'countries', 'languages', 'currencies'));
+        return view('users.edit', compact('user'));
     }
 
     /**
@@ -125,11 +136,9 @@ class UsersController extends Controller
     {
         $user = Auth::user();
 
-        $countries = Country::orderByTranslation('name')->get()->lists('name', 'id');
-        $languages = Language::orderBy('name')->get()->lists('name', 'id');
-        $currencies = Currency::orderByTranslation('name')->get()->lists('name', 'id');
+        $this->getDropdowns();
 
-        return view('users.edit_profile', compact('user', 'countries', 'languages', 'currencies'));
+        return view('users.edit_profile', compact('user'));
     }
 
     /**
