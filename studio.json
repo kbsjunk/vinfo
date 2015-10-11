@@ -1,0 +1,5 @@
+{
+    "packages": {
+        "kitbs/viewgen": "packages/kitbs/viewgen"
+    }
+}

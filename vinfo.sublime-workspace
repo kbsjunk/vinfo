@@ -1,0 +1,714 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"base",
+				"baseProperty"
+			],
+			[
+				"scrip",
+				"script	<script>"
+			],
+			[
+				"geometry",
+				"geometry_id"
+			],
+			[
+				"GEO",
+				"GEOSWKBWriter"
+			],
+			[
+				"geomtr",
+				"geometry"
+			],
+			[
+				"geome",
+				"geometry"
+			],
+			[
+				"for",
+				"foreach	foreach …"
+			],
+			[
+				"shrotcut",
+				"shortcutTo"
+			],
+			[
+				"json",
+				"json_encode"
+			],
+			[
+				"over",
+				"overflow"
+			],
+			[
+				"getSttus",
+				"getStatusCode"
+			],
+			[
+				"zeroclip",
+				"zeroclipboard"
+			],
+			[
+				"styl",
+				"style	Tag"
+			],
+			[
+				"font-fa",
+				"font-family-sans-serif"
+			],
+			[
+				"script",
+				"script	Tag"
+			],
+			[
+				"link",
+				"link	link - stylesheet"
+			],
+			[
+				"panel",
+				"panel-inner-border"
+			],
+			[
+				"jque",
+				"jquery-autosize"
+			],
+			[
+				"Mes",
+				"MessageBag"
+			],
+			[
+				"ov",
+				"overflow-y"
+			],
+			[
+				"mesage",
+				"messageId"
+			],
+			[
+				"recipient",
+				"recipient_id"
+			],
+			[
+				"recip",
+				"recipientId"
+			],
+			[
+				"lsat",
+				"lastLesson"
+			],
+			[
+				"echinesela",
+				"echineselearning"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "database/seeds/DatabaseSeeder.php",
+			"settings":
+			{
+				"buffer_size": 812,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 104.0,
+		"last_filter": "sidebar",
+		"selected_items":
+		[
+			[
+				"sidebar",
+				"Side Bar: Refresh"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"packa",
+				"Package Control: Remove Package"
+			],
+			[
+				"rein",
+				"JSON Reindent: reindent file or selection"
+			],
+			[
+				"rei",
+				"JSON Reindent: reindent file or selection"
+			],
+			[
+				"json",
+				"Set Syntax: JSON"
+			],
+			[
+				"blade",
+				"Set Syntax: PHP - Laravel Blade"
+			],
+			[
+				"html",
+				"Snippet: Simple HTML5 Boilerplate"
+			],
+			[
+				"javasc",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"wrap",
+				"HTML: Wrap Selection With Tag"
+			],
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				"css",
+				"Set Syntax: CSS"
+			],
+			[
+				"xml",
+				"Set Syntax: XML"
+			],
+			[
+				"indent",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"reindent",
+				"JSON Reindent: reindent file or selection"
+			],
+			[
+				"html5",
+				"Set Syntax: HTML5"
+			],
+			[
+				"undersc",
+				"Set Syntax: HTML (Underscore)"
+			],
+			[
+				"wrp",
+				"Word Wrap: Toggle"
+			],
+			[
+				"wr",
+				"Word Wrap: Toggle"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"File: Revert"
+			],
+			[
+				"insall",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 528.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/User/Sites/vinfo",
+		"/C/Users/User/Sites/vinfo/app"
+	],
+	"file_history":
+	[
+		"/C/Users/User/Sites/vinfo/database/seeds/BottleSizesTableSeeder.php",
+		"/C/Users/User/Sites/vinfo/composer.json",
+		"/C/Users/User/Sites/vinfo/wk/vinfo/composer.json",
+		"/C/Users/User/Sites/vinfo/wk/vinfo/database/seeds/CountriesTableSeeder.php",
+		"/C/Users/User/Sites/vinfo/database/migrations/2014_10_12_100000_create_password_resets_table.php",
+		"/C/Users/User/Sites/vinfo/wk/vinfo/database/migrations/2014_10_12_100000_create_password_resets_table.php",
+		"/C/Users/User/Sites/vinfo/wk/vinfo/database/migrations/2014_10_12_000000_create_users_table.php",
+		"/C/Users/User/Sites/vinfo/database/migrations/2014_10_12_000000_create_users_table.php",
+		"/C/Users/User/Sites/vinfo/wk/vinfo/database/seeds/BottleCasesTableSeeder.php",
+		"/C/Users/User/Sites/vinfo/wk/vinfo/app/Macros/HTML.php",
+		"/C/Users/User/Sites/vinfo/app/BottleCase.php",
+		"/C/Users/User/Sites/vinfo/app/BottleSize.php",
+		"/C/Users/User/Sites/vinfo/app/ConsumedReason.php",
+		"/C/Users/User/Sites/vinfo/app/Country.php",
+		"/C/Users/User/Sites/vinfo/app/Currency.php",
+		"/C/Users/User/Sites/vinfo/app/Price.php",
+		"/C/Users/User/Sites/vinfo/app/PriceType.php",
+		"/C/Users/User/Sites/vinfo/app/Region.php",
+		"/C/Users/User/Sites/vinfo/app/Vendor.php",
+		"/C/Users/User/Sites/vinfo/app/RegionType.php",
+		"/C/Users/User/Sites/vinfo/app/Vintage.php",
+		"/C/Users/User/Sites/vinfo/app/Wine.php",
+		"/C/Users/User/Sites/vinfo/app/Winery.php",
+		"/C/Users/User/Sites/vinfo/app/Bottle.php",
+		"/C/Users/User/Sites/vinfo/vinfo.sublime-project",
+		"/C/Windows/System32/drivers/etc/hosts",
+		"/C/Users/User/.homestead/Homestead.yaml",
+		"/C/Users/User/Sites/vinfo/.env",
+		"/C/Users/User/Sites/cellar/composer.json",
+		"/C/Users/User/Sites/cellar/wk/vinfo/composer.json",
+		"/C/Users/User/Sites/cellar/app/controllers/GeometryImportsController.php",
+		"/C/Users/User/Sites/cellar/app/controllers/GeometriesController.php",
+		"/C/Users/User/Sites/cellar/app/models/GeometryTrait.php",
+		"/C/Users/User/Sites/cellar/app/models/Geometry.php",
+		"/C/Users/User/Sites/cellar/app/views/geometries/form.blade.php",
+		"/C/Users/User/Sites/cellar/workbench/phayes/geophp/src/GeoPHP.php",
+		"/C/Users/User/Sites/cellar/workbench/phayes/geophp/composer.json",
+		"/C/Users/User/Sites/cellar/wk/au/BarossaValley.kml",
+		"/C/Users/User/Sites/cellar/wk/au/AdelaidePlains.kml",
+		"/C/Users/User/Sites/cellar/workbench/phayes/geophp/src/Adapter/KML.php",
+		"/C/Users/User/Sites/cellar/workbench/phayes/geophp/vendor/autoload.php",
+		"/C/Users/User/Sites/cellar/workbench/phayes/geophp/vendor/composer/autoload_real.php",
+		"/C/Users/User/Sites/cellar/workbench/phayes/geophp/vendor/composer/autoload_psr4.php",
+		"/C/Users/User/Sites/cellar/workbench/phayes/geophp/vendor/composer/autoload_namespaces.php",
+		"/C/Users/User/Sites/cellar/vendor/composer/autoload_psr4.php",
+		"/C/Users/User/Sites/cellar/workbench/phayes/geophp/src/GeoPHP/GeoPHP.php",
+		"/C/Users/User/Sites/cellar/.composer.json",
+		"/C/Users/User/Sites/cellar/workbench/kitbs/geophp/composer.json",
+		"/C/Users/User/Sites/cellar/workbench/kitbs/geophp/src/GeoPHP/Geophp/GeoPHPServiceProvider.php",
+		"/C/Users/User/Sites/cellar/app/database/seeds/DatabaseSeeder.php",
+		"/C/Users/User/Sites/cellar/app/controllers/RegionsController.php",
+		"/C/Users/User/Sites/cellar/app/database/seeds/RegionsTableSeeder.php",
+		"/C/Users/User/Sites/cellar/app/database/seeds/RegionTypesTableSeeder.php",
+		"/C/Users/User/Sites/cellar/app/routes.php",
+		"/C/Users/User/Sites/cellar/workbench/kitbs/geospatial/src/Kitbs/Geospatial/Geospatial.php",
+		"/C/Users/User/Sites/cellar/workbench/kitbs/geospatial/vendor/arenevier/gisconverter.php/gisconverter.php",
+		"/C/Users/User/Downloads/map (1).kml",
+		"/C/Users/User/Sites/_backup/RMIT/CollectWILScoping/basic/vendor/google/apiclient/examples/testfile.txt",
+		"/C/Users/User/Sites/cellar/wk/au/Wine Regions/wineregions_au.kml",
+		"/C/Users/User/Sites/cellar/wk/au/Padthaway.kml",
+		"/C/Users/User/Sites/cellar/wk/au/Riverland.kml",
+		"/C/Users/User/Sites/cellar/workbench/kitbs/geospatial/src/Kitbs/Geospatial/Facades/GeospatialFacade.php",
+		"/C/Users/User/Sites/cellar/workbench/kitbs/geospatial/src/Kitbs/Geospatial/GeospatialServiceProvider.php",
+		"/C/Users/User/Sites/cellar/app/config/app.php",
+		"/C/Users/User/Sites/cellar/extensions/phayes/geophp/src/Supporting/kml.xsd",
+		"/C/Users/User/Sites/cellar/extensions/gisconverter/gisconverter.php",
+		"/C/Users/User/Sites/cellar/app/views/imports/form.blade.php",
+		"/C/Users/User/Sites/cellar/app/models/GeometryImport.php",
+		"/C/Users/User/Sites/cellar/app/views/imports/index.blade.php",
+		"/C/Users/User/Sites/cellar/workbench/kitbs/geospatial/composer.json",
+		"/C/Users/User/Sites/cellar/workbench/kitbs/geospatial/vendor/composer/autoload_files.php",
+		"/C/Users/User/Sites/cellar/wk/wkt.language",
+		"/C/Users/User/Sites/cellar/app/views/layouts/default.blade.php",
+		"/C/Users/User/Sites/cellar/app/storage/uploads/imports/2bc8732c2cd65657c02c7d2ef5c525b0",
+		"/C/Users/User/Sites/kitbs/public/themes/admin/kitbs/assets/less/style.less",
+		"/C/Users/User/Downloads/map.geojson",
+		"/C/Users/User/Sites/cellar/app/views/imports/show.blade.php",
+		"/C/Users/User/Sites/cellar/app/storage/uploads/imports/1/phpdUSuBV",
+		"/C/Users/User/Sites/cellar/app/views/geometries/index.blade.php",
+		"/C/Users/User/Sites/cellar/app/models/Region.php",
+		"/C/Users/User/Sites/cellar/app/models/Place.php",
+		"/C/Users/User/Sites/cellar/app/database/migrations/2014_11_09_021757_create_geometry_imports_table.php",
+		"/C/Users/User/Sites/cellar/app/views/regions/index.blade.php",
+		"/C/Users/User/Sites/cellar/app/views/geometry_imports/index.blade.php",
+		"/C/Users/User/Sites/cellar/app/lang/en/buttons.php",
+		"/C/Users/User/Sites/cellar/app/lang/en/pages.php",
+		"/C/Users/User/Sites/cellar/extensions/phayes/geophp/src/Geometry/Point.php",
+		"/C/Users/User/Sites/cellar/extensions/phayes/geophp/src/Geometry/Collection.php",
+		"/C/Users/User/Sites/cellar/extensions/phayes/geophp/src/Geometry/Geometry.php",
+		"/C/Users/User/Sites/cellar/extensions/phayes/geophp/src/Geometry/Polygon.php",
+		"/C/Users/User/Sites/geophp-test/leaflet.html",
+		"/C/Users/User/Sites/cellar/app/models/Country.php",
+		"/C/Users/User/Sites/cellar/app/lang/en/labels.php",
+		"/C/Users/User/Sites/cellar/vendor/phayes/geophp/src/Adapter/KML.php",
+		"/C/Users/User/Sites/cellar/vendor/phayes/geophp/src/GeoPHP.php",
+		"/C/Users/User/Sites/cellar/wk/au/NSW.geojson",
+		"/C/Users/User/Downloads/NSW.json",
+		"/C/Users/User/Downloads/map.osm",
+		"/C/Users/User/Sites/cellar/wk/kmz/AT A22 Southern Burgenland/var/www/html/wein-plus.de/vertrieb/files/zipstr.kml",
+		"/C/Users/User/Sites/kitbs/public/themes/admin/default/views/partials/notifications.blade.php",
+		"/C/Users/User/Sites/kitbs/public/themes/admin/default/views/partials/modal-confirm.blade.php",
+		"/C/Users/User/Sites/kitbs/public/themes/admin/default/assets/platform/js/scripts.js",
+		"/C/Users/User/Sites/kitbs/public/themes/admin/default/assets/cartalyst/js/data-grid.js",
+		"/C/Users/User/Sites/kitbs/public/themes/admin/default/views/layouts/default.blade.php",
+		"/C/Users/User/Sites/kitbs/public/themes/admin/default/views/partials/modals.blade.php",
+		"/C/Users/User/Sites/cellar/app/views/layouts/notifications.blade.php",
+		"/C/Users/User/Sites/kitbs/extensions/kitbs/echineselearning/themes/admin/default/packages/kitbs/echineselearning/views/lessons/form.blade.php",
+		"/C/Users/User/Sites/cellar/app/views/modals/confirm.blade.php",
+		"/C/Users/User/Sites/cellar/app/database/migrations/2014_11_03_045955_create_geometries_table.php",
+		"/C/Users/User/Sites/cellar/vendor/phayes/geophp/src/Adapter/GeoJSON.php",
+		"/C/Users/User/Sites/cellar/wk/au/Beechworth.kml",
+		"/C/Users/User/Sites/cellar/wk/au/Wine Regions/Wine Regions.kml",
+		"/C/Users/User/Sites/cellar/wk/au/Northern Territory.geojson",
+		"/C/Users/User/Sites/kitbs/extensions/platform/pages/src/Models/Page.php",
+		"/C/Users/User/Sites/cellar/vendor/phayes/geophp/src/Geometry/GeometryCollection.php",
+		"/C/Users/User/Sites/cellar/vendor/phayes/geophp/src/Geometry/Collection.php",
+		"/C/Users/User/Sites/cellar/vendor/phayes/geophp/src/Geometry/Geometry.php",
+		"/C/Users/User/Sites/cellar/wk/au/AUS_adm1 (2).json",
+		"/C/Users/User/Sites/geophp-test/shpParser.php",
+		"/C/Users/User/Sites/cellar/app/views/geometries/show.blade.php",
+		"/C/Users/User/Downloads/AUS_adm1 (2).json",
+		"/C/Users/User/Sites/geophp-test/dbase.php",
+		"/C/Users/User/Downloads/AUS_adm0 (1).json",
+		"/C/Users/User/Downloads/AUS_adm0 (2).json",
+		"/C/Users/User/Downloads/AUS_adm1.json",
+		"/C/Users/User/Downloads/AUS_adm1 (1).json",
+		"/C/Users/User/Downloads/AUS_adm0.json",
+		"/C/Users/User/Sites/cellar/wk/kmz/AT A14 Carnuntum/var/www/html/wein-plus.de/vertrieb/files/zipstr.kml"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"C:\\Users\\User\\Sites\\kitbs\\workbench\\kitbs\\communications",
+			"/var/www/kitbs/workbench/kitbs/communications",
+			"/var/www/kitbs/workbench/kitbs/echineselearning",
+			"/var/www/kitbs/",
+			"/var/www/kitbs/workbench/kitbs/echineselearning",
+			"/var/www/kitbs/workbench/kitbs/ecl-calendar/themes/admin/default/packages/kitbs/echineselearning",
+			"/var/www/kitbs/workbench/kitbs/ecl-calendar/themes/admin/default/packages/kitbs/ecl-calendar/views",
+			"/home/kitbs/Downloads/plugins",
+			"/home/kitbs/contact-form-7,/home/kitbs/contact-form-7-modules,/home/kitbs/contact-form-7-to-database-extension"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"reduce",
+			"detectformat",
+			"Document",
+			"array_pop",
+			"$depth",
+			"adelaide",
+			"Murray Darling",
+			"return array($",
+			"Feature",
+			"Placemark",
+			"_geomFromXML",
+			"\"FEature",
+			"FEature",
+			"GeoJSON",
+			"geometrycoll",
+			"toKML",
+			"placemark",
+			"toKML",
+			"feature",
+			"setproperties",
+			"unimplemented",
+			"FeatureCollection",
+			"Feature",
+			"new Feature",
+			"ss Feature",
+			"geometry",
+			"featurecollection",
+			"class geometry",
+			"geometry",
+			"geometrycollection",
+			"decoder",
+			"LineString",
+			"class ",
+			"class",
+			"togeojson",
+			"'",
+			"type",
+			" ",
+			"'",
+			"\\s+=>.*",
+			"detectFormat",
+			"Shape ",
+			"quality",
+			"geometries",
+			"geometry",
+			"geometryimport",
+			"geometryimports",
+			"$geometryimports",
+			"Geometryimport",
+			"geometries",
+			"$geometry",
+			"$geometries",
+			"places",
+			"),",
+			"POINT(",
+			"GEOMETRYCOLLECTION",
+			"polygon",
+			"'",
+			"391837078",
+			"34159866",
+			"modal",
+			"MODAL",
+			"detectformat",
+			"geometryreduce",
+			"explode",
+			"Feature",
+			"textarea",
+			"asarray",
+			"dd",
+			"_Properties",
+			"$attributes",
+			"groups",
+			"$groups",
+			"strtolower(",
+			"loadrecords",
+			"checkClosed",
+			"checkclosed",
+			"startpoint",
+			"startpoing",
+			"geos",
+			"closed",
+			":",
+			"\"",
+			".edit",
+			".create",
+			"html",
+			"adelaides",
+			"children",
+			"$this->children",
+			"childrennodes",
+			"loadTree",
+			"region_type",
+			"regionType",
+			"region_type",
+			"masterton",
+			"martinborough",
+			"root",
+			"getsibling",
+			"next",
+			"$region",
+			"$parents",
+			"h2",
+			"parent",
+			"^([^$\\n\\t]+)",
+			"^([^$]+)",
+			"(.+)",
+			"(.+)\\t(.+)",
+			"(.+)\\t(.+)\\t",
+			"$child",
+			"= 1",
+			"	'",
+			"['	']",
+			"(.+)\\t(.+)\\t",
+			"(.+)\\t(.+)\\t(.+)\\t",
+			"(.+)\\t(.+)\\t(.+)\\t(.+)",
+			"(.+)\\t(.+)\\t(.+)\\t",
+			"(.+)\\t(.+)\\t(.+)",
+			"(.+)\\t(.+)\\t(.+)\\t(.+)",
+			"(.*)\\t(.*)\\t(.*)\\t(.*)",
+			"$this->getGeometry",
+			"SoftDeleting",
+			"Geospatial",
+			"geoPHP",
+			"Geospatial",
+			"wkt_",
+			"lookat",
+			"Sources:[\\s\\n]*",
+			"Sources:\\s"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"$regions[\"$1\"] = [];",
+			"$regions[\"$1\"][\"$2\"] = [];",
+			"$regions['$1']['$2'] = [];",
+			"$regions['$1']['$2'] = 1;",
+			"$regions['$1']['$2']['$3'] = 1;",
+			"$regions['$1']['$2']['$3']['$4'] = 1;",
+			"$regions['$1']['$2']['$3'] = $4;",
+			"$regions['$1']['$2']['$3'] = 1;",
+			"$regions['$1']['$2']['$3']['$4'] = 1;",
+			"$regions[$1][$2][$3][$4] = 1;",
+			"'$1' => ['$2' => ['$3' => ['$4' =>",
+			"Sources: ",
+			"",
+			"INSERT INTO `kitbs`.`repertoire_list_items` (`name`, `slug`, `list_id`, `created_at`, `updated_at`) VALUES ('$2', '$3', 1, '2014-10-27 23:09:49', '2014-10-27 23:09:49');",
+			"INSERT INTO `kitbs`.`repertoire_list_items` (`name`, `slug`, `list_id`, `created_at`, `updated_at`) VALUES ('$1', '$2', 1, '2014-10-27 23:09:49', '2014-10-27 23:09:49');",
+			"INSERT INTO `kitbs`.`repertoire_list_items` (`name`, `slug`, `created_at`, `updated_at`) VALUES ('$1', '$2', '2014-10-27 23:09:49', '2014-10-27 23:09:49');",
+			"\"+1 $1\"",
+			"\"+$1\"",
+			"data-data='{\"code\":\"$1\"}'",
+			"data-data=\"{'code':'$1'}\"",
+			"'+1 $1'",
+			"'+$1'",
+			"[\n'country' => '$1',\n'code'    => '$2',\n'label'   => '$3'\n],",
+			"[\n'country' => $1,\n'code'    => $2,\n'label'   => $3\n],",
+			"receipt",
+			"Receipt",
+			"receipt",
+			"Receipt",
+			"attachment",
+			"Attachment",
+			"attachment",
+			"attachments",
+			"Kitbs\\EChineseLearning",
+			"EChineseLearning",
+			"Lesson",
+			"echineselearning/lessons",
+			"$1/rss2.xml LOWREZ $2",
+			"/rss2.xml",
+			"$1",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "database/seeds/DatabaseSeeder.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 812,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								351,
+								351
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "vinfo.sublime-project",
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 215.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

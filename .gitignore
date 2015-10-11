@@ -1,0 +1,17 @@
+/vendor
+/node_modules
+/bower_components
+Homestead.yaml
+Homestead.json
+.env
+wk
+#wk/cellar-old/*
+#!wk/cellar-old/wk
+#wk/cellar-old/wk/cellar
+#wk/cellar-old/wk/cellar_old
+#wk/cellar-old/wk/mapbox1.tm2
+#wk/cellar-old/wk/mapbox1.workbench
+#wk/cellar-old/wk/workbench
+#wk/vinfo/*
+#!wk/vinfo/storage/data
+

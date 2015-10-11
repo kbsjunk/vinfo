@@ -1,0 +1,35 @@
+
+<div class="form-group{{ $errors->first('capacity', ' has-error') }}">
+	<label for="capacity" class="col-md-2 col-sm-3 control-label">
+		{{ trans('models/bottle_size.attributes.capacity') }}
+		{{-- <i class="fa fa-info-circle" data-toggle="popover" data-content="{{{ trans('models/bottle_size.attributes.capacity_help') }}}"></i> --}}
+	</label>
+	<div class="col-md-8 col-sm-7">
+		{!! Form::text('capacity', null, ['class' => 'form-control', 'placeholder' => trans('models/bottle_size.attributes.capacity')]) !!}
+		<span class="help-block">{{ $errors->first('capacity') }}</span>
+	</div>
+</div>
+
+<div class="form-group{{ $errors->first('is_common', ' has-error') }}">
+	<div class="col-md-offset-2 col-md-8 col-sm-offset-3 col-sm-7">
+		<div class="checkbox">
+			<label for="is_common">
+				{!! Form::hidden('is_common', 0) !!}
+				{!! Form::checkbox('is_common') !!} {{ trans('models/bottle_size.attributes.is_common') }}
+				{{-- <i class="fa fa-info-circle" data-toggle="popover" data-content="{{{ trans('models/bottle_size.attributes.is_common_help') }}}"></i> --}}
+			</label>
+		</div>
+		<span class="help-block">{{ $errors->first('is_common') }}</span>
+	</div>
+</div>
+
+<div class="form-group{{ $errors->first('name', ' has-error') }}">
+	<label for="name" class="col-md-2 col-sm-3 control-label">
+		{{ trans('models/bottle_size.attributes.name') }}
+		{{-- <i class="fa fa-info-circle" data-toggle="popover" data-content="{{{ trans('models/bottle_size.attributes.name_help') }}}"></i> --}}
+	</label>
+	<div class="col-md-8 col-sm-7">
+		{!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => trans('models/bottle_size.attributes.name')]) !!}
+		<span class="help-block">{{ $errors->first('name') }}</span>
+	</div>
+</div>

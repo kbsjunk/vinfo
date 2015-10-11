@@ -1,0 +1,13 @@
+
+<div class="form-group{{ $errors->first('__FIELD__', ' has-error') }}">
+	<div class="col-md-offset-2 col-md-8 col-sm-offset-3 col-sm-7">
+		<div class="checkbox">
+			<label for="__FIELD__">
+				{!! Form::hidden('__FIELD__', 0) !!}
+				{!! Form::checkbox('__FIELD__') !!} {{ trans('models/__LANG__.attributes.__FIELD__') }}
+				{{-- <i class="fa fa-info-circle" data-toggle="popover" data-content="{{{ trans('models/__LANG__.attributes.__FIELD___help') }}}"></i> --}}
+			</label>
+		</div>
+		<span class="help-block">{{ $errors->first('__FIELD__') }}</span>
+	</div>
+</div>

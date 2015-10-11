@@ -1,0 +1,11 @@
+
+<div class="form-group{{ $errors->first('__FIELD__', ' has-error') }}">
+	<label for="__FIELD__" class="col-md-2 col-sm-3 control-label">
+		{{ trans('models/__LANG__.attributes.__FIELD__') }}
+		{{-- <i class="fa fa-info-circle" data-toggle="popover" data-content="{{{ trans('models/__LANG__.attributes.__FIELD___help') }}}"></i> --}}
+	</label>
+	<div class="col-md-8 col-sm-7">
+		{!! Form::__TYPE__('__FIELD__', null, ['class' => 'form-control', 'placeholder' => trans('models/__LANG__.attributes.__FIELD__')]) !!}
+		<span class="help-block">{{ $errors->first('__FIELD__') }}</span>
+	</div>
+</div>

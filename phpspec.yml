@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: Vinfo
+        psr4_prefix: Vinfo
+        src_path: app

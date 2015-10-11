@@ -1,0 +1,1 @@
+$('[data-selectize="single"]').selectize();
