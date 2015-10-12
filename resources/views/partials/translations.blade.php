@@ -7,7 +7,7 @@
 		@foreach($model->translations as $translation)
 		@if ($translation->locale !== App::getLocale())
 		<div class="panel panel-default">
-			<div class="panel-heading" role="tab" id="heading_{{ $translation->locale }}">
+			<div class="panel-heading" role="tab" id="heading_{{ $translation->locale }}" lang="{{ $translation->locale }}">
 				<h4 class="panel-title">
 					<i class="fa fa-circle"></i>
 					<a role="button" data-toggle="collapse" data-parent="#translations_accordion" href="#translations_{{ $translation->locale }}" aria-expanded="true" aria-controls="collapseOne">
@@ -38,7 +38,7 @@
 			<div class="panel-heading" role="tab" id="heading_{{ $locale }}">
 				<h4 class="panel-title">
 					<i class="fa fa-circle-thin"></i>
-					<a role="button" data-toggle="collapse" data-parent="#translations_accordion" href="#translations_{{ $locale }}" aria-expanded="true" aria-controls="collapseOne">
+					<a role="button" data-toggle="collapse" data-parent="#translations_accordion" href="#translations_{{ $locale }}" aria-expanded="true" aria-controls="collapseOne" lang="{{ $locale }}">
 						{{ Punic\Language::getName($locale, $locale) }}
 					</a>
 				</h4>
@@ -67,7 +67,7 @@
 			<div class="panel-heading" role="tab" id="heading_{{ $locale }}">
 				<h4 class="panel-title">
 					<i class="fa fa-circle-thin"></i>
-					<a role="button" data-toggle="collapse" data-parent="#translations_accordion" href="#translations_{{ $locale }}" aria-expanded="true" aria-controls="collapseOne">
+					<a role="button" data-toggle="collapse" data-parent="#translations_accordion" href="#translations_{{ $locale }}" aria-expanded="true" aria-controls="collapseOne" lang="{{ $locale }}">
 						{{ Punic\Language::getName($locale, $locale) }}
 					</a>
 				</h4>
