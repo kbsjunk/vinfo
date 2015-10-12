@@ -35,6 +35,11 @@
 	<!-- Bootstrap JavaScript -->
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	<script src="{{ asset('vendor/selectize/selectize.min.js') }}"></script>
+	<script>
+		function base_url(path) {
+			return '{{ url('/') }}/'+path.trim('/');	
+		} 
+	</script>
 	<script src="{{ asset('js/script.js') }}"></script>
 	@yield('scripts')
 </body>

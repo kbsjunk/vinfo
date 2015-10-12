@@ -1,12 +1,16 @@
 <?php
 
 return [
-
-	'account'      => 'Account',
-	'settings'     => 'Settings',
+	
+	'account'      => 'Compte',
+	'settings'     => 'Paramètres',
 	'admin'        => 'Configuration',
-	'countries'    => 'Countries',
-	'currencies'   => 'Currencies',
-	'bottle_sizes' => 'Bottle Sizes',
+	'countries'    => 'Pays',
+	'currencies'   => 'Devises',
+	'bottle_sizes' => 'Tailles de bouteilles',
+	'users'        => 'Utilisateurs',
+	'languages'    => 'Langues',
+	'details'    => 'Détails',
+	'translations'    => 'Traductions',
 
 ];

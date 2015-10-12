@@ -35,9 +35,13 @@ class UsersFormRequest extends Request
             'country_id'  => 'required|exists:countries,id',
             'language_id' => 'required|exists:languages,id',
             'currency_id' => 'required|exists:currencies,id',
+            'password' => 'confirmed|min:6',
+            'password_confirmation' => 'required_with:password',
         ];
 
-        // dd($rules);
+        if ($id == 'NULL') {
+			$rules['password'] .= '|required';
+		}
 
         return $rules;
     }

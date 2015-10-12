@@ -66,7 +66,11 @@ class UsersController extends Controller
 
         $this->authorize('create', $user);
 
-        if ($user->fill($request->input())->save()) {
+        $user->fill($request->input());
+
+        $user->password = bcrypt($request->input('password'));
+
+        if ($user->save()) {
             return redirect(action('UsersController@edit', $user->id))
                 ->with('success', trans('messages.saved_success'));
         }
@@ -122,9 +126,21 @@ class UsersController extends Controller
 
         $this->authorize('update', $user);
 
-        $user->fill($request->input())->save();
+        $user->fill($request->input());
 
-        return redirect(action('UsersController@edit', $id))->with('success', trans('messages.saved_success'));
+        if ($request->has('password')) {
+            $user->password = bcrypt($request->input('password'));
+        }
+
+        $user->save();
+
+        $response = redirect(action('UsersController@edit', $id))->with('success', trans('messages.saved_success'));
+
+        if ($request->has('password')) {
+            $response->with('successes', [trans('passwords.reset')]);
+        }
+
+        return $response;
     }
     /**
      * Show the form for editing the specified resource.

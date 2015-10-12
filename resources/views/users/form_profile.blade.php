@@ -21,9 +21,14 @@
 					<span class="help-block">{{ $errors->first('email') }}</span>
 				</div>
 			</div>
+		</fieldset>
+		<fieldset>
+			<legend>
+				{{ trans('models/user.attributes.new_password') }}
+			</legend>
 			<div class="form-group{{ $errors->first('password', ' has-error') }}">
 				<label for="password" class="col-md-4 col-sm-3 control-label">
-					{{ trans('models/user.attributes.password') }}
+					{{ trans('models/user.attributes.new_password') }}
 				</label>
 				<div class="col-md-8 col-sm-7">
 					{!! Form::password('password', ['class' => 'form-control', 'placeholder' => trans('models/user.attributes.password')]) !!}

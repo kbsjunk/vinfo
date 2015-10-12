@@ -11,6 +11,8 @@ return [
 		'email_help'                 => 'Enter the email of the user.',
 		'password'                   => 'Password',
 		'password_help'              => 'Enter your password.',
+		'new_password'                   => 'New Password',
+		'password_help'              => 'Enter your password.',
 		'password_confirmation'      => 'Password Confirmation',
 		'password_confirmation_help' => 'Reenter your password.',
 		'currency_id'                => 'Currency',

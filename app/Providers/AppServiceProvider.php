@@ -7,6 +7,7 @@ use Validator;
 use Punic\Language;
 use Locale;
 
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -16,11 +17,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // Validator::extend('locale', function($attribute, $value, $parameters) {
-        //     $locale = Locale::parseLocale($value);
-        //     dd(Locale::getDisplayName($value));
-        //     return Language::getName($value) === $value;
-        // });
+       
     }
 
     /**

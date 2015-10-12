@@ -1,7 +1,7 @@
 <?php
 
 return [
-	'name'       => 'Bottle Size',
+	'name'       => 'Taille de bouteilles',
 	'attributes' => [
 		'id'              => 'ID',
 		'id_help'         => 'Enter the ID of the bottle size.',
