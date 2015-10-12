@@ -7,7 +7,7 @@ return array (
     'id_help' => 'The ID of the record.',
     'name' => 'Name',
     'name_help' => 'The name of the record.',
-    'code' => 'Name',
+    'code' => 'Code',
     'code_help' => 'The code of the record.',
     'created_at' => 'Created at',
     'created_at_help' => 'The date that the record was created.',

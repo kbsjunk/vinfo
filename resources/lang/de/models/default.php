@@ -3,8 +3,8 @@
 return array (
   'attributes' => 
   array (
-    'id' => 'ID-Nr.',
-    'id_help' => 'Die ID-Nr. des Datensatzes.',
+    'id' => 'Schlüssel',
+    'id_help' => 'Der Schlüssel des Datensatzes.',
     'name' => 'Name',
     'name_help' => 'Der Name des Datensatzes.',
     'code' => 'Code',
