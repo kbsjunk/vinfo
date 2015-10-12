@@ -1,11 +1,11 @@
 <?php
 
 return [
-	'name'       => 'Currency',
+	'name'       => 'Valute',
 	'attributes' => [
-		'code'            => 'Code',
+		'code'            => 'Codice',
 		'code_help'       => 'Enter the code of the currency.',
-		'name'            => 'Name',
+		'name'            => 'Nome',
 		'name_help'       => 'Enter the name of the currency.',
 		'created_at'      => 'Created At',
 		'created_at_help' => 'Enter the created date of the currency.',

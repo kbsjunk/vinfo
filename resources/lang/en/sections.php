@@ -10,5 +10,7 @@ return [
 	'bottle_sizes' => 'Bottle Sizes',
 	'users'        => 'Users',
 	'languages'    => 'Languages',
+	'details'    => 'Details',
+	'translations'    => 'Translations',
 
 ];

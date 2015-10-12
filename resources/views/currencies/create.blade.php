@@ -6,14 +6,17 @@
 @section('content')
 {!! Form::open(['action' => 'CurrenciesController@store', 'method' => 'POST', 'class' => 'form-horizontal']) !!}
     <legend class="sr-only">{{ trans('models/currency.name') }}</legend>
+<div class="panel panel-default">
+	<div class="panel-body">
+		@include('currencies.form', ['currency' => new Vinfo\Currency])
+	</div>
 
-    @include('currencies.form')
-
-    <div class="form-group">
-	    <div class="col-md-offset-2 col-md-10 col-sm-offset-3 col-sm-9">
-	    	<button type="submit" class="btn btn-primary">{{ trans('actions.save') }}</button>
-	    	<a href="{{ action('CurrenciesController@index') }}" class="btn btn-link">{{ trans('actions.cancel') }}</a>
-	    </div>
-    </div>
+	<div class="panel-footer">
+		<div class="col-sm-offset-1">
+			<button type="submit" class="btn btn-primary">{{ trans('actions.save') }}</button>
+			<a href="{{ action('CurrenciesController@index') }}" class="btn btn-link">{{ trans('actions.cancel') }}</a>
+		</div>
+	</div>
+</div>
 {!! Form::close() !!}
 @endsection

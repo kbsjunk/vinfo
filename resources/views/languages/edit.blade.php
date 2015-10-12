@@ -5,15 +5,18 @@
 
 @section('content')
 {!! Form::model($language, ['action' => ['LanguagesController@update', $language->id], 'method' => 'PUT', 'class' => 'form-horizontal']) !!}
-    <legend class="sr-only">{{ trans('models/language.name') }}</legend>
+<legend class="sr-only">{{ trans('models/language.name') }}</legend>
+<div class="panel panel-default">
+	<div class="panel-body">
+		@include('languages.form')
+	</div>
 
-    @include('languages.form')
-
-    <div class="form-group">
-	    <div class="col-md-offset-2 col-md-10 col-sm-offset-3 col-sm-9">
-	    	<button type="submit" class="btn btn-primary">{{ trans('actions.save') }}</button>
-	    	<a href="{{ action('LanguagesController@index') }}" class="btn btn-link">{{ trans('actions.cancel') }}</a>
-	    </div>
-    </div>
+	<div class="panel-footer">
+		<div class="col-sm-offset-1">
+			<button type="submit" class="btn btn-primary">{{ trans('actions.save') }}</button>
+			<a href="{{ action('LanguagesController@index') }}" class="btn btn-link">{{ trans('actions.cancel') }}</a>
+		</div>
+	</div>
+</div>
 {!! Form::close() !!}
 @endsection

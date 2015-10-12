@@ -15,5 +15,6 @@
 	    	<a href="{{ action('UsersController@index') }}" class="btn btn-link">{{ trans('actions.cancel') }}</a>
 	    </div>
     </div>
+
 {!! Form::close() !!}
 @endsection

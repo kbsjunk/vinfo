@@ -4,7 +4,7 @@
 
 @section('content')
 
-<form method="POST" action="/auth/login" class="form-horizontal">
+<form method="POST" action="{{ url('auth/login') }}" class="form-horizontal">
     {!! csrf_field() !!}
 
     <div class="form-group{{ $errors->first('email', ' has-error') }}">

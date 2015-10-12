@@ -13,12 +13,38 @@ html, body, input, textarea
 
 .selectize-control > .selectize-input {
 	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
-    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
 
 fieldset legend {
 	font-size: 16px;
+}
+
+input.input-default {
+	background-color: #eee;
+}
+
+.table.table-valign-middle>tbody>tr>th,
+.table.table-valign-middle>tbody>tr>td
+{
+	vertical-align: middle;
+}
+
+.panel-default>.panel-heading, .panel-heading {
+	background: none;
+}
+.panel-footer {
+	margin: 0 15px;
+	background: none;
+	padding: 10px 0;
+}
+.panel fieldset legend {
+    padding-bottom: 10px;
+}
+.panel-body {
+	padding: 15px 0;
+    margin: 0 15px;
 }

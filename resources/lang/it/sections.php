@@ -5,8 +5,8 @@ return [
 	'account'      => 'Account',
 	'settings'     => 'Settings',
 	'admin'        => 'Configuration',
-	'countries'    => 'Countries',
-	'currencies'   => 'Currencies',
+	'countries'    => 'Paesi',
+	'currencies'   => 'Valute',
 	'bottle_sizes' => 'Bottle Sizes',
 
 ];

@@ -7,7 +7,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">Vinfo</a>
+      <a class="navbar-brand" href="{{ url('/') }}">Vinfo</a>
     </div>
     <div class="collapse navbar-collapse" id="navbar-collapse">
 {{--<ul class="nav navbar-nav">
@@ -56,17 +56,17 @@
             {{ Auth::user()->name }} <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
-            <li><a href="/auth/account">{{ trans('sections.account') }}</a></li>
-            {{-- <li><a href="/auth/settings">{{ trans('sections.settings') }}</a></li> --}}
+            <li><a href="{{ url('auth/account') }}">{{ trans('sections.account') }}</a></li>
+            {{-- <li><a href="{{ url('auth/settings') }}">{{ trans('sections.settings') }}</a></li> --}}
             <li role="separator" class="divider"></li>
-            <li><a href="/auth/logout">{{ trans('actions.logout') }}</a></li>
+            <li><a href="{{ url('auth/logout') }}">{{ trans('actions.logout') }}</a></li>
           </ul>
         </li>
       </ul>
       @else
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/auth/login">{{ trans('actions.login') }}</a></li>
-        <li><a href="/auth/register">{{ trans('actions.register') }}</a></li>
+        <li><a href="{{ url('auth/login') }}">{{ trans('actions.login') }}</a></li>
+        <li><a href="{{ url('auth/register') }}">{{ trans('actions.register') }}</a></li>
       </ul>
       @endif
     </div><!-- /.navbar-collapse -->

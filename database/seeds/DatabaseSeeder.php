@@ -14,12 +14,12 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        // $this->call(CountriesTableSeeder::class);
-        // $this->call(LanguagesTableSeeder::class);
-        // $this->call(CurrenciesTableSeeder::class);
-        $this->call(UsersTableSeeder::class);
+/*          $this->call(CountriesTableSeeder::class);
+         $this->call(LanguagesTableSeeder::class);
+         $this->call(CurrenciesTableSeeder::class);
+        $this->call(UsersTableSeeder::class); */
         
-        // $this->call(BottleSizesTableSeeder::class);
+//$this->call(BottleSizesTableSeeder::class); 
         // $this->call(ConsumedReasonsTableSeeder::class);
         // $this->call(BottlesTableSeeder::class);
         // $this->call(BottleCasesTableSeeder::class);

@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'url' => 'http://localhost',
+    'url' => env('APP_URL', 'http://localhost'),
 
     /*
     |--------------------------------------------------------------------------
@@ -145,6 +145,7 @@ return [
         Vinfo\Providers\AuthServiceProvider::class,
         Vinfo\Providers\EventServiceProvider::class,
         Vinfo\Providers\RouteServiceProvider::class,
+        Vinfo\Providers\TranslatableServiceProvider::class,
 
         // Vendor Service Providers
         Dimsav\Translatable\TranslatableServiceProvider::class,

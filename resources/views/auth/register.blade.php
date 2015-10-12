@@ -6,7 +6,7 @@
 
 @section('content')
 
-<form method="POST" action="/auth/register" class="form-horizontal">
+<form method="POST" action="{{ url('auth/register') }}" class="form-horizontal">
     {!! csrf_field() !!}
 
     <div class="form-group{{ $errors->first('name', ' has-error') }}">
