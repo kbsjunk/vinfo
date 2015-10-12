@@ -19,7 +19,7 @@
 				<div class="panel-body">
 					@foreach($model->translatedAttributes as $attribute)
 					<div class="form-group{{ $errors->first('name', ' has-error') }}">
-						<label for="name" class="col-md-4 col-sm-3 control-label">
+						<label for="name" class="col-md-4 col-sm-3 control-label input-sm">
 							{{ trans('models/'.$modelName.'.attributes.'.$attribute, [], null, $translation->locale) }}
 						</label>
 						<div class="col-md-8 col-sm-7">
@@ -47,7 +47,7 @@
 				<div class="panel-body">
 					@foreach($model->translatedAttributes as $attribute)
 					<div class="form-group{{ $errors->first('name', ' has-error') }}">
-						<label for="name" class="col-md-4 col-sm-3 control-label">
+						<label for="name" class="col-md-4 col-sm-3 control-label input-sm">
 							{{ trans('models/'.$modelName.'.attributes.'.$attribute, [], null, $locale) }}
 						</label>
 						<div class="col-md-8 col-sm-7">
@@ -76,7 +76,7 @@
 				<div class="panel-body">
 					@foreach($model->translatedAttributes as $attribute)
 					<div class="form-group{{ $errors->first('name', ' has-error') }}">
-						<label for="name" class="col-md-4 col-sm-3 control-label">
+						<label for="name" class="col-md-4 col-sm-3 control-label input-sm">
 							{{ trans('models/'.$modelName.'.attributes.'.$attribute, [], null, $locale) }}
 						</label>
 						<div class="col-md-8 col-sm-7">

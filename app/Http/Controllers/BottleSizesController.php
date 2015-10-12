@@ -15,7 +15,7 @@ class BottleSizesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
         $bottle_sizes = BottleSize::orderBy('is_common', 'desc')->orderBy('capacity')->paginate(25);
 
         return view('bottle_sizes.index', compact('bottle_sizes'));

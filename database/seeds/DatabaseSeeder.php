@@ -14,12 +14,16 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
 
+// use Stichoza\GoogleTranslate\TranslateClient;
+// echo TranslateClient::translate('en', 'de', 'Hello again');
+
 /*          $this->call(CountriesTableSeeder::class);
          $this->call(LanguagesTableSeeder::class);
          $this->call(CurrenciesTableSeeder::class);*/
-        $this->call(UsersTableSeeder::class); 
+        // $this->call(UsersTableSeeder::class); 
         
-//$this->call(BottleSizesTableSeeder::class); 
+// $this->call(BottleSizesTableSeeder::class); 
+// $this->call(BottleSizesTableSaver::class); 
         // $this->call(ConsumedReasonsTableSeeder::class);
         // $this->call(BottlesTableSeeder::class);
         // $this->call(BottleCasesTableSeeder::class);

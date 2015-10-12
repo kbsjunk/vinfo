@@ -15,7 +15,11 @@ use Vinfo\Language;
 use Vinfo\Currency;
 
 use Config;
+use Input;
 use Locale;
+use Lang;
+
+use Stichoza\GoogleTranslate\TranslateClient;
 
 class ApiController extends Controller
 {
@@ -57,6 +61,27 @@ class ApiController extends Controller
         else {
             return response('error', 404);
         }
+    }
+
+    public function translateWord($lang)
+    {
+        $group = Input::get('group');
+        $key = Input::get('key');
+
+        $key = $group.'.'.$key;
+
+
+        if (Lang::has($key, 'en'))
+        {
+            $word = Lang::get($key, [], 'en');
+            dd($word);
+            $word = TranslateClient::translate('en', $lang, $word);
+        }
+        else {
+            $word = null;
+        }
+
+        return ['word' => $word];
     }
 
 }

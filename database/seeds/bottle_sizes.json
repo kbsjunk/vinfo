@@ -1,0 +1,400 @@
+[
+    {
+        "capacity": "0.7500",
+        "is_common": 1,
+        "en": {
+            "name": "Bottle"
+        },
+        "de": {
+            "name": "Flasche"
+        },
+        "fr": {
+            "name": "Bouteille"
+        },
+        "es": {
+            "name": "Botella"
+        },
+        "it": {
+            "name": "Bottiglia"
+        },
+        "zh-Hans": {
+            "name": "\u666e\u901a\u74f6"
+        },
+        "ru": {
+            "name": "\u0411\u0443\u0442\u044b\u043b\u043a\u0430"
+        }
+    },
+    {
+        "capacity": "0.1875",
+        "is_common": 1,
+        "en": {
+            "name": "Piccolo"
+        },
+        "zh-Hans": {
+            "name": "\u77ed\u7b1b\u74f6"
+        }
+    },
+    {
+        "capacity": "1.5000",
+        "is_common": 1,
+        "en": {
+            "name": "Magnum"
+        },
+        "ru": {
+            "name": "\u041c\u0430\u0433\u043d\u0443\u043c"
+        },
+        "zh-Hans": {
+            "name": "\u9a6c\u683c\u5357\u74f6\/ \u5927\u74f6"
+        }
+    },
+    {
+        "capacity": "0.2000",
+        "is_common": 0,
+        "en": {
+            "name": "Quarter"
+        },
+        "de": {
+            "name": "Viertel"
+        },
+        "fr": {
+            "name": "Quart"
+        },
+        "es": {
+            "name": "Cuarto"
+        },
+        "ru": {
+            "name": "\u0427\u0435\u0442\u0432\u0435\u0440\u0442\u044c"
+        },
+        "zh-Hans": {
+            "name": "\u5938\u8131\u74f6"
+        }
+    },
+    {
+        "capacity": "0.2500",
+        "is_common": 0,
+        "en": {
+            "name": "Chopine"
+        },
+        "zh-Hans": {
+            "name": "\u8096\u90a6\u74f6"
+        }
+    },
+    {
+        "capacity": "0.3750",
+        "is_common": 0,
+        "en": {
+            "name": "Demi"
+        },
+        "de": {
+            "name": "H\u00e4lfte"
+        },
+        "fr": {
+            "name": "Demi"
+        },
+        "es": {
+            "name": "Mitad"
+        },
+        "ru": {
+            "name": "\u041f\u043e\u043b\u043e\u0432\u0438\u043d\u0430"
+        },
+        "zh-Hans": {
+            "name": "\u534a\u74f6"
+        }
+    },
+    {
+        "capacity": "0.3780",
+        "is_common": 0,
+        "en": {
+            "name": "Tenth"
+        },
+        "de": {
+            "name": "Zehntel"
+        },
+        "fr": {
+            "name": "Dixi\u00e8me"
+        },
+        "es": {
+            "name": "D\u00e9cimo"
+        },
+        "zh-Hans": {
+            "name": "\u817e\u74f6"
+        }
+    },
+    {
+        "capacity": "0.5000",
+        "is_common": 0,
+        "en": {
+            "name": "Jennie"
+        },
+        "zh-Hans": {
+            "name": "\u73cd\u59ae\u5f17\u74f6"
+        }
+    },
+    {
+        "capacity": "0.6200",
+        "is_common": 0,
+        "en": {
+            "name": "Clavelin"
+        },
+        "zh-Hans": {
+            "name": "\u514b\u62c9\u592b\u5170\u74f6"
+        }
+    },
+    {
+        "capacity": "0.7570",
+        "is_common": 0,
+        "en": {
+            "name": "Fifth"
+        },
+        "de": {
+            "name": "F\u00fcnftel"
+        },
+        "fr": {
+            "name": "Quinte"
+        },
+        "es": {
+            "name": "Quinto"
+        },
+        "zh-Hans": {
+            "name": "\u7b2c\u4e94\u578b\u74f6"
+        }
+    },
+    {
+        "capacity": "1.0000",
+        "is_common": 0,
+        "en": {
+            "name": "Litre"
+        },
+        "de": {
+            "name": "Liter"
+        },
+        "es": {
+            "name": "Litro"
+        },
+        "zh-Hans": {
+            "name": "\u5347\u74f6"
+        }
+    },
+    {
+        "capacity": "2.2500",
+        "is_common": 0,
+        "en": {
+            "name": "Marie Jeanne"
+        },
+        "fr": {
+            "name": "Marie-Jeanne"
+        },
+        "zh-Hans": {
+            "name": "\u739b\u4e3d\u00b7\u73cd\u59ae\u74f6"
+        }
+    },
+    {
+        "capacity": "3.0000",
+        "is_common": 0,
+        "en": {
+            "name": "Jeroboam\/ Double Magnum (3.0 L)"
+        },
+        "de": {
+            "name": "Jeroboam\/ Doppelmagnum (3,0 l)"
+        },
+        "fr": {
+            "name": "J\u00e9roboam\/ Double magnum (3,0 l)"
+        },
+        "es": {
+            "name": "Jeroboam\/ Doble magnum (3,0 l)"
+        },
+        "ru": {
+            "name": "\u0418\u0435\u0440\u043e\u0432\u043e\u0430\u043c\/ \u0414\u0432\u043e\u0439\u043d\u043e\u0439 \u043c\u0430\u0433\u043d\u0443\u043c (3,0 \u043b)"
+        },
+        "zh-Hans": {
+            "name": "\u4ee5\u8272\u5217\u738b\u74f6\/ \u8036\u7f57\u6ce2\u5b89\u74f6\/ \u53cc\u500d\u9a6c\u683c\u5357\u74f6 (3\u5347)"
+        }
+    },
+    {
+        "capacity": "4.5000",
+        "is_common": 0,
+        "en": {
+            "name": "Jeroboam\/ Rehoboam\/ Double Magnum (4.5 L)"
+        },
+        "de": {
+            "name": "Jeroboam\/ Rehoboam\/ Doppelmagnum (4,5 l)"
+        },
+        "fr": {
+            "name": "Jeroboam\/ R\u00e9hoboam\/ Double magnum (4,5 l)"
+        },
+        "es": {
+            "name": "Jeroboam\/ Rehoboam\/ Doble magnum (4,5 l)"
+        },
+        "ru": {
+            "name": "\u0418\u0435\u0440\u043e\u0432\u043e\u0430\u043c\/ \u0420\u043e\u0432\u043e\u0430\u043c\/ \u0414\u0432\u043e\u0439\u043d\u043e\u0439 \u043c\u0430\u0433\u043d\u0443\u043c (4,5 \u043b)"
+        },
+        "zh-Hans": {
+            "name": "\u4ee5\u8272\u5217\u738b\u74f6\/ \u8036\u7f57\u6ce2\u5b89\u74f6\/ \u72b9\u592a\u738b\u74f6\/ \u96f7\u970d\u535a\u59c6\u74f6\/ \u53cc\u500d\u9a6c\u683c\u5357\u74f6 (4.5\u5347)"
+        }
+    },
+    {
+        "capacity": "6.0000",
+        "is_common": 0,
+        "en": {
+            "name": "Methuselah\/ Imperial"
+        },
+        "de": {
+            "name": "Methuselem\/ Imperiale"
+        },
+        "fr": {
+            "name": "Mathusalem\/ Imperial"
+        },
+        "es": {
+            "name": "Matusal\u00e9n\/ Imp\u00e9riale"
+        },
+        "ru": {
+            "name": "\u041c\u0430\u0444\u0443\u0441\u0430\u0438\u043b"
+        },
+        "zh-Hans": {
+            "name": "\u739b\u571f\u6492\u62c9\u74f6\/ \u7687\u5ba4\u74f6"
+        }
+    },
+    {
+        "capacity": "9.0000",
+        "is_common": 0,
+        "en": {
+            "name": "Salmanazar"
+        },
+        "zh-Hans": {
+            "name": "\u4e9a\u8ff0\u738b\u74f6\/ \u6492\u7f26\u4ee5\u8272\u74f6"
+        }
+    },
+    {
+        "capacity": "12.0000",
+        "is_common": 0,
+        "en": {
+            "name": "Balthazar\/ Belshazzar"
+        },
+        "es": {
+            "name": "Baltasar"
+        },
+        "ru": {
+            "name": "\u0412\u0430\u043b\u0442\u0430\u0441\u0430\u0440"
+        },
+        "zh-Hans": {
+            "name": "\u4f2f\u6c99\u6492\u74f6"
+        }
+    },
+    {
+        "capacity": "15.0000",
+        "is_common": 0,
+        "en": {
+            "name": "Nebuchadnezzar"
+        },
+        "fr": {
+            "name": "Nabuchodonosor"
+        },
+        "es": {
+            "name": "Nebuchadnezzar"
+        },
+        "ru": {
+            "name": "\u041d\u0430\u0432\u0443\u0445\u043e\u0434\u043e\u043d\u043e\u0441\u043e\u0440"
+        },
+        "zh-Hans": {
+            "name": "\u5c3c\u5e03\u7532\u5c3c\u6492\u74f6"
+        }
+    },
+    {
+        "capacity": "18.0000",
+        "is_common": 0,
+        "en": {
+            "name": "Melchior"
+        },
+        "ru": {
+            "name": "\u041c\u0435\u043b\u044c\u0445\u0438\u043e\u0440"
+        },
+        "zh-Hans": {
+            "name": "\u5149\u4e4b\u738b\u74f6\/ \u6885\u5c14\u57fa\u5965\u5c14\u74f6"
+        }
+    },
+    {
+        "capacity": "18.0000",
+        "is_common": 0,
+        "en": {
+            "name": "Solomon"
+        },
+        "de": {
+            "name": "Salomo"
+        },
+        "fr": {
+            "name": "Salomon"
+        },
+        "es": {
+            "name": "Salom\u00f3n"
+        },
+        "ru": {
+            "name": "\u0421\u043e\u043b\u043e\u043c\u043e\u043d"
+        },
+        "zh-Hans": {
+            "name": "\u6240\u7f57\u95e8\u74f6"
+        }
+    },
+    {
+        "capacity": "26.2500",
+        "is_common": 0,
+        "en": {
+            "name": "Sovereign"
+        },
+        "de": {
+            "name": "Souver\u00e4n"
+        },
+        "fr": {
+            "name": "Souverain"
+        },
+        "es": {
+            "name": "Soberano"
+        },
+        "zh-Hans": {
+            "name": "\u541b\u4e3b\u74f6"
+        }
+    },
+    {
+        "capacity": "27.0000",
+        "is_common": 0,
+        "en": {
+            "name": "Primat\/ Goliath"
+        },
+        "de": {
+            "name": "Primat\/ Goliath"
+        },
+        "fr": {
+            "name": "Primat\/ Goliath"
+        },
+        "es": {
+            "name": "Primat\/ Goliath"
+        },
+        "ru": {
+            "name": "\u041f\u0440\u0438\u043c\u0430\u0442\/ \u0413\u043e\u043b\u0438\u0430\u0444"
+        },
+        "zh-Hans": {
+            "name": "\u5de8\u4eba\u74f6"
+        }
+    },
+    {
+        "capacity": "30.0000",
+        "is_common": 0,
+        "en": {
+            "name": "Melchizedek\/ Midas"
+        },
+        "de": {
+            "name": "Melchisedech"
+        },
+        "fr": {
+            "name": "Melchiz\u00e9dec"
+        },
+        "es": {
+            "name": "Melchizedek\/ Midas"
+        },
+        "ru": {
+            "name": "\u041c\u0435\u043b\u0445\u0438\u0441\u0435\u0434\u0435\u043a\/ \u041c\u0438\u0434\u0430\u0441"
+        },
+        "zh-Hans": {
+            "name": "\u6492\u51b7\u738b\u74f6\/ \u9ea6\u57fa\u6d17\u5fb7\u74f6\/ \u8fc8\u8fbe\u65af\u74f6"
+        }
+    }
+]

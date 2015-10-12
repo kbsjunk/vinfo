@@ -43,6 +43,19 @@ class CurrenciesTableSeeder extends Seeder
             Currency::create($currency);
         }
 
+        $extras = [
+         'GGP' => '根西岛镑',
+         'JEP' => '泽西岛镑',
+         'IMP' => '马恩岛英镑',
+         'BTC' => '比特币',
+        ];
+
+        foreach ($extras as $code => $name) {
+            $currency = Currency::whereCode($code)->first();
+            $currency->translate('zh-Hans')->name = $name;
+            $currency->save();
+        }
+
         Data::setDefaultLocale(Config::get('app.locale'));
     }
 }

@@ -5,6 +5,7 @@
 
 @section('content')
 {!! Form::model($user, ['action' => ['UsersController@update', $user->id], 'method' => 'PUT', 'class' => 'form-horizontal']) !!}
+<legend class="sr-only">{{ trans('models/user.name') }}</legend>
 <div class="panel panel-default">
 	<div class="panel-body">
 		@include('users.form')

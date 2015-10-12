@@ -3,6 +3,8 @@
 use Illuminate\Database\Seeder;
 use Vinfo\BottleSize;
 
+// http://www.wine-world.com/culture/zt/20140217171349239
+
 class BottleSizesTableSeeder extends Seeder
 {
     /**
@@ -15,7 +17,7 @@ class BottleSizesTableSeeder extends Seeder
 
     	DB::table('bottle_sizes')->delete();
 
-        $sizes = require(storage_path('app/bottle_sizes.php'));
+        $sizes = json_decode(File::get(dirname(__FILE__).'/bottle_sizes.json'), true);
 
         foreach ($sizes as $size) {
         	BottleSize::create($size);

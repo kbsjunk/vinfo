@@ -19,8 +19,11 @@ class Translator extends LaravelTranslator
 		$line = parent::get($key, $replace, $locale);
 
 		if ($line == $key && strpos($line, 'models/') === 0) {
-			$key = preg_replace('@models/[^./]+@', 'models/default', $key);
-			$line = parent::get($key, $replace, $locale);
+			$newkey = preg_replace('@models/[^./]+@', 'models/default', $key);
+			$line = parent::get($newkey, $replace, $locale);
+            if ($newkey == $line) {
+                return $key;
+            }
 		}
 		
 		return $line;
