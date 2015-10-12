@@ -1,6 +1,7 @@
 {
     "packages": {
         "kitbs/viewgen": "packages/kitbs/viewgen",
-        "/": "packages"
+        "/": "packages",
+        "barryvdh/laravel-translation-manager": "packages/kitbs/laravel-translation-manager"
     }
 }

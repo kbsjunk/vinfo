@@ -151,8 +151,10 @@ return [
         Dimsav\Translatable\TranslatableServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         
+		// DEV
         Kitbs\Viewgen\ViewGeneratorServiceProvider::class,
         Laracasts\Generators\GeneratorsServiceProvider::class,
+		Barryvdh\TranslationManager\ManagerServiceProvider::class,
         // Andynoelker\Laravel5ViewGenerator\ViewGeneratorServiceProvider::class,
 
     ],
