@@ -1,0 +1,8 @@
+{
+    "name": "kitbs/translation",
+    "autoload": {
+        "psr-4": {
+            "Kitbs\\Translation\\": "src/"
+        }
+    }
+}

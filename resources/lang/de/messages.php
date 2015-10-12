@@ -3,10 +3,10 @@
 return array (
   'success' => 'Erfolg',
   'error' => 'Fehler',
-  'saved_success' => 'Dokument erfolgreich gespeichert.',
-  'saved_error' => 'Fehler beim Speichern des Dokuments.',
-  'deleted_success' => 'Dokument erfolgreich gelöscht.',
-  'deleted_error' => 'Fehler beim Löschen des Dokuments.',
+  'saved_success' => 'Der Datensatz wurde erfolgreich gespeichert.',
+  'saved_error' => 'Fehler beim Speichern des Datensatzes.',
+  'deleted_success' => 'Der Datensatz wurde erfolgreich gelöscht.',
+  'deleted_error' => 'Fehler beim Löschen des Datensatzes.',
   'yes' => 'Ja',
   'no' => 'Nein',
 );

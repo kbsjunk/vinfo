@@ -26,7 +26,7 @@
 			</div>
 
 			@if (App::getLocale() != 'en')
-			<div class="form-group{{ $errors->first('name', ' has-error') }}">
+			<div class="form-group">
 				<label for="name" class="col-md-4 col-sm-3 control-label">
 					{{ trans('models/bottle_size.attributes.name') }} ({{ Punic\Language::getName('en', App::getLocale()) }})
 				</label>

@@ -3,11 +3,10 @@
 namespace Vinfo\Http\Requests;
 
 use Vinfo\Http\Requests\Request;
-use App;
-use Lang;
 
-class LanguagesFormRequest extends Request
+class LanguagesFormRequest extends ModelFormRequest
 {
+	protected $model = 'language';
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -37,13 +36,4 @@ class LanguagesFormRequest extends Request
         return $rules;
     }
 
-    /**
-     * Get the validation attributes that apply to the request.
-     *
-     * @return array
-     */
-    public function attributes()
-    {
-        return Lang::get('models/language.attributes');
-    }
 }

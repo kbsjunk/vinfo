@@ -3,11 +3,10 @@
 namespace Vinfo\Http\Requests;
 
 use Vinfo\Http\Requests\Request;
-use App;
-use Lang;
 
-class UserProfileFormRequest extends Request
+class UserProfileFormRequest extends ModelFormRequest
 {
+	protected $model = 'user';
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -42,13 +41,4 @@ class UserProfileFormRequest extends Request
         return $rules;
     }
 
-    /**
-     * Get the validation attributes that apply to the request.
-     *
-     * @return array
-     */
-    public function attributes()
-    {
-        return Lang::get('models/user.attributes');
-    }
 }

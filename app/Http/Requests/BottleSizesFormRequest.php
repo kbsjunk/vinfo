@@ -4,10 +4,11 @@ namespace Vinfo\Http\Requests;
 
 use Vinfo\Http\Requests\Request;
 use App;
-use Lang;
 
-class BottleSizesFormRequest extends Request
+class BottleSizesFormRequest extends ModelFormRequest
 {
+	protected $model = 'bottle_size';
+	
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -37,13 +38,4 @@ class BottleSizesFormRequest extends Request
         return $rules;
     }
 
-    /**
-     * Get the validation attributes that apply to the request.
-     *
-     * @return array
-     */
-    public function attributes()
-    {
-        return Lang::get('models/currency.attributes');
-    }
 }

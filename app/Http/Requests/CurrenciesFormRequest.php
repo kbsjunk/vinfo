@@ -4,10 +4,10 @@ namespace Vinfo\Http\Requests;
 
 use Vinfo\Http\Requests\Request;
 use App;
-use Lang;
 
-class CurrenciesFormRequest extends Request
+class CurrenciesFormRequest extends ModelFormRequest
 {
+	protected $model = 'currency';
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -37,13 +37,4 @@ class CurrenciesFormRequest extends Request
         return $rules;
     }
 
-    /**
-     * Get the validation attributes that apply to the request.
-     *
-     * @return array
-     */
-    public function attributes()
-    {
-        return Lang::get('models/currency.attributes');
-    }
 }
