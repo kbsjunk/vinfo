@@ -5,6 +5,9 @@ Homestead.yaml
 Homestead.json
 .env
 wk
+/packages/kitbs/laravel-translation-manager/*
+
+
 #wk/cellar-old/*
 #!wk/cellar-old/wk
 #wk/cellar-old/wk/cellar

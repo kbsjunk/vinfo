@@ -8,10 +8,11 @@
 	<title>@yield('title') &middot; Vinfo</title>
 
 	<!-- Bootstrap CSS -->
-	<link href="//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+	{{-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"> --}}
+	<link rel="stylesheet" href="{{ asset('vendor/bootstrap/bootstrap.min.css') }}">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="{{ asset('css/style.css') }}">
-	<link rel="stylesheet" href="{{ asset('vendor/selectize/selectize.bootstrap3.css') }}">
+	<link rel="stylesheet" href="{{ asset('vendor/selectize/selectize.bootstrap-paper.css') }}">
 	@yield('styles')
 
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -23,10 +24,10 @@
 <body>
 	@include('layouts/nav')
 	<div class="container">
-		<h3 class="page-header">
+		<h4 class="page-header">
 			@yield('title')
 			<small>@yield('subtitle')</small>
-		</h3>
+		</h4>
 		@include('layouts/errors')
 		@yield('content')
 	</div>

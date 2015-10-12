@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
@@ -31,7 +31,7 @@
         <div class="form-group">
           <input type="search" class="form-control" placeholder="{{ trans('actions.search') }}">
         </div>
-        <button type="submit" class="btn btn-default">{{ trans('actions.search') }}</button>
+        <button type="submit" class="btn btn-link"><i class="fa fa-search"></i><span class="sr-only">{{ trans('actions.search') }}</span></button>
       </form>
       <ul class="nav navbar-nav navbar-right">
       @if(Auth::user()->is_admin)
