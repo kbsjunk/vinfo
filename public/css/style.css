@@ -36,6 +36,9 @@ input.input-default {
 	padding: 15px 0 0 0;
 	border-top: 1px solid #e5e5e5;
 }
+.panel-footer.unstyled {
+	border-top: none;
+}
 .panel fieldset legend {
 	padding-bottom: 10px;
 }
@@ -74,4 +77,23 @@ input.input-default {
 .btn:not(.btn-link) {
 	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 	-webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+input[type="checkbox"].checkbox-sm:checked:before,
+.checkbox input[type="checkbox"].checkbox-sm:checked:before,
+.checkbox-inline input[type="checkbox"].checkbox-sm:checked:before {
+	left: 5px;
+	width: 4px;
+    height: 8px;
+}
+
+input[type="checkbox"].checkbox-sm:after,
+.checkbox input[type="checkbox"].checkbox-sm:after,
+.checkbox-inline input[type="checkbox"].checkbox-sm:after {
+	width: 14px;
+    height: 14px;
+}
+
+th label {
+	font-weight: bold;
 }

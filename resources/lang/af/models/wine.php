@@ -1,9 +1,9 @@
 <?php
 
 return array (
-  'name' => 'Vino',
+  'name' => 'Wyn',
   'attributes' => 
   array (
-    'description' => 'Descrizione',
+    'description' => 'Beskrywing',
   ),
 );

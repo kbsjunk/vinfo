@@ -28,7 +28,7 @@ class ApiController extends Controller
     public function languageNameByLanguageCode($code)
     {
         return [
-            'name' => PunicLanguage::getName($code, $code),
+        'name' => PunicLanguage::getName($code, $code),
         ];
     }
 
@@ -55,8 +55,8 @@ class ApiController extends Controller
             $currency = Currency::whereCode($currency)->first();
 
             return [
-                'language_id' => $language->id,
-                'currency_id' => $currency->id,
+            'language_id' => $language->id,
+            'currency_id' => $currency->id,
             ];
         }
         else {
@@ -78,7 +78,7 @@ class ApiController extends Controller
 
             if ($translated = Cache::get($word.':'.$lang)) {
                 // Cached
-                Cache::forget($word.':'.$lang);
+                // Cache::forget($word.':'.$lang);
             }
             else {
                 $translated = TranslateClient::translate('en', $lang, $word);
@@ -89,7 +89,9 @@ class ApiController extends Controller
             $translated = null;
         }
 
-        return ['word' => ucfirst($translated)];
+        $word = mb_convert_case(mb_substr($translated, 0, 1, 'UTF-8'), MB_CASE_UPPER, 'UTF-8').mb_substr($translated, 1, null, 'UTF-8');
+
+        return ['word' => $word];
     }
 
 }
