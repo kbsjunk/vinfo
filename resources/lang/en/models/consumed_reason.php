@@ -1,7 +1,7 @@
 <?php
 
 return array (
-  'name' => 'Consumed Reason',
+  'name' => 'Consumption Type',
   'attributes' => 
   array (
     'info' => 'Extra Data',
