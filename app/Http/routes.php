@@ -57,7 +57,7 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::group(['prefix' => 'api'], function() {
 		Route::get('language/{language}/name', 'ApiController@languageNameByLanguageCode');
 		Route::get('country/{language}/settings', 'ApiController@languageAndCurrencyByCountry');
-		Route::any('translate/{language}', 'ApiController@translateWord');
+		Route::any('translate', 'ApiController@translateWord');
 	});
 
 });

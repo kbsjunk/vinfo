@@ -18,6 +18,7 @@ use Config;
 use Input;
 use Locale;
 use Lang;
+use Cache;
 
 use Stichoza\GoogleTranslate\TranslateClient;
 
@@ -63,25 +64,30 @@ class ApiController extends Controller
         }
     }
 
-    public function translateWord($lang)
+    public function translateWord()
     {
         $group = Input::get('group');
         $key = Input::get('key');
+        $lang = Input::get('lang');
 
         $key = $group.'.'.$key;
-
 
         if (Lang::has($key, 'en'))
         {
             $word = Lang::get($key, [], 'en');
-            dd($word);
-            $word = TranslateClient::translate('en', $lang, $word);
+            if ($translated = Cache::get($word.':'.$lang)) {
+                // Cached
+            }
+            else {
+                $translated = TranslateClient::translate('en', $lang, $word);
+                Cache::put($word.':'.$lang, $word, 30);
+            }
         }
         else {
-            $word = null;
+            $translated = null;
         }
 
-        return ['word' => $word];
+        return ['word' => ucfirst($translated)];
     }
 
 }
