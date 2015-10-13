@@ -70,17 +70,19 @@ class ApiController extends Controller
         $key = Input::get('key');
         $lang = Input::get('lang');
 
-        $key = $group.'.'.$key;
+        $key = str_replace('.','/',$group).'.'.$key;
 
         if (Lang::has($key, 'en'))
         {
             $word = Lang::get($key, [], 'en');
+
             if ($translated = Cache::get($word.':'.$lang)) {
                 // Cached
+                Cache::forget($word.':'.$lang);
             }
             else {
                 $translated = TranslateClient::translate('en', $lang, $word);
-                Cache::put($word.':'.$lang, $word, 30);
+                Cache::put($word.':'.$lang, $translated, 30);
             }
         }
         else {

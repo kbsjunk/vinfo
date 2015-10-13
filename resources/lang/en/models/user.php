@@ -14,7 +14,7 @@ return array (
     'currency_id' => 'Currency',
     'currency_id_help' => 'Enter the currency of the user.',
     'country_id' => 'Country',
-    'country_id_help' => 'Enter the currency of the user.',
+    'country_id_help' => 'Enter the country of the user.',
     'language_id' => 'Language',
     'language_id_help' => 'Enter the language of the user.',
     'is_admin' => 'Admin?',
