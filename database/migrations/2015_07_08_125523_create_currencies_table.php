@@ -15,6 +15,7 @@ class CreateCurrenciesTable extends Migration
         Schema::create('currencies', function (Blueprint $table) {
             $table->increments('id');
             $table->string('code', 3)->unique();
+            $table->boolean('is_used')->default(true);
             $table->timestamps();
             $table->softDeletes();
         });

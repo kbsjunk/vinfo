@@ -13,6 +13,7 @@
 					@if (App::getLocale() != 'en')
 					<th>{{ trans('models/bottle_size.attributes.name') }} ({{ Punic\Language::getName('en', App::getLocale()) }})</th>
 					@endif
+					<th>{{ trans('models/bottle_size.attributes.is_used') }}</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -23,6 +24,8 @@
 					@if (App::getLocale() != 'en')
 					<td>{{ $bottle_size->name_en }}</td>
 					@endif
+					<td>
+					</td>
 				</tr>
 				@endforeach
 			</tbody>

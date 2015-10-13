@@ -36,6 +36,18 @@
 			</div>
 			@endif
 
+			<div class="form-group{{ $errors->first('is_used', ' has-error') }}">
+				<div class="col-md-offset-4 col-md-8 col-sm-offset-3 col-sm-7">
+					<div class="checkbox">
+						<label for="is_used">
+							{!! Form::hidden('is_used', 0) !!}
+							{!! Form::checkbox('is_used') !!} {{ trans('models/currency.attributes.is_used') }}
+						</label>
+					</div>
+					<span class="help-block">{{ $errors->first('is_used') }}</span>
+				</div>
+			</div>
+
 		</fieldset>
 	</div>
 	<div class="col-md-7">

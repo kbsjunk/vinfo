@@ -37,7 +37,7 @@
 			@endif
 
 			<div class="form-group{{ $errors->first('is_common', ' has-error') }}">
-				<div class="col-md-offset-2 col-md-8 col-sm-offset-3 col-sm-7">
+				<div class="col-md-offset-4 col-md-8 col-sm-offset-3 col-sm-7">
 					<div class="checkbox">
 						<label for="is_common">
 							{!! Form::hidden('is_common', 0) !!}

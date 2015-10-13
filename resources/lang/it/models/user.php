@@ -11,6 +11,7 @@ return array (
     'new_password' => 'Nuova password',
     'password' => 'Password',
     'remember_token' => 'Rimanere connesso?',
+    'password_confirmation' => 'Conferma password',
   ),
   'name' => 'Utilizzatore',
 );

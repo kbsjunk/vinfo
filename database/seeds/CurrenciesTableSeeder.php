@@ -15,9 +15,12 @@ class CurrenciesTableSeeder extends Seeder
      */
     public function run()
     {
-		DB::table('currencies')->delete();
 
-		$currencies = json_decode(file_get_contents('https://openexchangerates.org/api/currencies.json?app_id=74e989a64ee04c2283c3f3a7ca631d1d'));
+        DB::table('currencies')->delete();
+
+        $currencies = json_decode(file_get_contents('https://openexchangerates.org/api/currencies.json?app_id=74e989a64ee04c2283c3f3a7ca631d1d'));
+        
+        $commonCurrencies = array_keys(PunicCurrency::getAllCurrencies());
 
         Data::setDefaultLocale(Config::get('app.locale'));
         Data::setFallbackLocale(Config::get('app.fallback_locale'));
@@ -27,7 +30,8 @@ class CurrenciesTableSeeder extends Seeder
         foreach ($currencies as $code => $name) {
 
             $currency = [
-                'code' => $code,
+                'code'      => $code,
+                'is_used' => in_array($code, $commonCurrencies),
             ];
 
             foreach ($locales as $locale) {
@@ -51,9 +55,10 @@ class CurrenciesTableSeeder extends Seeder
         ];
 
         foreach ($extras as $code => $name) {
-            $currency = Currency::whereCode($code)->first();
-            $currency->translate('zh-Hans')->name = $name;
-            $currency->save();
+            if ($currency = Currency::whereCode($code)->first()) {
+                $currency->fill(['zh-Hans' => ['name' => $name]]);
+                $currency->save();
+            }
         }
 
         Data::setDefaultLocale(Config::get('app.locale'));

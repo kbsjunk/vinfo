@@ -90,6 +90,7 @@ class ApiController extends Controller
         }
 
         $word = mb_convert_case(mb_substr($translated, 0, 1, 'UTF-8'), MB_CASE_UPPER, 'UTF-8').mb_substr($translated, 1, null, 'UTF-8');
+        $word = str_replace([' .', '\''], ['.', '’'], $word);
 
         return ['word' => $word];
     }
