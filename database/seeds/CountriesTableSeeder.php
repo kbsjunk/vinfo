@@ -35,8 +35,27 @@ class CountriesTableSeeder extends Seeder
                 ];
             }
 
-            Country::create($country);
+            $country = Country::create($country);
         }
+		
+		$countries = [
+			'CSHH' => 'Czechoslovakia',
+			'CSXX' => 'Serbia and Montenegro',
+			'SUHH' => 'Soviet Union',
+			'YUCS' => 'Yugoslavia',
+		];
+		
+		foreach ($countries as $code => $name)
+		{
+			$country = [
+                'code' => $code,
+				'en' => [
+	                'name' => $name,
+				],
+            ];
+			
+			$country = Country::create($country);
+		}
 
         Data::setDefaultLocale(Config::get('app.locale'));
 

@@ -47,6 +47,8 @@
             <li><a href="{{ route('admin.bottle_sizes.index') }}">{{ trans('sections.bottle_sizes') }}</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="{{ route('admin.users.index') }}">{{ trans('sections.users') }}</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="{{ action('\Barryvdh\TranslationManager\Controller@getIndex') }}">{{ trans('sections.translations') }} &nbsp;<i class="fa fw fa-globe"></i></a></li>
           </ul>
         </li>
         @endif

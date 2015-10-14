@@ -19,4 +19,9 @@ class Country extends Model
     ];
 
     public $translatedAttributes = ['name'];
+	
+	public function getIsActiveAttribute()
+	{
+		return strlen($this->code) == 2;
+	}
 }

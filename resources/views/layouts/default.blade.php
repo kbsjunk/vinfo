@@ -8,7 +8,6 @@
 	<title>@yield('title') &middot; Vinfo</title>
 
 	<!-- Bootstrap CSS -->
-	{{-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"> --}}
 	<link rel="stylesheet" href="{{ asset('vendor/bootstrap/bootstrap.min.css') }}">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="{{ asset('css/style.css') }}">

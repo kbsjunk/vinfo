@@ -13,7 +13,7 @@
 					@if (App::getLocale() != 'en')
 					<th>{{ trans('models/bottle_size.attributes.name') }} ({{ Punic\Language::getName('en', App::getLocale()) }})</th>
 					@endif
-					<th>{{ trans('models/bottle_size.attributes.is_used') }}</th>
+					<th>{{ trans('models/bottle_size.attributes.is_common') }}</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -24,8 +24,7 @@
 					@if (App::getLocale() != 'en')
 					<td>{{ $bottle_size->name_en }}</td>
 					@endif
-					<td>
-					</td>
+					<td>{{ $bottle_size->is_common ? trans('messages.yes') : trans('messages.no') }}</td>
 				</tr>
 				@endforeach
 			</tbody>

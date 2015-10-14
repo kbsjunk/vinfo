@@ -9,9 +9,7 @@ html, body, input, textarea
 	/*font-family: 'Rosarivo', serif;*/
 }
 
-.dropdown-toggle .caret {
-	height: 10px;
-}
+
 
 fieldset legend {
 	font-size: 16px;
@@ -114,6 +112,15 @@ h4 small .badge {
 }
 
 .dropdown-toggle .caret {
-	    float: right;
+	float: right;
+	height: 10px;
+	margin-left: 6px;
     margin-top: 10px;
+}
+
+.dropdown.open .dropdown-toggle .caret {
+	border-top: none;
+	height: 4px;
+	border-bottom: 4px dashed;
+    border-bottom: 4px solid \9;
 }
