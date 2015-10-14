@@ -124,3 +124,25 @@ h4 small .badge {
 	border-bottom: 4px dashed;
     border-bottom: 4px solid \9;
 }
+
+.table.table-form tbody > tr > td {
+	border:none;
+	padding:0 5px;
+}
+.table.table-form tbody > tr > td.has-btn {
+	padding: 1px 0 0 0;
+}
+
+.selectize-control.input-sm .item,  .selectize-control.input-sm input {
+    font-size: 12px;
+}
+
+.selectize-control.input-sm .selectize-input {
+    padding-top: 2px;
+    padding-bottom: 0;
+    min-height: 30px;
+}
+
+.selectize-control.single.input-sm .selectize-input:after {
+	right: 10px;
+}

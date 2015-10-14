@@ -56,5 +56,20 @@ class ConsumedReason extends Model
 		
 		return $labels;
 	}
+	
+	public function getFieldTypesAttribute()
+	{
+		$labels = ['text','money','currency','country','rating'];
+		
+		$labels = array_combine($labels, $labels);
+		
+		foreach ($labels as &$label)
+		{
+			$label = trans('models/consumed_reason.field_types.'.$label);
+		}
+		
+		return $labels;
+		
+	}
 
 }

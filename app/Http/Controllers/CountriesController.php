@@ -102,7 +102,7 @@ class CountriesController extends Controller
     {
         $country = Country::findOrFail($id);
 
-        $this->authorize('destroy', $country);
+        $this->authorize('update', $country);
 
         $country->fill($request->input())->save();
 

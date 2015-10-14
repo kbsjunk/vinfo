@@ -102,7 +102,9 @@ class ConsumedReasonsController extends Controller
     {
         $consumed_reason = ConsumedReason::findOrFail($id);
 
-        $this->authorize('destroy', $consumed_reason);
+		dd($request->input());
+		
+/*         $this->authorize('update', $consumed_reason); */
 
         $consumed_reason->fill($request->input())->save();
 

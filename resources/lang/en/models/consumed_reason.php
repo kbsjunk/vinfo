@@ -17,4 +17,12 @@ return array (
     'recipient' => 'Recipient',
     'currency' => 'Currency',
   ),
+  'field_types' => 
+  array (
+    'text' => 'Text',
+    'money' => 'Money',
+    'currency' => 'Currency',
+    'rating' => 'Rating',
+    'country' => 'Country',
+  ),
 );
