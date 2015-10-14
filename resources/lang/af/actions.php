@@ -11,4 +11,5 @@ return array (
   'search' => 'Soek',
   'settings' => 'Instellings',
   'save' => 'Spaar',
+  'back' => 'Terug',
 );

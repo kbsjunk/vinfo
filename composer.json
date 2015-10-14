@@ -13,8 +13,7 @@
         "andynoelker/laravel-5-view-generator": "^1.0",
         "laravelcollective/html": "^5.1",
         "overtrue/laravel-lang": "1.0.*",
-        "dimsav/laravel-translatable": "^5.1",
-        "stichoza/google-translate-php": "^3.1"
+        "dimsav/laravel-translatable": "^5.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -29,7 +28,10 @@
         ],
         "psr-4": {
             "Vinfo\\": "app/"
-        }
+        },
+        "files": [
+            "app/helpers.php"
+        ]
     },
     "autoload-dev": {
         "classmap": [

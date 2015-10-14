@@ -22,13 +22,13 @@
 	<![endif]-->
 </head>
 <body>
-	@include('layouts/nav')
+	@include('partials/nav')
 	<div class="container">
 		<h4 class="page-header">
 			@yield('title')
 			<small>@yield('subtitle')</small>
 		</h4>
-		@include('layouts/errors')
+		@include('partials/alerts')
 		@yield('content')
 	</div>
 	<!-- jQuery -->

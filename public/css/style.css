@@ -1,4 +1,4 @@
-html {
+body {
 	overflow-y: scroll;
 }
 
@@ -25,6 +25,11 @@ input.input-default {
 .table.table-valign-middle>tbody>tr>td
 {
 	vertical-align: middle;
+}
+
+.table > tbody:first-child > tr:first-child > th,
+.table > tbody:first-child > tr:first-child > td {
+	border-top: none;
 }
 
 .panel-default>.panel-heading, .panel-heading {
@@ -64,14 +69,16 @@ input.input-default {
 .panel {
 	padding: 15px;
 }
-
+.panel-unstyled {
+	padding: 0 15px;
+}
 .page-header {
 	border-bottom: none;
 	padding: 0 15px;
 }
 
 .navbar {
-	z-index: 9999;
+	z-index: 1040;
 }
 
 .btn:not(.btn-link) {
@@ -96,4 +103,17 @@ input[type="checkbox"].checkbox-sm:after,
 
 th label {
 	font-weight: bold;
+}
+
+textarea {
+	resize: vertical;
+}
+
+h4 small .badge {
+	padding-bottom: 3px;
+}
+
+.dropdown-toggle .caret {
+	    float: right;
+    margin-top: 10px;
 }
