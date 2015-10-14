@@ -15,6 +15,7 @@ class CreateCountriesTable extends Migration
         Schema::create('countries', function (Blueprint $table) {
             $table->increments('id');
             $table->string('code', 4)->unique();
+			$table->boolean('is_wine');
             $table->timestamps();
             $table->softDeletes();
         });

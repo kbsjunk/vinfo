@@ -40,14 +40,13 @@ Route::group(['middleware' => 'auth'], function() {
 		Route::post('account', 'UsersController@postAccount');
 
 		Route::group(['namespace' => 'Auth'], function() {
-
 			Route::get('logout', 'AuthController@getLogout');
-
 		});
 	});
 
 	Route::group(['prefix' => 'admin'], function() {
 		Route::resource('bottle_sizes', 'BottleSizesController');
+		Route::resource('consumed_reasons', 'ConsumedReasonsController');
 		Route::resource('countries', 'CountriesController');
 		Route::resource('currencies', 'CurrenciesController');
 		Route::resource('languages', 'LanguagesController');
@@ -57,7 +56,6 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::group(['prefix' => 'api'], function() {
 		Route::get('language/{language}/name', 'ApiController@languageNameByLanguageCode');
 		Route::get('country/{language}/settings', 'ApiController@languageAndCurrencyByCountry');
-		Route::any('translate', 'ApiController@translateWord');
 	});
 
 });

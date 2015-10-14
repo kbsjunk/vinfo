@@ -127,6 +127,15 @@ class LangMakeCommand extends Command
 
         return $contents;
     }
+	
+	protected function getFieldsList($table)
+	{
+		$fields = Schema::getColumnListing($table);
+		
+		$ignore = ['id', 'name', 'code', 'created_at', 'created_by', 'updated_at', 'updated_by', 'deleted_at', 'deleted_by'];
+		
+		return array_diff($fields, $ignore);
+	}
 
     protected function getFieldLabel($field)
     {

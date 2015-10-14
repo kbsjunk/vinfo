@@ -13,7 +13,7 @@
 					@if (App::getLocale() != 'en')
 					<th>{{ trans('models/currency.attributes.name') }} ({{ Punic\Language::getName('en', App::getLocale()) }})</th>
 					@endif
-					<th>{{ trans('models/currency.attributes.is_used') }}</th>
+					<th class="col-md-1">{{ trans('models/currency.attributes.is_used') }}</th>
 				</tr>
 			</thead>
 			<tbody>

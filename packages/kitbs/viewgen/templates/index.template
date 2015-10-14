@@ -3,21 +3,27 @@
 @section('title', trans('sections.__VIEW__'))
 
 @section('content')
-<div class="table-responsive">
-	<table class="table table-condensed">
+<div class="panel panel-default">
+	<div class="table-responsive">
+		<table class="table">
 		<thead>
 			<tr>
 __COLUMNS__
+__TRANSLATED_COLUMN__
 			</tr>
 		</thead>
 		<tbody>
 			@foreach($__MODELS__ as $__MODEL__)
 			<tr>
 __FIELDS__
+__TRANSLATED_FIELD__
 			</tr>
 			@endforeach
 		</tbody>
-	</table>
+		</table>
+	</div>
+	<div class="panel-footer">
+		{!! $__MODELS__->render() !!}
+	</div>
 </div>
-{!! $__MODELS__->render() !!}
 @endsection

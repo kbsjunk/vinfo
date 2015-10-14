@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateConsumedReasonsTable extends Migration
+class CreateFaodataTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,13 @@ class CreateConsumedReasonsTable extends Migration
      */
     public function up()
     {
-        Schema::create('consumed_reasons', function (Blueprint $table) {
+        Schema::create('data_faostat', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('info');
-            $table->boolean('is_drank');
+			$table->string('country', 4);
+			$table->unsignedInteger('year');
+			$table->unsignedInteger('tonnes');
+			$table->string('status', 1);
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -28,6 +29,6 @@ class CreateConsumedReasonsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('consumed_reasons');
+        Schema::drop('data_faostat');
     }
 }

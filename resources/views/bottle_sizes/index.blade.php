@@ -13,7 +13,7 @@
 					@if (App::getLocale() != 'en')
 					<th>{{ trans('models/bottle_size.attributes.name') }} ({{ Punic\Language::getName('en', App::getLocale()) }})</th>
 					@endif
-					<th>{{ trans('models/bottle_size.attributes.is_common') }}</th>
+					<th class="col-md-1">{{ trans('models/bottle_size.attributes.is_common') }}</th>
 				</tr>
 			</thead>
 			<tbody>

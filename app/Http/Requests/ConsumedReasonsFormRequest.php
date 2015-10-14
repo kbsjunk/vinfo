@@ -5,9 +5,9 @@ namespace Vinfo\Http\Requests;
 use Vinfo\Http\Requests\Request;
 use App;
 
-class CountriesFormRequest extends ModelFormRequest
+class ConsumedReasonsFormRequest extends ModelFormRequest
 {
-	protected $model = 'country';
+    protected $model = 'consumed_reason';
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -26,11 +26,10 @@ class CountriesFormRequest extends ModelFormRequest
     public function rules()
     {
 
-        $id = $this->route('countries') ?: 'NULL';
+        $id = $this->route('consumed_reasons') ?: 'NULL';
 
         $rules = [
-            'code'     => 'required|min:2|max:4|alpha|unique:countries,code,'.$id,
-            'name'     => 'required|unique:country_translations,name,'.$id.',country_id,locale,'.App::getLocale(),
+            'name'     => 'required|unique:consumed_reason_translations,name,'.$id.',consumed_reason_id,locale,'.App::getLocale(),
             'common'   => 'boolean',
         ];
 

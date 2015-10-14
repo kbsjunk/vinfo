@@ -5,7 +5,7 @@
 
 @section('content')
 {!! Form::open(['action' => 'CurrenciesController@store', 'method' => 'POST', 'class' => 'form-horizontal']) !!}
-    <legend class="sr-only">{{ trans('models/currency.name') }}</legend>
+<legend class="sr-only">{{ trans('models/currency.name') }}</legend>
 <div class="panel panel-default">
 	<div class="panel-body">
 		@include('currencies.form', ['currency' => new Vinfo\Currency])

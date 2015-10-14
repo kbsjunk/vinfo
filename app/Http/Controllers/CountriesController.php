@@ -19,7 +19,7 @@ class CountriesController extends Controller
     {
         $this->authorize('show', new Country);
 
-        $countries = Country::orderByTranslation('name')->paginate(25);
+        $countries = Country::orderByActive('desc')->orderBy('is_wine', 'desc')->orderByTranslation('name')->paginate(25);
 
         return view('countries.index', compact('countries'));
     }
@@ -31,9 +31,11 @@ class CountriesController extends Controller
      */
     public function create()
     {
-        $this->authorize('create', new Country);
+        $country = new Country;
 
-        return view('countries.create');
+        $this->authorize('create', $country);
+
+        return view('countries.create', compact('country'));
     }
 
     /**

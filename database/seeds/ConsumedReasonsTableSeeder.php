@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 
+use Vinfo\ConsumedReason;
+
 class ConsumedReasonsTableSeeder extends Seeder
 {
     /**
@@ -9,31 +11,97 @@ class ConsumedReasonsTableSeeder extends Seeder
      *
      * @return void
      */
-	public function run()
-	{
+    public function run()
+    {
 
-		DB::table('consumed_reasons')->truncate();
+        DB::table('consumed_reasons')->delete();
 
-		$reasons = [
-		'Drank'           => [1, ['Rating' => 'rating']],
-		'Gave as gift'    => [0, ['Recipient' => 'text']],
-		'Sold'            => [0, ['Buyer' => 'text', 'Price' => 'money', 'currency' => 'currency']],
-		'Used in cooking' => [1, ['Rating' => 'rating', 'Meal' => 'text']],
-		'Corked'          => [0, []],
-		'Damaged'         => [0, []],
-		'Spilled'         => [0, []],
-		'Stolen'          => [0, []],
-		'Lost'            => [0, []],
-		'(Unknown)'       => [0, []],
-		];
+        $reasons = [
+            [
+                'is_drank' => 1,
+                'info'     => ['rating' => 'rating'],
+                'en'       => ['name'=>'Drank'],
+                'de'       => ['name'=>'Getrunken'],
+                // 'fr'       => ['name'=>''],
+                // 'es'       => ['name'=>''],
+            ],
+            [
+                'is_drank' => 0,
+                'info'     => ['recipient' => 'text'],
+                'en'       => ['name'=>'Gave as gift'],
+                'de'       => ['name'=>'Geschenkt'],
+                // 'fr'       => ['name'=>''],
+                // 'es'       => ['name'=>''],
+            ],
+            [
+                'is_drank' => 0,
+                'info'     => ['buyer' => 'text', 'price' => 'money', 'currency' => 'currency'],
+                'en'       => ['name'=>'Sold'],
+                'de'       => ['name'=>'Verkauft'],
+                // 'fr'       => ['name'=>''],
+                // 'es'       => ['name'=>''],
+            ],
+            [
+                'is_drank' => 1,
+                'info'     => ['rating' => 'rating', 'meal' => 'text'],
+                'en'       => ['name'=>'Used in cooking'],
+                'de'       => ['name'=>'Beim Kochen verwendet'],
+                // 'fr'       => ['name'=>''],
+                // 'es'       => ['name'=>''],
+            ],
+            [
+                'is_drank' => 0,
+                'info'     => [],
+                'en'       => ['name'=>'Corked'],
+                'de'       => ['name'=>'Verdorben'],
+                // 'fr'       => ['name'=>''],
+                // 'es'       => ['name'=>''],
+            ],
+            [
+                'is_drank' => 0,
+                'info'     => [],
+                'en'       => ['name'=>'Damaged'],
+                'de'       => ['name'=>'Beschädigt'],
+                // 'fr'       => ['name'=>''],
+                // 'es'       => ['name'=>''],
+            ],
+            [
+                'is_drank' => 0,
+                'info'     => [],
+                'en'       => ['name'=>'Spilled'],
+                'de'       => ['name'=>'Verschüttet'],
+                // 'fr'       => ['name'=>''],
+                // 'es'       => ['name'=>''],
+            ],
+            [
+                'is_drank' => 0,
+                'info'     => [],
+                'en'       => ['name'=>'Stolen'],
+                'de'       => ['name'=>'Gestohlen'],
+                // 'fr'       => ['name'=>''],
+                // 'es'       => ['name'=>''],
+            ],
+            [
+                'is_drank' => 0,
+                'info'     => [],
+                'en'       => ['name'=>'Lost'],
+                'de'       => ['name'=>'Verloren'],
+                // 'fr'       => ['name'=>''],
+                // 'es'       => ['name'=>''],
+            ],
+            [
+                'is_drank' => 0,
+                'info'     => [],
+                'en'       => ['name'=>'(Unknown)'],
+                'de'       => ['name'=>'(Unbekannt)'],
+                // 'fr'       => ['name'=>''],
+                // 'es'       => ['name'=>''],
+            ],
+        ];
 
-		foreach ($reasons as $reason => $drank)
-		{
-			Vinfo\ConsumedReason::create([
-				'name'     => $reason,
-				'is_drank' => $drank[0],
-				'info'     => $drank[1],
-				]);
-		}
-	}
+        foreach ($reasons as $reason)
+        {
+            $reason = ConsumedReason::create($reason);
+        }
+    }
 }

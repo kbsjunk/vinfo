@@ -3,7 +3,7 @@
 		{{ trans('sections.translations') }}
 	</legend>
 	<div class="panel-group" id="translations_accordion" role="tablist" aria-multiselectable="true">
-		@if($model->exists)
+		@if(is_object($model) && $model->exists)
 		@foreach($model->translations as $translation)
 		@if ($translation->locale !== App::getLocale())
 		<div class="panel panel-default">

@@ -36,9 +36,32 @@
 				</div>
 			</div>
 			@endif
+
+			<div class="form-group{{ $errors->first('is_active', ' has-error') }}">
+				<div class="col-md-offset-4 col-md-8 col-sm-offset-3 col-sm-7">
+					<div class="checkbox disabled">
+						<label for="is_active">
+							{!! Form::checkbox('is_active', null, null, ['readonly', 'disabled']) !!} {{ trans('models/country.attributes.is_active') }}
+						</label>
+					</div>
+					<span class="help-block">{{ $errors->first('is_active') }}</span>
+				</div>
+			</div>
+			<div class="form-group{{ $errors->first('is_wine', ' has-error') }}">
+				<div class="col-md-offset-4 col-md-8 col-sm-offset-3 col-sm-7">
+					<div class="checkbox">
+						<label for="is_wine">
+							{!! Form::hidden('is_wine', 0) !!}
+							{!! Form::checkbox('is_wine') !!} {{ trans('models/country.attributes.is_wine') }}
+						</label>
+					</div>
+					<span class="help-block">{{ $errors->first('is_wine') }}</span>
+				</div>
+			</div>
+
 		</fieldset>
 	</div>
 	<div class="col-md-7">
-	@include('partials/translations', ['model'=>$country, 'modelName'=>'country'])
+		@include('partials/translations', ['model'=>$country, 'modelName'=>'country'])
 	</div>
 </div>

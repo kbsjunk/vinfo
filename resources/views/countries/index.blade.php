@@ -13,6 +13,8 @@
 					@if (App::getLocale() != 'en')
 					<th>{{ trans('models/country.attributes.name') }} ({{ Punic\Language::getName('en', App::getLocale()) }})</th>
 					@endif
+					<th class="col-md-1">{{ trans('models/country.attributes.is_active') }}</th>
+					<th class="col-md-1">{{ trans('models/country.attributes.is_wine') }}</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -23,6 +25,8 @@
 					@if (App::getLocale() != 'en')
 					<td>{{ $country->name_en }}</td>
 					@endif
+					<td>{{ $country->is_active ? trans('messages.yes') : trans('messages.no') }}</td>
+					<td>{{ $country->is_wine ? trans('messages.yes') : trans('messages.no') }}</td>
 				</tr>
 				@endforeach
 			</tbody>

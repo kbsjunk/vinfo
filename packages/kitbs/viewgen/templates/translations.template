@@ -1,0 +1,3 @@
+<div class="col-md-7">
+    @include('partials/translations', ['model'=>$__MODEL__, 'modelName'=>'__MODEL__'])
+</div>
