@@ -5,9 +5,11 @@ Homestead.yaml
 Homestead.json
 .env
 wk
-/packages/kitbs/laravel-translation-manager/*
+/packages/kitbs/laravel-translation-manager
 
-
+#!wk/data/*
+#!wk/geodata/*
+#wk/cellar-old/*
 #wk/cellar-old/*
 #!wk/cellar-old/wk
 #wk/cellar-old/wk/cellar
