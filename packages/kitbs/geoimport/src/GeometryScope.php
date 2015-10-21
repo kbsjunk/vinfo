@@ -8,12 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class GeometryScope implements ScopeInterface
 {
-	protected $binary;
-
-	public function __construct($binary = false)
-	{
-		$this->binary = $binary;
-	}
 
 	/**
 	 * Apply the scope to a given Eloquent query builder.
@@ -31,12 +25,7 @@ class GeometryScope implements ScopeInterface
 		$select = ['*'];
 
 		foreach ($columns as $column) {
-			if ($this->binary) {
-				$select[] = 'AsBinary(`'.$column.'`) AS `'.$column.'`';
-			}
-			else {
-				$select[] = 'AsText(`'.$column.'`) AS `'.$column.'`';
-			}
+			$select[] = 'AsText(`'.$column.'`) AS `'.$column.'`';
 		}
 
 		// $builder->onDelete(function (Builder $builder) {

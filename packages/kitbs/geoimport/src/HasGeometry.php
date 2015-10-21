@@ -4,12 +4,9 @@ namespace Kitbs\Geoimport;
 
 use Kitbs\Geoimport\Generator;
 use Kitbs\Geoimport\Extractor;
-use GeoIO\WKT\Parser\Parser as WKTParser;
-use GeoIO\WKB\Parser\Parser as WKBParser;
+use GeoIO\WKT\Parser\Parser;
 
 trait HasGeometry {
-
-    protected static $binary = true;
 
     /**
      * Boot the geometry trait for a model.
@@ -18,7 +15,7 @@ trait HasGeometry {
      */
     public static function bootHasGeometry()
     {
-        static::addGlobalScope(new GeometryScope(self::$binary));
+        static::addGlobalScope(new GeometryScope);
     }
 
     /**
@@ -89,13 +86,7 @@ trait HasGeometry {
     protected function toGeometry($value)
     {
         $factory = new Generator();
-        dd($value);
-        if ($this->binary) {
-            $parser = new WKBParser($factory);
-        }
-        else {
-            $parser = new WKTParser($factory);
-        }
+        $parser = new Parser($factory);
 
         return $parser->parse($value);
     }
