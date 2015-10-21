@@ -36,7 +36,11 @@ class GeometryScope implements ScopeInterface
 		// 		]);
 		// });
 
-		return $query->selectRaw(implode(', ', $select));
+		// $this->addToFeature($builder);
+
+		$query = $query->selectRaw(implode(', ', $select));
+
+		return $query;
 	}
 
 	/**
@@ -56,4 +60,11 @@ class GeometryScope implements ScopeInterface
         //     return $this->isSoftDeleteConstraint($where, $column);
         // })->values()->all();
 	}
+
+	// protected function addToFeature(Builder $builder)
+	// {
+	// 	$builder->macro('toFeature', function (Builder $builder) {
+	// 		return $builder->getModel()->toFeature();
+	// 	});
+	// }
 }

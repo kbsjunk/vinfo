@@ -45,9 +45,9 @@ Route::get('/test/geometry', function() {
 
 	// dd();
 
-	$geo = Vinfo\Geometry::orderBy('id', 'desc')->first();
+	$geo = Vinfo\Geometry::orderBy('id', 'asc')->get();
 
-	dd($geo->geometry);
+	dd(json_encode($geo->toFeatureCollection()->jsonSerialize()));
 
 });
 

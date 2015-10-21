@@ -4,7 +4,11 @@ namespace Kitbs\Geoimport;
 
 use Kitbs\Geoimport\Generator;
 use Kitbs\Geoimport\Extractor;
+use Kitbs\Geoimport\Geometry;
+use Kitbs\Geoimport\Collection;
+use GeoJson\Feature\Feature;
 use GeoIO\WKT\Parser\Parser;
+
 
 trait HasGeometry {
 
@@ -16,6 +20,17 @@ trait HasGeometry {
     public static function bootHasGeometry()
     {
         static::addGlobalScope(new GeometryScope);
+    }
+
+    /**
+     * Create a new Eloquent Collection instance.
+     *
+     * @param  array  $models
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public function newCollection(array $models = [])
+    {
+        return new Collection($models);
     }
 
     /**
@@ -93,12 +108,54 @@ trait HasGeometry {
 
     protected function fromGeometry($value)
     {
+        if ($value instanceof Geometry) {
 
+            $extractor = new Extractor();
+            $generator = new Generator($extractor);
+         
+            return $generator->generate($value);
+        }
+
+        return 'POINT(0 0)';
     }
 
-    protected function toFeature()
+    /**
+     * Convert the model's attributes to an array.
+     *
+     * @return array
+     */
+    public function attributesToArray()
     {
+        $attributes = parent::attributesToArray();
 
+        foreach ($this->getGeometries() as $attribute) {
+            $attributes[$attribute] = $this->getAttribute($attribute)->jsonSerialize();
+        }
+
+        return $attributes;
+    }
+
+    public function toFeature()
+    {
+        return new Feature($this->geometry, $this->properties, $this->id);
+    }
+
+    public function getPropertiesAttribute()
+    {
+        $properties = [
+            'name'        => $this->name,
+            'description' => $this->description,
+        ];
+
+        return array_merge((array) $this->getAttributeFromArray('properties'), $properties);
+    }
+
+    public function setPropertiesAttribute($properties)
+    {
+        if (isset($properties['name'])) $this->name = $properties['name'];
+        if (isset($properties['description'])) $this->name = $properties['description'];
+
+        $this->properties = array_except(['name', 'description']);
     }
 
 }
