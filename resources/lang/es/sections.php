@@ -11,4 +11,5 @@ return array (
   'languages' => 'Idiomas',
   'translations' => 'Traducciones',
   'users' => 'Usuarios',
+  'avatar' => 'Foto de perfil',
 );

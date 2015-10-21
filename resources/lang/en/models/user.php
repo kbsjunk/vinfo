@@ -18,7 +18,7 @@ return array (
     'language_id' => 'Language',
     'language_id_help' => 'Enter the language of the user.',
     'is_admin' => 'Admin?',
-    'is_admin_help' => 'Is the user admin?',
+    'is_admin_help' => 'Is the user an administrator?',
     'remember_token' => 'Stay logged in?',
     'remember_token_help' => 'Should the user remain logged in between sessions?',
   ),

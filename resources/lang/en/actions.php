@@ -16,4 +16,6 @@ return array (
   'settings' => 'Settings',
   'close' => 'Close',
   'language' => 'Language',
+  'remove' => 'Clear',
+  'change' => 'Change',
 );

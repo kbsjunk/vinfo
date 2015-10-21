@@ -11,4 +11,5 @@ return array (
   'users' => '用户',
   'languages' => '语言',
   'details' => '资料',
+  'avatar' => '头像',
 );

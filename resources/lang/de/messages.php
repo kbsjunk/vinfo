@@ -9,4 +9,5 @@ return array (
   'deleted_error' => 'Fehler beim Löschen des Datensatzes.',
   'yes' => 'Ja',
   'no' => 'Nein',
+  'confirm_delete' => 'Sind Sie sicher, dass Sie diesen Datensatz löschen wollen?',
 );

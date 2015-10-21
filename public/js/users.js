@@ -8,3 +8,29 @@ $('[data-selectize="country"]').selectize({
 		}
 	}
 });
+
+$('[data-email]').each(function() {
+	var btn = $(this);
+	var field = $(this).data('email');
+
+	var val = $(field).val();
+	btn.toggleClass('disabled', val.length == 0);
+
+	if (val.length == 0) {
+		btn.prop('href', '');
+	}
+	else {		
+		btn.prop('href', 'mailto:' + val);
+	}
+
+	$(field).on('keyup', function() {
+		var val = $(this).val();
+		btn.toggleClass('disabled', val.length == 0);
+		if (val.length == 0) {
+			btn.prop('href', '');
+		}
+		else {
+			btn.prop('href', 'mailto:' + val);
+		}
+	});
+});

@@ -13,4 +13,5 @@ return array (
   'translations' => 'Translations',
   'consumed_reasons' => 'Consumed Reasons',
   'region_types' => 'Region Types',
+  'avatar' => 'Profile Picture',
 );

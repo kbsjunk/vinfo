@@ -16,4 +16,5 @@ return array (
   'settings' => 'Ajustes',
   'language' => 'Idioma',
   'close' => 'Cerrar',
+  'change' => 'Cambiar',
 );

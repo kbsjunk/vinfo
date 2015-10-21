@@ -13,6 +13,14 @@
 
 Route::get('/', 'HomeController@index');
 
+Route::get('/test/geometry', function() {
+
+	$geo = Vinfo\Geometry::orderBy('id', 'desc')->first();
+
+	dd($geo->geometry);
+
+});
+
 Route::group(['namespace' => 'Auth', 'prefix' => 'auth', 'middleware' => 'guest'], function() {
 
 	// Authentication routes...

@@ -11,4 +11,5 @@ return array (
   'users' => 'Usuários',
   'configuration' => 'Configuração',
   'bottle_sizes' => 'Tamanhos de garrafa',
+  'avatar' => 'Foto do perfil',
 );

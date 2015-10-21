@@ -10,6 +10,7 @@ return array (
     'password' => 'Wagwoord',
     'password_confirmation' => 'Wagwoord bevestiging',
     'email' => 'E-pos adres',
+    'is_admin_help' => 'Is die gebruiker ’n administrateur?',
   ),
   'name' => 'Gebruiker',
 );

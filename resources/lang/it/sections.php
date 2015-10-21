@@ -11,4 +11,5 @@ return array (
   'translations' => 'Traduzioni',
   'users' => 'Utenti',
   'bottle_sizes' => 'Formati di bottiglia',
+  'avatar' => 'Immagine del profilo',
 );

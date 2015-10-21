@@ -35,7 +35,7 @@ class UsersController extends Controller
     {
         $this->authorize('show', new User);
 
-        $users = User::orderBy('name')->paginate(25);
+        $users = User::with('country.translations')->with('currency')->with('language')->orderBy('name')->paginate(25);
 
         return view('users.index', compact('users'));
     }

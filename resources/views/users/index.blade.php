@@ -5,7 +5,7 @@
 @section('content')
 <div class="panel panel-default">
 	<div class="table-responsive">
-		<table class="table">
+		<table class="table table-valign-middle">
 			<thead>
 				<tr>
 					<th class="col-md-3">{{ trans('models/user.attributes.name') }}</th>
@@ -19,7 +19,18 @@
 			<tbody>
 				@foreach($users as $user)
 				<tr>
-					<td><a href="{{ action('UsersController@edit', $user->id) }}">{{ $user->name }}</a></td>
+					<td>
+						<a href="{{ action('UsersController@edit', $user->id) }}">
+							<div class="media">
+								<div class="media-left media-middle">
+									<img src="{{ asset('img/user.png') }}" class="img-circle img-avatar-sm media-object">
+								</div>
+								<div class="media-body media-middle">
+									{{ $user->name }}
+								</div>
+							</div>
+						</a>
+					</td>
 					<td>{{ $user->email }}</td>
 					<td>{{ $user->country->name }}</td>
 					<td>{{ $user->language->name_local }}</td>

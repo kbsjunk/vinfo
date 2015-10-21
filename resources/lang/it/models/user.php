@@ -12,6 +12,7 @@ return array (
     'password' => 'Password',
     'remember_token' => 'Rimanere connesso?',
     'password_confirmation' => 'Conferma password',
+    'is_admin_help' => 'È l’utente un amministratore?',
   ),
   'name' => 'Utilizzatore',
 );

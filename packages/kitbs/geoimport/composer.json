@@ -6,6 +6,9 @@
         }
     },
     "require": {
-        "sabre/xml": "^1.2"
+        "sabre/xml": "^1.2",
+        "jmikola/geojson": "^1.0",
+        "geo-io/wkt-parser": "^1.0",
+        "geo-io/wkt-generator": "^1.0"
     }
 }

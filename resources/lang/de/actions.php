@@ -16,4 +16,6 @@ return array (
   'ok' => 'OK',
   'language' => 'Sprache',
   'close' => 'Schließen',
+  'change' => 'Ändern',
+  'remove' => 'Löschen',
 );

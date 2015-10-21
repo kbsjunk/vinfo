@@ -52,7 +52,7 @@
         @endif
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-            <img src="{{ asset('img/user.png') }}" class="img-circle" style="width:28px;margin:-18px 7px -14px 0;">
+            <img src="{{ asset('img/user.png') }}" class="img-circle img-avatar-xs">
             {{ Auth::user()->name }} <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">

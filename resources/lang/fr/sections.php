@@ -11,4 +11,5 @@ return array (
   'details' => 'Détails',
   'translations' => 'Traductions',
   'configuration' => 'Administration',
+  'avatar' => 'Photo de profil',
 );

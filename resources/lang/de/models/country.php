@@ -5,5 +5,6 @@ return array (
   'attributes' => 
   array (
     'is_active' => 'Aktiv?',
+    'is_wine' => 'Weinland?',
   ),
 );

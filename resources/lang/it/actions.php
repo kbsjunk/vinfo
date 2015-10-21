@@ -16,4 +16,5 @@ return array (
   'login' => 'Connettersi',
   'language' => 'Lingua',
   'close' => 'Chiudere',
+  'change' => 'Cambiare',
 );

@@ -29,6 +29,25 @@ body {
 	/*box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);*/
 }
 
+.img-avatar-xs {
+	width:28px;
+}
+
+.img-avatar-sm {
+	width:36px;
+}
+
+.img-avatar-md {
+	width:52px;
+}
+
+.img-avatar-lg {
+	width:140px;
+}
+
+.navbar .img-avatar-sm {
+	margin:-18px 7px -14px 0;
+}
 
 fieldset legend {
 	font-size: 16px;

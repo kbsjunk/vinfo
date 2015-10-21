@@ -1,6 +1,21 @@
 
 <div class="row">
-	<div class="col-md-6">
+	<div class="col-md-6 col-md-push-6">
+{{-- 		<fieldset>
+			<legend>{{ trans('sections.avatar') }}</legend>
+			<div class="media col-md-offset-2 col-md-8">
+				<div class="media-left media-middle">
+					<img src="{{ asset('img/user.png') }}" class="img-circle img-avatar-lg media-object">
+				</div>
+				<div class="media-body media-middle">
+					<button type="button" class="btn btn-default btn-block">{{ trans('actions.remove') }}</button>
+					<button type="button" class="btn btn-default btn-block">{{ trans('actions.change') }}</button>
+				</div>
+			</div>
+		</fieldset> --}}
+	</div>
+	<div class="col-md-6 col-md-pull-6">
+
 		<fieldset>
 			<legend>{{ trans('sections.account') }}</legend>
 			<div class="form-group{{ $errors->first('name', ' has-error') }}">
@@ -18,7 +33,12 @@
 					{{ trans('models/user.attributes.email') }}
 				</label>
 				<div class="col-md-8 col-sm-7">
-					{!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => trans('models/user.attributes.email')]) !!}
+					<div class="input-group">
+						{!! Form::email('email', null, ['id' => 'email', 'class' => 'form-control', 'placeholder' => trans('models/user.attributes.email')]) !!}
+						<span class="input-group-btn">
+							<a href="#" class="btn btn-link btn-sm disabled" data-email="#email"><i class="fa fa-envelope"></i></a>
+						</span>
+					</div>
 					<span class="help-block">{{ $errors->first('email') }}</span>
 				</div>
 			</div>
@@ -36,17 +56,23 @@
 			</div>
 			@endif
 		</fieldset>
+
+	</div>
+</div>
+<div class="row">
+
+	<div class="col-md-6">
 		<fieldset>
 			<legend>
-				{{ trans('models/user.attributes.password') }}
+				{{ trans('models/user.attributes.new_password') }}
 			</legend>
 
 			<div class="form-group{{ $errors->first('password', ' has-error') }}">
 				<label for="password" class="col-md-4 col-sm-3 control-label">
-					{{ trans('models/user.attributes.password') }}
+					{{ trans('models/user.attributes.new_password') }}
 				</label>
 				<div class="col-md-8 col-sm-7">
-					{!! Form::password('password', ['class' => 'form-control', 'placeholder' => trans('models/user.attributes.password')]) !!}
+					{!! Form::password('password', ['class' => 'form-control', 'placeholder' => trans('models/user.attributes.new_password')]) !!}
 					<span class="help-block">{{ $errors->first('password') }}</span>
 				</div>
 			</div>
@@ -63,7 +89,6 @@
 
 		</fieldset>
 	</div>
-
 	<div class="col-md-6">
 		<fieldset>
 			<legend>{{ trans('sections.settings') }}</legend>
@@ -97,6 +122,7 @@
 				</div>
 			</div>
 		</fieldset>
+
 	</div>
 </div>
 
