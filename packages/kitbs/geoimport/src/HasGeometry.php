@@ -129,6 +129,10 @@ trait HasGeometry {
 
             return $generator->generate($value);
         }
+        elseif (is_string($value))
+        {
+            return $value;
+        }
 
         return 'POINT(0 0)';
     }

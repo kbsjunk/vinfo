@@ -17,13 +17,13 @@ Route::get('/test/geometry', function() {
 
 	// $wkt = 'POINT (30 10)';
 	// $wkt = 'LINESTRING (30 10, 10 30, 40 40)';
-	$wkt = 'POLYGON ((30 10, 40 40, 20 40, 10 20, 30 10))';
+	// $wkt = 'POLYGON ((30 10, 40 40, 20 40, 10 20, 30 10))';
 	// $wkt = 'POLYGON ((35 10, 45 45, 15 40, 10 20, 35 10), (20 30, 35 35, 30 20, 20 30))';
 	// $wkt = 'MULTIPOINT ((10 40), (40 30), (20 20), (30 10))';
 	// $wkt = 'MULTILINESTRING ((10 10, 20 20, 10 40),(40 40, 30 30, 40 20, 30 10))';
 	// $wkt = 'MULTIPOLYGON (((30 20, 45 40, 10 40, 30 20)),((15 5, 40 10, 10 20, 5 10, 15 5)))';
 	// $wkt = 'MULTIPOLYGON (((40 40, 20 45, 45 30, 40 40)),((20 35, 10 30, 10 10, 30 5, 45 20, 20 35),(30 20, 20 15, 20 25, 30 20)))';
-	// $wkt = 'GEOMETRYCOLLECTION(POINT(4 6),LINESTRING(4 6,7 10))';
+	$wkt = 'GEOMETRYCOLLECTION(POINT(4 6),LINESTRING(4 6,7 10))';
 	// $wkt = 'POINT ZM (1 1 5 60)';
 
 	// echo $wkt;
@@ -47,7 +47,7 @@ Route::get('/test/geometry', function() {
 
 	$geo = Vinfo\Geometry::orderBy('id', 'desc')->first();
 
-	$geo->geometry = $parser->parse($wkt);
+	$geo->geometry = $wkt; $parser->parse($wkt);
 
 	$geo->save();
 
