@@ -14,11 +14,14 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        \Vinfo\User::class       => \Vinfo\Policies\UserPolicy::class,
-        \Vinfo\BottleSize::class => \Vinfo\Policies\BottleSizePolicy::class,
-        \Vinfo\Country::class    => \Vinfo\Policies\CountryPolicy::class,
-        \Vinfo\Currency::class   => \Vinfo\Policies\CurrencyPolicy::class,
-        \Vinfo\Language::class   => \Vinfo\Policies\LanguagePolicy::class,
+        \Vinfo\User::class           => \Vinfo\Policies\UserPolicy::class,
+        
+        \Vinfo\BottleSize::class     => \Vinfo\Policies\AdminPolicy::class,
+        \Vinfo\Country::class        => \Vinfo\Policies\AdminPolicy::class,
+        \Vinfo\Currency::class       => \Vinfo\Policies\AdminPolicy::class,
+        \Vinfo\Language::class       => \Vinfo\Policies\AdminPolicy::class,
+        \Vinfo\ConsumedReason::class => \Vinfo\Policies\AdminPolicy::class,
+        \Vinfo\RegionType::class     => \Vinfo\Policies\AdminPolicy::class,
     ];
 
     /**

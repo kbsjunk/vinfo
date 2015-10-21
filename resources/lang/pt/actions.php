@@ -11,4 +11,6 @@ return array (
   'save' => 'Guardar',
   'search' => 'Pesquisar',
   'settings' => 'Configurações',
+  'administration' => 'Administração',
+  'ok' => 'Está bem',
 );

@@ -30,7 +30,7 @@ class CurrenciesFormRequest extends ModelFormRequest
 
         $rules = [
             'code'     => 'required|size:3|alpha|unique:currencies,code,'.$id,
-            'name'     => 'required|unique:currency_translations,name,'.$id.',currency_id,locale,'.App::getLocale(),
+            'name'     => 'required|max:255|unique:currency_translations,name,'.$id.',currency_id,locale,'.App::getLocale(),
             'common'   => 'boolean',
         ];
 

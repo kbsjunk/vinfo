@@ -30,7 +30,7 @@ class BottleSizesFormRequest extends ModelFormRequest
         $id = $this->route('bottle_sizes') ?: 'NULL';
 
         $rules = [
-            'name'     => 'required|unique:bottle_size_translations,name,'.$id.',bottle_size_id,locale,'.App::getLocale(),
+            'name'     => 'required|max:255|unique:bottle_size_translations,name,'.$id.',bottle_size_id,locale,'.App::getLocale(),
             'capacity' => 'required|numeric',
             'common'   => 'boolean',
         ];

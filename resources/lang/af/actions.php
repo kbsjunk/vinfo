@@ -12,4 +12,5 @@ return array (
   'settings' => 'Instellings',
   'save' => 'Spaar',
   'back' => 'Terug',
+  'administration' => 'Administrasie',
 );

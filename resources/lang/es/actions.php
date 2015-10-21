@@ -1,7 +1,7 @@
 <?php
 
 return array (
-  'admin' => 'Administración',
+  'administration' => 'Administración',
   'back' => 'Volver',
   'cancel' => 'Cancelar',
   'delete' => 'Borrar',

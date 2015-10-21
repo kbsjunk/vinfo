@@ -2,44 +2,21 @@
 
 namespace Vinfo\Policies;
 
+use Illuminate\Database\Eloquent\Model;
 use Vinfo\User;
 
-class UserPolicy
+class UserPolicy extends AdminPolicy
 {
-    /**
-     * Determine if the user can list users.
-     *
-     * @param  \App\User  $user
-     * @param  \App\User  $given
-     * @return bool
-     */
-    public function show(User $user)
-    {
-        return $user->is_admin;
-    }
-
-    /**
-     * Determine if the user can create users.
-     *
-     * @param  \App\User  $user
-     * @param  \App\User  $given
-     * @return bool
-     */
-    public function create(User $user)
-    {
-        return $user->is_admin;
-    }
-
     /**
      * Determine if the given user can be updated by the user.
      *
      * @param  \App\User  $user
-     * @param  \App\User  $given
+     * @param  \App\User  $model
      * @return bool
      */
-    public function update(User $user, User $given)
+    public function update(User $user, User $model)
     {
-        return $user->is_admin || $user->id === $given->id;
+        return $user->is_admin || $user->id === $model->id;
     }
 
     /**
@@ -48,8 +25,8 @@ class UserPolicy
      * @param  \App\User  $user
      * @return bool
      */
-    public function destroy(User $user, User $given)
+    public function destroy(User $user, Model $model)
     {
-        return $user->is_admin && $given->id !== 1 && $user->id !== $given->id;
+        return $user->is_admin && $model->id !== 1 && $user->id !== $model->id;
     }
 }

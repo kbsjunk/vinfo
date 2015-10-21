@@ -34,10 +34,10 @@
         <button type="submit" class="btn btn-link"><i class="fa fa-search"></i><span class="sr-only">{{ trans('actions.search') }}</span></button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-      @if(Auth::user()->is_admin)
+        @if(Auth::user()->is_admin)
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-            {{ trans('sections.admin') }} <span class="caret"></span>
+          {{ trans('sections.configuration') }} <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
             <li><a href="{{ route('admin.countries.index') }}">{{ trans('sections.countries') }}</a></li>
@@ -45,10 +45,8 @@
             <li><a href="{{ route('admin.languages.index') }}">{{ trans('sections.languages') }}</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="{{ route('admin.bottle_sizes.index') }}">{{ trans('sections.bottle_sizes') }}</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="{{ route('admin.users.index') }}">{{ trans('sections.users') }}</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="{{ action('\Barryvdh\TranslationManager\Controller@getIndex') }}">{{ trans('sections.translations') }} &nbsp;<i class="fa fw fa-globe"></i></a></li>
+            <li><a href="{{ route('admin.consumed_reasons.index') }}">{{ trans('sections.consumed_reasons') }}</a></li>
+            <li><a href="{{ route('admin.region_types.index') }}">{{ trans('sections.region_types') }}</a></li>
           </ul>
         </li>
         @endif
@@ -60,6 +58,9 @@
           <ul class="dropdown-menu">
             <li><a href="{{ url('auth/account') }}">{{ trans('sections.account') }}</a></li>
             {{-- <li><a href="{{ url('auth/settings') }}">{{ trans('sections.settings') }}</a></li> --}}
+            @if(Auth::user()->is_admin)
+            <li><a href="{{ route('admin.users.index') }}">{{ trans('sections.users') }}</a></li>
+            @endif
             <li role="separator" class="divider"></li>
             <li><a href="{{ url('auth/logout') }}">{{ trans('actions.logout') }}</a></li>
           </ul>

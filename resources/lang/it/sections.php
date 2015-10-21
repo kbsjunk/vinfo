@@ -5,7 +5,7 @@ return array (
   'currencies' => 'Valute',
   'details' => 'Dettagli',
   'account' => 'Conto',
-  'admin' => 'Amministrazione',
+  'configuration' => 'Amministrazione',
   'languages' => 'Lingue',
   'settings' => 'Impostazioni',
   'translations' => 'Traduzioni',

@@ -30,7 +30,7 @@ class CountriesFormRequest extends ModelFormRequest
 
         $rules = [
             'code'     => 'required|min:2|max:4|alpha|unique:countries,code,'.$id,
-            'name'     => 'required|unique:country_translations,name,'.$id.',country_id,locale,'.App::getLocale(),
+            'name'     => 'required|max:255|unique:country_translations,name,'.$id.',country_id,locale,'.App::getLocale(),
             'common'   => 'boolean',
         ];
 

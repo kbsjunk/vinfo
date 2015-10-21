@@ -9,6 +9,25 @@ html, body, input, textarea
 	/*font-family: 'Rosarivo', serif;*/
 }
 
+html {
+	position: relative;
+	min-height: 100%;
+}
+body {
+	/* Margin bottom by footer height */
+	margin-bottom: 80px;
+}
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	/* Set the fixed height of the footer here */
+	height: 80px;
+	border-top: 1px solid #e5e5e5;
+	padding: 15px 0 0 0;
+	/*-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);*/
+	/*box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);*/
+}
 
 
 fieldset legend {
@@ -89,14 +108,14 @@ input[type="checkbox"].checkbox-sm:checked:before,
 .checkbox-inline input[type="checkbox"].checkbox-sm:checked:before {
 	left: 5px;
 	width: 4px;
-    height: 8px;
+	height: 8px;
 }
 
 input[type="checkbox"].checkbox-sm:after,
 .checkbox input[type="checkbox"].checkbox-sm:after,
 .checkbox-inline input[type="checkbox"].checkbox-sm:after {
 	width: 14px;
-    height: 14px;
+	height: 14px;
 }
 
 th label {
@@ -111,18 +130,18 @@ h4 small .badge {
 	padding-bottom: 3px;
 }
 
-.dropdown-toggle .caret {
+.navbar .dropdown-toggle .caret {
 	float: right;
 	height: 10px;
 	margin-left: 6px;
-    margin-top: 10px;
+	margin-top: 10px;
 }
 
-.dropdown.open .dropdown-toggle .caret {
+.navbar .dropdown.open .dropdown-toggle .caret {
 	border-top: none;
 	height: 4px;
 	border-bottom: 4px dashed;
-    border-bottom: 4px solid \9;
+	border-bottom: 4px solid \9;
 }
 
 .table.table-form tbody > tr > td {
@@ -134,13 +153,13 @@ h4 small .badge {
 }
 
 .selectize-control.input-sm .item,  .selectize-control.input-sm input {
-    font-size: 12px;
+	font-size: 12px;
 }
 
 .selectize-control.input-sm .selectize-input {
-    padding-top: 2px;
-    padding-bottom: 0;
-    min-height: 30px;
+	padding-top: 2px;
+	padding-bottom: 0;
+	min-height: 30px;
 }
 
 .selectize-control.single.input-sm .selectize-input:after {

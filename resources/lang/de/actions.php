@@ -12,6 +12,6 @@ return array (
   'register' => 'Registrieren',
   'save' => 'Speichern',
   'search' => 'Suchen',
-  'admin' => 'Administration',
+  'administration' => 'Administration',
   'ok' => 'OK',
 );

@@ -12,6 +12,6 @@ return array (
   'save' => '保存',
   'search' => '搜',
   'settings' => '设置',
-  'admin' => '管理',
+  'administration' => '管理',
   'back' => '回去',
 );

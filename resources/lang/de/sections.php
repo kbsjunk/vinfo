@@ -3,7 +3,7 @@
 return array (
   'account' => 'Konto',
   'settings' => 'Einstellungen',
-  'admin' => 'Konfiguration',
+  'configuration' => 'Konfiguration',
   'countries' => 'Länder',
   'currencies' => 'Währungen',
   'bottle_sizes' => 'Flaschengrößen',

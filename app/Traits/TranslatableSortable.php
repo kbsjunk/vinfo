@@ -20,10 +20,10 @@ trait TranslatableSortable
         $translatedAttributes = array_map(function($attribute) {
             return $this->getTranslationsTable().'.'.$attribute;
         }, $translatedAttributes);
-        $translatedAttributes  = implode(', ', $translatedAttributes);
+        $translatedAttributes = array_merge([$this->getTable().'.*'], $translatedAttributes);
 
         $query
-            ->select($this->getTable().'.*', $translatedAttributes)
+            ->select($translatedAttributes)
             ->leftJoin($this->getTranslationsTable(), $this->getTranslationsTable().'.'.$this->getRelationKey(), '=', $this->getTable().'.'.$this->getKeyName())
             ->where($this->getTranslationsTable().'.'.$this->getLocaleKey(), $this->locale())
         ;

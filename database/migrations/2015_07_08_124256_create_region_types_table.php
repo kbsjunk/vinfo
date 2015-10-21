@@ -14,8 +14,6 @@ class CreateRegionTypesTable extends Migration
     {
         Schema::create('region_types', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->index();
-            $table->text('description')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

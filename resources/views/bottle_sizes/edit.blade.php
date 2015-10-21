@@ -12,11 +12,24 @@
 	</div>
 
 	<div class="panel-footer">
-		<div class="col-sm-offset-1">
-			<button type="submit" class="btn btn-primary">{{ trans('actions.save') }}</button>
-			<a href="{{ action('BottleSizesController@index') }}" class="btn btn-link">{{ trans('actions.cancel') }}</a>
+		<div class="row">
+			<div class="col-sm-offset-1 col-sm-9">
+				<button type="submit" class="btn btn-primary">{{ trans('actions.save') }}</button>
+				<a href="{{ action('BottleSizesController@index') }}" class="btn btn-link">{{ trans('actions.cancel') }}</a>
+			</div>
+			<div class="col-sm-2 text-right">
+				@can('destroy', $bottle_size)
+				<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">
+					{{ trans('actions.delete') }}
+				</button>
+				@endcan
+			</div>
 		</div>
 	</div>
 </div>
 {!! Form::close() !!}
+@endsection
+
+@section('modals')
+@include('modals/delete', ['model' => $bottle_size, 'controller' => 'BottleSizesController'])
 @endsection

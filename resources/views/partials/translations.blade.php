@@ -23,7 +23,11 @@
 							{{ trans('models/'.$modelName.'.attributes.'.$attribute, [], null, $translation->locale) }}
 						</label>
 						<div class="col-md-8 col-sm-7">
-							{!! Form::text("{$translation->locale}[{$attribute}]", $translation->$attribute, ['class' => 'form-control input-sm', 'lang' => $translation->locale, 'placeholder' => trans('models/'.$modelName.'.attributes.name', [], null, $translation->locale)]) !!}
+						@if (@$model->fieldTypes[$attribute] == 'textarea')
+							{!! Form::textarea("{$translation->locale}[{$attribute}]", $translation->$attribute, ['class' => 'form-control input-sm', 'lang' => $translation->locale, 'rows' => 3, 'placeholder' => trans('models/'.$modelName.'.attributes.'.$attribute, [], null, $translation->locale)]) !!}
+						@else
+							{!! Form::text("{$translation->locale}[{$attribute}]", $translation->$attribute, ['class' => 'form-control input-sm', 'lang' => $translation->locale, 'placeholder' => trans('models/'.$modelName.'.attributes.'.$attribute, [], null, $translation->locale)]) !!}
+						@endif
 						</div>
 					</div>
 					@endforeach
@@ -51,7 +55,11 @@
 							{{ trans('models/'.$modelName.'.attributes.'.$attribute, [], null, $locale) }}
 						</label>
 						<div class="col-md-8 col-sm-7">
-							{!! Form::text("{$locale}[{$attribute}]", null, ['class' => 'form-control input-sm', 'lang' => $locale, 'placeholder' => trans('models/'.$modelName.'.attributes.name', [], null, $locale)]) !!}
+							@if (@$model->fieldTypes[$attribute] == 'textarea')
+							{!! Form::textarea("{$locale}[{$attribute}]", null, ['class' => 'form-control input-sm', 'lang' => $locale, 'rows' => 3, 'placeholder' => trans('models/'.$modelName.'.attributes.'.$attribute, [], null, $locale)]) !!}
+							@else
+							{!! Form::text("{$locale}[{$attribute}]", null, ['class' => 'form-control input-sm', 'lang' => $locale, 'placeholder' => trans('models/'.$modelName.'.attributes.'.$attribute, [], null, $locale)]) !!}
+							@endif
 						</div>
 					</div>
 					@endforeach
@@ -80,7 +88,11 @@
 							{{ trans('models/'.$modelName.'.attributes.'.$attribute, [], null, $locale) }}
 						</label>
 						<div class="col-md-8 col-sm-7">
-							{!! Form::text("{$locale}[{$attribute}]", null, ['class' => 'form-control input-sm', 'lang' => $locale, 'placeholder' => trans('models/'.$modelName.'.attributes.name', [], null, $locale)]) !!}
+							@if (@$model->fieldTypes[$attribute] == 'textarea')
+							{!! Form::textarea("{$locale}[{$attribute}]", null, ['class' => 'form-control input-sm', 'lang' => $locale, 'rows' => 3, 'placeholder' => trans('models/'.$modelName.'.attributes.'.$attribute, [], null, $locale)]) !!}
+							@else
+							{!! Form::text("{$locale}[{$attribute}]", null, ['class' => 'form-control input-sm', 'lang' => $locale, 'placeholder' => trans('models/'.$modelName.'.attributes.'.$attribute, [], null, $locale)]) !!}
+							@endif
 						</div>
 					</div>
 					@endforeach

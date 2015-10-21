@@ -17,9 +17,9 @@ class ConsumedReasonsController extends Controller
      */
     public function index()
     {
-/*         $this->authorize('show', new ConsumedReason); */
+        $this->authorize('show', new ConsumedReason);
 
-        $consumed_reasons = ConsumedReason::orderBy('is_drank', 'desc')->orderByTranslation('name')->paginate(25);
+        $consumed_reasons = ConsumedReason::withTranslation()->orderBy('is_drank', 'desc')->orderByTranslation('name')->paginate(25);
 
         return view('consumed_reasons.index', compact('consumed_reasons'));
     }
@@ -86,7 +86,7 @@ class ConsumedReasonsController extends Controller
     {
         $consumed_reason = ConsumedReason::whereid($id)->firstOrFail();
 
-/*         $this->authorize('update', $consumed_reason); */
+        $this->authorize('update', $consumed_reason);
 
         return view('consumed_reasons.edit', compact('consumed_reason'));
     }
@@ -104,7 +104,7 @@ class ConsumedReasonsController extends Controller
 
 		dd($request->input());
 		
-/*         $this->authorize('update', $consumed_reason); */
+        $this->authorize('update', $consumed_reason);
 
         $consumed_reason->fill($request->input())->save();
 

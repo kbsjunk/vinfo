@@ -11,10 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-	return view('layouts/default');
-});
-
+Route::get('/', 'HomeController@index');
 
 Route::group(['namespace' => 'Auth', 'prefix' => 'auth', 'middleware' => 'guest'], function() {
 
@@ -31,13 +28,14 @@ Route::group(['namespace' => 'Auth', 'prefix' => 'auth', 'middleware' => 'guest'
 Route::group(['middleware' => 'auth'], function() {
 
 	Route::get('/home', function () {
-		return view('layouts/default');
+		return redirect('/');
 	});
 
 	Route::group(['prefix' => 'auth'], function() {
 
 		Route::get('account', 'UsersController@getAccount');
 		Route::post('account', 'UsersController@postAccount');
+		Route::get('account/language/{language}', 'UsersController@setLanguage');
 
 		Route::group(['namespace' => 'Auth'], function() {
 			Route::get('logout', 'AuthController@getLogout');
@@ -50,6 +48,7 @@ Route::group(['middleware' => 'auth'], function() {
 		Route::resource('countries', 'CountriesController');
 		Route::resource('currencies', 'CurrenciesController');
 		Route::resource('languages', 'LanguagesController');
+		Route::resource('region_types', 'RegionTypesController');
 		Route::resource('users', 'UsersController');
 	});
 

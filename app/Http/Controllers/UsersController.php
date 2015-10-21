@@ -17,9 +17,9 @@ class UsersController extends Controller
 
     private function getDropdowns()
     {
-        $countries = Country::orderByTranslation('name')->get()->lists('name', 'id');
+        $countries = Country::withTranslation()->orderByTranslation('name')->get()->lists('name', 'id');
         $languages = Language::orderBy('name')->get()->lists('name', 'id');
-        $currencies = Currency::orderByTranslation('name')->get()->lists('name', 'id');
+        $currencies = Currency::withTranslation()->orderByTranslation('name')->get()->lists('name', 'id');
 
         view()->share('countries', $countries);
         view()->share('languages', $languages);
@@ -185,6 +185,21 @@ class UsersController extends Controller
         }
 
         return $response;
+    }
+
+    public function setLanguage($language)
+    {
+        $user = Auth::user();
+
+        $this->authorize('update', $user);
+
+        $language = Language::whereCode($language)->firstOrFail();
+
+        $user->language_id = $language->id;
+
+        $user->save();
+
+        return redirect()->back();
     }
 
     /**

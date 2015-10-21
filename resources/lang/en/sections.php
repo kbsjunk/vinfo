@@ -3,7 +3,7 @@
 return array (
   'account' => 'Account',
   'settings' => 'Settings',
-  'admin' => 'Configuration',
+  'configuration' => 'Configuration',
   'countries' => 'Countries',
   'currencies' => 'Currencies',
   'bottle_sizes' => 'Bottle Sizes',
@@ -11,4 +11,6 @@ return array (
   'languages' => 'Languages',
   'details' => 'Details',
   'translations' => 'Translations',
+  'consumed_reasons' => 'Consumed Reasons',
+  'region_types' => 'Region Types',
 );

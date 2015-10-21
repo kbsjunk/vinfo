@@ -9,6 +9,6 @@ return array (
   'settings' => 'Configurações',
   'translations' => 'Traduções',
   'users' => 'Usuários',
-  'admin' => 'Configuração',
+  'configuration' => 'Configuração',
   'bottle_sizes' => 'Tamanhos de garrafa',
 );

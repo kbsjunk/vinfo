@@ -2,7 +2,7 @@
 
 return array (
   'account' => 'Счет',
-  'admin' => 'Конфигурация',
+  'configuration' => 'Конфигурация',
   'bottle_sizes' => 'Бутылка размеры',
   'countries' => 'Страны',
   'currencies' => 'Валюты',

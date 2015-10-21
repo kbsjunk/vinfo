@@ -10,5 +10,5 @@ return array (
   'languages' => 'Langues',
   'details' => 'Détails',
   'translations' => 'Traductions',
-  'admin' => 'Administration',
+  'configuration' => 'Administration',
 );

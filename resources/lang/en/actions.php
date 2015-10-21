@@ -12,6 +12,7 @@ return array (
   'save' => 'Save',
   'search' => 'Search',
   'profile' => 'Profile',
-  'admin' => 'Admin',
+  'administration' => 'Administration',
   'settings' => 'Settings',
+  'close' => 'Close',
 );

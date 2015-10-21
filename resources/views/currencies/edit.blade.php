@@ -20,3 +20,7 @@
 </div>
 {!! Form::close() !!}
 @endsection
+
+@section('modals')
+@include('modals/delete', ['model' => $currency, 'controller' => 'CurrenciesController'])
+@endsection

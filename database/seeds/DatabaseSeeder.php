@@ -3,7 +3,6 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 
-
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -22,7 +21,8 @@ class DatabaseSeeder extends Seeder
         
         // $this->call(BottleSizesTableSeeder::class); 
 		// $this->call(BottleSizesTableSaver::class); 
-        $this->call(ConsumedReasonsTableSeeder::class);
+        // $this->call(ConsumedReasonsTableSeeder::class);
+        // $this->call(RegionTypesTableSeeder::class);
         // $this->call(BottlesTableSeeder::class);
         // $this->call(BottleCasesTableSeeder::class);
         // $this->call(WineriesTableSeeder::class);

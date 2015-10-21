@@ -16,7 +16,9 @@ class BottleSizesController extends Controller
      */
     public function index()
     {   
-        $bottle_sizes = BottleSize::orderBy('is_common', 'desc')->orderBy('capacity')->paginate(25);
+        $this->authorize('show', new BottleSize);
+
+        $bottle_sizes = BottleSize::withTranslation()->orderBy('is_common', 'desc')->orderBy('capacity')->paginate(25);
 
         return view('bottle_sizes.index', compact('bottle_sizes'));
     }
@@ -28,6 +30,10 @@ class BottleSizesController extends Controller
      */
     public function create()
     {
+        $bottle_size = new BottleSize;
+
+        $this->authorize('create', $bottle_size);
+
         return view('bottle_sizes.create');
     }
 
@@ -40,6 +46,8 @@ class BottleSizesController extends Controller
     public function store(BottleSizesFormRequest $request)
     {
         $bottle_size = new BottleSize;
+
+        $this->authorize('create', $bottle_size);
 
         if ($bottle_size->fill($request->input())->save()) {
             return redirect(action('BottleSizesController@edit', $bottle_size->id))
@@ -62,6 +70,8 @@ class BottleSizesController extends Controller
     {
         $bottle_size = BottleSize::findOrFail($id);
 
+        $this->authorize('show', $bottle_size);
+
         return view('bottle_sizes.show', compact('bottle_size'));
     }
 
@@ -74,6 +84,8 @@ class BottleSizesController extends Controller
     public function edit($id)
     {
         $bottle_size = BottleSize::whereid($id)->firstOrFail();
+
+        $this->authorize('update', $bottle_size);
 
         return view('bottle_sizes.edit', compact('bottle_size'));
     }
@@ -89,6 +101,8 @@ class BottleSizesController extends Controller
     {
         $bottle_size = BottleSize::findOrFail($id);
 
+        $this->authorize('update', $bottle_size);
+
         $bottle_size->fill($request->input())->save();
 
         return redirect(action('BottleSizesController@edit', $id))->with('success', trans('messages.saved_success'));
@@ -103,6 +117,8 @@ class BottleSizesController extends Controller
     public function destroy($id)
     {
         $bottle_size = BottleSize::findOrFail($id);
+
+        $this->authorize('destroy', $bottle_size);
 
         if ($bottle_size->delete()) {
             return redirect(action('BottleSizesController@index'))

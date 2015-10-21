@@ -4,11 +4,7 @@ namespace Vinfo\Policies;
 
 use Vinfo\User;
 
-class CountryPolicy
+class CountryPolicy extends AdminPolicy
 {
-	public function before($user, $ability)
-	{
-		return $user->is_admin;
-	}
 
 }

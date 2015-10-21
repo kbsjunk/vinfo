@@ -1,0 +1,11 @@
+{
+    "name": "kitbs/geoimport",
+    "autoload": {
+        "psr-4": {
+            "Kitbs\\Geoimport\\": "src/"
+        }
+    },
+    "require": {
+        "sabre/xml": "^1.2"
+    }
+}

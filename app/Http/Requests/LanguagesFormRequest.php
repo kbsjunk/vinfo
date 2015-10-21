@@ -28,8 +28,8 @@ class LanguagesFormRequest extends ModelFormRequest
         $id = $this->route('languages') ?: 'NULL';
 
         $rules = [
-            'code'     => 'required|min:2|alpha_dash|unique:languages,code,'.$id,
-            'name'     => 'required|unique:languages,name,'.$id,
+            'code'     => 'required|min:2|max:20|alpha_dash|unique:languages,code,'.$id,
+            'name'     => 'required|max:255|unique:languages,name,'.$id,
             'common'   => 'boolean',
         ];
 

@@ -29,7 +29,7 @@ class ConsumedReasonsFormRequest extends ModelFormRequest
         $id = $this->route('consumed_reasons') ?: 'NULL';
 
         $rules = [
-            'name'     => 'required|unique:consumed_reason_translations,name,'.$id.',consumed_reason_id,locale,'.App::getLocale(),
+            'name'     => 'required|max:255|unique:consumed_reason_translations,name,'.$id.',consumed_reason_id,locale,'.App::getLocale(),
             'common'   => 'boolean',
         ];
 

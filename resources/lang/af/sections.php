@@ -10,5 +10,5 @@ return array (
   'settings' => 'Instellings',
   'translations' => 'Vertalings',
   'users' => 'Gebruikers',
-  'admin' => 'Opset',
+  'configuration' => 'Opset',
 );

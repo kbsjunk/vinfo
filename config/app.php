@@ -156,6 +156,7 @@ return [
         Kitbs\Viewgen\ViewGeneratorServiceProvider::class,
         Laracasts\Generators\GeneratorsServiceProvider::class,
 		Barryvdh\TranslationManager\ManagerServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
         // Andynoelker\Laravel5ViewGenerator\ViewGeneratorServiceProvider::class,
 
     ],

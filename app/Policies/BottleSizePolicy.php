@@ -4,11 +4,7 @@ namespace Vinfo\Policies;
 
 use Vinfo\User;
 
-class BottleSizePolicy
+class BottleSizePolicy extends AdminPolicy
 {
-	public function before($user, $ability)
-	{
-		return $user->is_admin;
-	}
-	
+
 }

@@ -30,6 +30,10 @@
 		@include('partials/alerts')
 		@yield('content')
 	</div>
+
+	@yield('modals')
+	@include('partials/footer')
+
 	<!-- jQuery -->
 	<script src="//code.jquery.com/jquery.js"></script>
 	<!-- Bootstrap JavaScript -->
