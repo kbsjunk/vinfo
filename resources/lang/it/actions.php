@@ -14,4 +14,6 @@ return array (
   'search' => 'Ricercare',
   'settings' => 'Impostazioni',
   'login' => 'Connettersi',
+  'language' => 'Lingua',
+  'close' => 'Chiudere',
 );

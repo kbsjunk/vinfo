@@ -8,10 +8,12 @@ return array (
   'login' => 'Iniciar sesión',
   'logout' => 'Cerrar sesion',
   'new' => 'Nuevo',
-  'ok' => 'OK',
+  'ok' => 'Aceptar',
   'profile' => 'Perfil',
   'register' => 'Registrar',
   'save' => 'Guardar',
   'search' => 'Buscar',
   'settings' => 'Ajustes',
+  'language' => 'Idioma',
+  'close' => 'Cerrar',
 );

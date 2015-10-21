@@ -14,4 +14,6 @@ return array (
   'settings' => '设置',
   'administration' => '管理',
   'back' => '回去',
+  'language' => '语言',
+  'close' => '关闭',
 );

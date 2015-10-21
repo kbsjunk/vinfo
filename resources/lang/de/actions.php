@@ -14,4 +14,6 @@ return array (
   'search' => 'Suchen',
   'administration' => 'Administration',
   'ok' => 'OK',
+  'language' => 'Sprache',
+  'close' => 'Schließen',
 );

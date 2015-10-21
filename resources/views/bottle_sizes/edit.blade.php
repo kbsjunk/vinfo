@@ -13,13 +13,12 @@
 
 	<div class="panel-footer">
 		<div class="row">
-			<div class="col-sm-offset-1 col-sm-9">
-				<button type="submit" class="btn btn-primary">{{ trans('actions.save') }}</button>
-				<a href="{{ action('BottleSizesController@index') }}" class="btn btn-link">{{ trans('actions.cancel') }}</a>
-			</div>
-			<div class="col-sm-2 text-right">
+			<div class="col-sm-offset-1 col-sm-11">
+				<button type="submit" class="btn btn-primary btn-block-sm">{{ trans('actions.save') }}</button>
+				<a href="{{ action('BottleSizesController@index') }}" class="btn btn-link btn-block-sm">{{ trans('actions.cancel') }}</a>
 				@can('destroy', $bottle_size)
-				<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">
+				<hr class="visible-xs">
+				<button type="button" class="btn btn-danger btn-block-sm pull-right" data-toggle="modal" data-target="#delete-modal">
 					{{ trans('actions.delete') }}
 				</button>
 				@endcan

@@ -12,5 +12,8 @@ return array (
   'search' => 'Pesquisar',
   'settings' => 'Configurações',
   'administration' => 'Administração',
-  'ok' => 'Está bem',
+  'ok' => 'Aceitar',
+  'language' => 'Idioma',
+  'close' => 'Fechar',
+  'back' => 'Voltar',
 );

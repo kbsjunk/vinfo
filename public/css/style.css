@@ -103,6 +103,16 @@ input.input-default {
 	-webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
+@media (max-width: 768px) {
+	.btn-block-sm {
+		display: block;
+		width: 100%;
+	}
+	.btn-block-sm + .btn-block-sm {
+		margin-top: 5px;
+	}
+}
+
 input[type="checkbox"].checkbox-sm:checked:before,
 .checkbox input[type="checkbox"].checkbox-sm:checked:before,
 .checkbox-inline input[type="checkbox"].checkbox-sm:checked:before {

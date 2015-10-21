@@ -15,4 +15,5 @@ return array (
   'administration' => 'Administration',
   'settings' => 'Settings',
   'close' => 'Close',
+  'language' => 'Language',
 );
