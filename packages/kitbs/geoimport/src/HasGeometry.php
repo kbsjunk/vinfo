@@ -2,7 +2,14 @@
 
 namespace Kitbs\Geoimport;
 
+use Kitbs\Geoimport\Generator;
+use Kitbs\Geoimport\Extractor;
+use GeoIO\WKT\Parser\Parser as WKTParser;
+use GeoIO\WKB\Parser\Parser as WKBParser;
+
 trait HasGeometry {
+
+    protected static $binary = true;
 
     /**
      * Boot the geometry trait for a model.
@@ -11,7 +18,7 @@ trait HasGeometry {
      */
     public static function bootHasGeometry()
     {
-        static::addGlobalScope(new GeometryScope);
+        static::addGlobalScope(new GeometryScope(self::$binary));
     }
 
     /**
@@ -45,9 +52,9 @@ trait HasGeometry {
             case 'geometry':
             case 'geography':
             case 'geo':
-                return $this->asGeometry($value);
+            return $this->toGeometry($value);
             default:
-                return parent::castAttribute($key, $value);
+            return parent::castAttribute($key, $value);
         }
     }
 
@@ -61,9 +68,7 @@ trait HasGeometry {
     public function setAttribute($key, $value)
     {
         if ($this->isGeoCastable($key)) {
-            $method = 'set'.Str::studly($key).'Attribute';
-
-            return $this->{$method}($value);
+            $this->attributes = $this->fromGeometry($value);
         }
 
         return parent::setAttribute($key, $value);
@@ -78,12 +83,31 @@ trait HasGeometry {
     protected function isGeoCastable($key)
     {
         return $this->hasCast($key) &&
-               in_array($this->getCastType($key), ['geo', 'geometry', 'geography'], true);
+        in_array($this->getCastType($key), ['geo', 'geometry', 'geography'], true);
     }
 
-    protected function asGeometry($value)
+    protected function toGeometry($value)
     {
-        return $value;
+        $factory = new Generator();
+        dd($value);
+        if ($this->binary) {
+            $parser = new WKBParser($factory);
+        }
+        else {
+            $parser = new WKTParser($factory);
+        }
+
+        return $parser->parse($value);
+    }
+
+    protected function fromGeometry($value)
+    {
+
+    }
+
+    protected function toFeature()
+    {
+
     }
 
 }
