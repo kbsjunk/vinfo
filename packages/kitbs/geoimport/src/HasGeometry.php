@@ -4,11 +4,15 @@ namespace Kitbs\Geoimport;
 
 use Kitbs\Geoimport\Generator;
 use Kitbs\Geoimport\Extractor;
-use Kitbs\Geoimport\Geometry;
 use Kitbs\Geoimport\Collection;
-use GeoJson\Feature\Feature;
-use GeoIO\WKT\Parser\Parser;
 
+use GeoJson\Geometry\Geometry;
+use GeoJson\Feature\Feature;
+
+use GeoIO\WKT\Parser\Parser as WKTParser;
+use GeoIO\WKT\Generator\Generator as WKTGenerator;
+
+use DB;
 
 trait HasGeometry {
 
@@ -20,13 +24,23 @@ trait HasGeometry {
     public static function bootHasGeometry()
     {
         static::addGlobalScope(new GeometryScope);
+
+        static::saving(function($model)
+        {
+            foreach ($model->getGeometries() as $column) {
+                if ($model->isDirty($column)) {
+                    $model->attributes[$column] = DB::raw('GeomFromText(\''.$model->attributes[$column].'\')');
+                }
+            }
+
+        });
     }
 
     /**
      * Create a new Eloquent Collection instance.
      *
      * @param  array  $models
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Kitbs\Geoimport\Collection
      */
     public function newCollection(array $models = [])
     {
@@ -80,7 +94,7 @@ trait HasGeometry {
     public function setAttribute($key, $value)
     {
         if ($this->isGeoCastable($key)) {
-            $this->attributes = $this->fromGeometry($value);
+            return $this->attributes[$key] = $this->fromGeometry($value);
         }
 
         return parent::setAttribute($key, $value);
@@ -101,7 +115,7 @@ trait HasGeometry {
     protected function toGeometry($value)
     {
         $factory = new Generator();
-        $parser = new Parser($factory);
+        $parser = new WKTParser($factory);
 
         return $parser->parse($value);
     }
@@ -111,8 +125,8 @@ trait HasGeometry {
         if ($value instanceof Geometry) {
 
             $extractor = new Extractor();
-            $generator = new Generator($extractor);
-         
+            $generator = new WKTGenerator($extractor);
+
             return $generator->generate($value);
         }
 
@@ -143,8 +157,8 @@ trait HasGeometry {
     public function getPropertiesAttribute()
     {
         $properties = [
-            'name'        => $this->name,
-            'description' => $this->description,
+        'name'        => $this->name,
+        'description' => $this->description,
         ];
 
         return array_merge((array) $this->getAttributeFromArray('properties'), $properties);
@@ -159,18 +173,3 @@ trait HasGeometry {
     }
 
 }
-
-        // Geometry::saving(function($geo)
-        // {
-        //     foreach ($geo->getGeometry() as $column) {
-        //         if ($geo->isDirty($column) || true) {
-        //             if ($geo->getAttribute($column) instanceof GeoPHP\Geometry\Geometry) {
-        //                 $geo->attributes[$column] = DB::raw('GeomFromText(\''.$geo->getAttribute($column)->asText().'\')');
-        //             }
-        //             else {
-        //                 $geo->attributes[$column] = DB::raw('GeomFromText(\'POINT(0 0)\')');;
-        //             }
-        //         }
-        //     }
-
-        // });

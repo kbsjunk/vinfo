@@ -17,7 +17,7 @@ Route::get('/test/geometry', function() {
 
 	// $wkt = 'POINT (30 10)';
 	// $wkt = 'LINESTRING (30 10, 10 30, 40 40)';
-	// $wkt = 'POLYGON ((30 10, 40 40, 20 40, 10 20, 30 10))';
+	$wkt = 'POLYGON ((30 10, 40 40, 20 40, 10 20, 30 10))';
 	// $wkt = 'POLYGON ((35 10, 45 45, 15 40, 10 20, 35 10), (20 30, 35 35, 30 20, 20 30))';
 	// $wkt = 'MULTIPOINT ((10 40), (40 30), (20 20), (30 10))';
 	// $wkt = 'MULTILINESTRING ((10 10, 20 20, 10 40),(40 40, 30 30, 40 20, 30 10))';
@@ -28,8 +28,8 @@ Route::get('/test/geometry', function() {
 
 	// echo $wkt;
 
-	// $factory = new Kitbs\Geoimport\Generator();
-	// $parser = new GeoIO\WKT\Parser\Parser($factory);
+	$factory = new Kitbs\Geoimport\Generator();
+	$parser = new GeoIO\WKT\Parser\Parser($factory);
 
 	// $geo = $parser->parse($wkt);
 
@@ -45,9 +45,15 @@ Route::get('/test/geometry', function() {
 
 	// dd();
 
-	$geo = Vinfo\Geometry::orderBy('id', 'asc')->get();
+	$geo = Vinfo\Geometry::orderBy('id', 'desc')->first();
 
-	dd(json_encode($geo->toFeatureCollection()->jsonSerialize()));
+	$geo->geometry = $parser->parse($wkt);
+
+	$geo->save();
+
+	dd($geo);
+
+	// dd(json_encode($geo->toFeatureCollection()->jsonSerialize()));
 
 });
 
