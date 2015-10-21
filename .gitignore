@@ -20,3 +20,5 @@ wk
 #wk/vinfo/*
 #!wk/vinfo/storage/data
 
+
+*.sublime-workspace
