@@ -151,6 +151,7 @@ return [
         // Vendor Service Providers
         Dimsav\Translatable\TranslatableServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        Baum\Providers\BaumServiceProvider::class,
         
 		// DEV
         Kitbs\Viewgen\ViewGeneratorServiceProvider::class,

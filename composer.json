@@ -10,11 +10,10 @@
         "moltin/currency": "dev-master@dev",
         "sebastian/money": "dev-master",
         "punic/punic": "^1.6",
-        "andynoelker/laravel-5-view-generator": "^1.0",
         "laravelcollective/html": "^5.1",
         "overtrue/laravel-lang": "1.0.*",
         "dimsav/laravel-translatable": "^5.1",
-        "barryvdh/laravel-debugbar": "^2.0"
+        "baum/baum": "^1.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -22,6 +21,8 @@
         "phpunit/phpunit": "~4.0",
         "phpspec/phpspec": "~2.1",
         "laracasts/generators": "^1.1",
+        "andynoelker/laravel-5-view-generator": "^1.0",
+        "barryvdh/laravel-debugbar": "^2.0",
         "filp/whoops": "~1.0"
     },
     "autoload": {

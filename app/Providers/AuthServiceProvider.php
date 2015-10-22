@@ -22,6 +22,7 @@ class AuthServiceProvider extends ServiceProvider
         \Vinfo\Language::class       => \Vinfo\Policies\AdminPolicy::class,
         \Vinfo\ConsumedReason::class => \Vinfo\Policies\AdminPolicy::class,
         \Vinfo\RegionType::class     => \Vinfo\Policies\AdminPolicy::class,
+        \Vinfo\Region::class         => \Vinfo\Policies\AdminPolicy::class,
     ];
 
     /**

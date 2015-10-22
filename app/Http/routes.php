@@ -120,6 +120,7 @@ Route::group(['middleware' => 'auth'], function() {
 		Route::resource('currencies', 'CurrenciesController');
 		Route::resource('languages', 'LanguagesController');
 		Route::resource('region_types', 'RegionTypesController');
+		Route::resource('regions', 'RegionsController');
 		Route::resource('users', 'UsersController');
 	});
 
