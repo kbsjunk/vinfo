@@ -26,7 +26,7 @@
 							@if (!$ancestor->isLeaf())
 							<button type="button" class="btn btn-xs btn-link"><u class="caret"></u></button>
 							@else
-							<span style="margin-left:18px;"></span>
+							<span style="margin-left:20px;"></span>
 							@endif
 						</span>
 						@if ($ancestor->shortcut_id)
@@ -43,13 +43,7 @@
 					@if (App::getLocale() != 'en')
 					<td>{{ $ancestor->name_en }}</td>
 					@endif
-					<td>
-						@if ($ancestor->region_type_id == 1)
-						<strong>{{ $ancestor->regionType->name }}</strong>
-						@else
-						{{ $ancestor->regionType->name }}
-						@endif
-					</td>
+					<td>{{ $ancestor->regionType->name }}</td>
 					<td>{{ $ancestor->country->name }}</td>
 				</tr>
 				@endforeach
@@ -60,7 +54,7 @@
 							@if (!$region->isLeaf())
 							<button type="button" class="btn btn-xs btn-link"><u class="caret"></u></button>
 							@else
-							<span style="margin-left:18px;"></span>
+							<span style="margin-left:20px;"></span>
 							@endif
 						</span>
 						@if ($region->shortcut_id)
@@ -77,13 +71,7 @@
 					@if (App::getLocale() != 'en')
 					<td>{{ $region->name_en }}</td>
 					@endif
-					<td>
-						@if ($region->region_type_id == 1)
-						<strong>{{ $region->regionType->name }}</strong>
-						@else
-						{{ $region->regionType->name }}
-						@endif
-					</td>
+					<td>{{ $region->regionType->name }}</td>
 					<td>{{ $region->country->name }}</td>
 				</tr>
 				@endforeach
