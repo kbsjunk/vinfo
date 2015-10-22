@@ -6,15 +6,28 @@ use Kitbs\Geoimport\Generator;
 use Kitbs\Geoimport\Extractor;
 use Kitbs\Geoimport\Collection;
 
+use GeoJson\GeoJson;
 use GeoJson\Geometry\Geometry;
+use GeoJson\Geometry\GeometryCollection;
 use GeoJson\Feature\Feature;
+use GeoJson\Feature\FeatureCollection;
 
 use GeoIO\WKT\Parser\Parser as WKTParser;
 use GeoIO\WKT\Generator\Generator as WKTGenerator;
 
 use DB;
+use Exception;
+
+// https://github.com/mjaschen/phpgeo
+// https://github.com/toin0u/Geotools-laravel --> https://github.com/thephpleague/Geotools
+// https://github.com/geocoder-php/Geocoder
 
 trait HasGeometry {
+	
+	protected $propertiesField = 'properties';
+	protected $geometryField = 'geometry';
+	protected $nameField = 'name';
+	protected $descriptionField = 'description';
 
     /**
      * Boot the geometry trait for a model.
@@ -29,8 +42,11 @@ trait HasGeometry {
         {
             foreach ($model->getGeometries() as $column) {
                 if ($model->isDirty($column)) {
-                    $model->attributes[$column] = DB::raw('GeomFromText(\''.$model->attributes[$column].'\')');
+                    $model->attributes[$column] = DB::raw('GeomFromText(\''.strtoupper($model->attributes[$column]).'\')');
                 }
+				if (empty($model->attributes[$column])) {
+                    $model->attributes[$column] = DB::raw('GeomFromText(\'POINT(0 0)\')');
+				}
             }
 
         });
@@ -99,6 +115,46 @@ trait HasGeometry {
 
         return parent::setAttribute($key, $value);
     }
+	
+	public function getPropertiesField()
+	{
+		return $this->propertiesField ?: 'properties';
+	}
+	
+	public function getGeometryField()
+	{
+		return $this->geometryField ?: 'geometry';
+	}
+	
+	public function getNameField()
+	{
+		return $this->nameField;
+	}
+	
+	public function getDescriptionField()
+	{
+		return $this->descriptionField;
+	}
+	
+    /**
+     * Save a new model and return the instance.
+     *
+     * @param  array  $attributes
+     * @return static
+     */
+    public static function createFromFeature(Feature $feature, array $attributes = [])
+    {
+		$instance = new static;
+		
+		$properties = [
+			$instance->getPropertiesField() => array_filter($feature->getProperties()),
+			$instance->getGeometryField() => $feature->getGeometry(),
+		];
+		
+		$attributes = array_merge($attributes, $properties);
+		
+        return parent::create($attributes);
+    }
 
     /**
      * Determine whether a value is JSON castable for inbound manipulation.
@@ -108,8 +164,8 @@ trait HasGeometry {
      */
     protected function isGeoCastable($key)
     {
-        return $this->hasCast($key) &&
-        in_array($this->getCastType($key), ['geo', 'geometry', 'geography'], true);
+        return $key == $this->getGeometryField() || ($this->hasCast($key) &&
+        in_array($this->getCastType($key), ['geo', 'geometry', 'geography'], true));
     }
 
     protected function toGeometry($value)
@@ -120,20 +176,42 @@ trait HasGeometry {
         return $parser->parse($value);
     }
 
-    protected function fromGeometry($value)
+    protected function fromGeometry($geometry)
     {
-        if ($value instanceof Geometry) {
+		if ($geometry instanceof Geometry) {
 
-            $extractor = new Extractor();
-            $generator = new WKTGenerator($extractor);
+			$extractor = new Extractor();
+			$generator = new WKTGenerator($extractor);
 
-            return $generator->generate($value);
-        }
-        elseif (is_string($value))
-        {
-            return $value;
-        }
-
+			return $generator->generate($geometry);
+		}
+		elseif (is_string($geometry)) {
+			if (json_decode($geometry)) {
+				$geometry = json_decode($geometry);
+				$geometry = GeoJson::jsonUnserialize($geometry);
+				if ($geometry instanceof Feature) {
+					$geometry = $geometry->getGeometry();
+				}
+				elseif ($geometry instanceof FeatureCollection) {
+					$geometries = [];
+					foreach ($geometry->getFeatures() as $feature) {
+						$geometries[] = $feature->getGeometry();
+					}
+					return $this->fromGeometry(new GeometryCollection($geometries));
+				}
+				if ($geometry instanceof Geometry) {
+					return $this->fromGeometry($geometry);
+				}
+			}
+			
+			try {
+				if ($this->toGeometry($geometry)) {
+					return $geometry;
+				}
+			}
+			catch (Exception $e) {}
+		} 
+        
         return 'POINT(0 0)';
     }
 
@@ -161,19 +239,31 @@ trait HasGeometry {
     public function getPropertiesAttribute()
     {
         $properties = [
-        'name'        => $this->name,
-        'description' => $this->description,
+        'name'        => $this->getNameField() ? $this->getAttributeFromArray($this->getNameField()) : null,
+        'description' => $this->getDescriptionField() ? $this->getAttributeFromArray($this->getDescriptionField()) : null,
         ];
 
-        return array_merge((array) $this->getAttributeFromArray('properties'), $properties);
+		$arrayProperties = $this->getAttributeFromArray($this->getPropertiesField());
+		
+		if (!is_array($arrayProperties)) {
+			$arrayProperties = json_decode($arrayProperties, true);
+		}
+		
+        return array_merge($arrayProperties, $properties);
     }
 
     public function setPropertiesAttribute($properties)
     {
-        if (isset($properties['name'])) $this->name = $properties['name'];
-        if (isset($properties['description'])) $this->name = $properties['description'];
+		if ($this->getNameField()) {
+			$this->setAttribute($this->getNameField(), @$properties['name']);
+			unset($properties['name']);
+		}
+		if ($this->getDescriptionField()) {
+			$this->setAttribute($this->getDescriptionField(), @$properties['description']);
+			unset($properties['description']);
+		}
 
-        $this->properties = array_except(['name', 'description']);
+        $this->attributes[$this->getPropertiesField()] = json_encode($properties);
     }
 
 }

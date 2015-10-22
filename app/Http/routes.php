@@ -23,13 +23,13 @@ Route::get('/test/geometry', function() {
 	// $wkt = 'MULTILINESTRING ((10 10, 20 20, 10 40),(40 40, 30 30, 40 20, 30 10))';
 	// $wkt = 'MULTIPOLYGON (((30 20, 45 40, 10 40, 30 20)),((15 5, 40 10, 10 20, 5 10, 15 5)))';
 	// $wkt = 'MULTIPOLYGON (((40 40, 20 45, 45 30, 40 40)),((20 35, 10 30, 10 10, 30 5, 45 20, 20 35),(30 20, 20 15, 20 25, 30 20)))';
-	$wkt = 'GEOMETRYCOLLECTION(POINT(4 6),LINESTRING(4 6,7 10))';
+/* 	$wkt = 'GEOMETRYCOLLECTION(POINT(4 6),LINESTRING(4 6,7 10))'; */
 	// $wkt = 'POINT ZM (1 1 5 60)';
 
 	// echo $wkt;
 
-	$factory = new Kitbs\Geoimport\Generator();
-	$parser = new GeoIO\WKT\Parser\Parser($factory);
+/* 	$factory = new Kitbs\Geoimport\Generator();
+	$parser = new GeoIO\WKT\Parser\Parser($factory); */
 
 	// $geo = $parser->parse($wkt);
 
@@ -45,13 +45,40 @@ Route::get('/test/geometry', function() {
 
 	// dd();
 
-	$geo = Vinfo\Geometry::orderBy('id', 'desc')->first();
+/* 	$geo = new Vinfo\Geometry;//orderBy('id', 'desc')->first(); */
+	
+/* 	$wkt = '{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          122.16796875,
+          -29.152161283318915
+        ]
+      }
+    }
+  ]
+}';	 */
+	$wkt = '{ "type": "Feature", "properties": { "name": "Western Plains", "description": null, "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": -1, "visibility": -1, "drawOrder": null, "icon": null, "folders": "Wine Regions of Australia\/\/New South Wales\/\/" }, "geometry": { "type": "Point", "coordinates": [ 148.637671479877298, -32.264375774937847, 0.0 ] } }';
+	
+	$wkt = json_decode($wkt);
+	$feature = GeoJson\GeoJson::jsonUnserialize($wkt);
 
-	$geo->geometry = $wkt; $parser->parse($wkt);
+/* 	dd($wkt); */
+	
+/* 	dd($feature); */
+	
+/* 	$geo->geometry = $wkt; //$parser->parse($wkt); */
+ 	//dd($geo);
 
-	$geo->save();
+	Vinfo\Geometry::createFromFeature($feature);
+	
+/* 	$geo->save(); */
 
-	dd($geo);
 
 	// dd(json_encode($geo->toFeatureCollection()->jsonSerialize()));
 

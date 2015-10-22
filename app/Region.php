@@ -17,7 +17,12 @@ class Region extends Model
 
     public function type()
     {
-    	return $this->belongsTo('Vinfo\PriceType');
+    	return $this->belongsTo('Vinfo\RegionType');
+    }
+	
+	public function geometries()
+    {
+        return $this->morphMany('Vinfo\Geometry', 'geometried');
     }
 
 }

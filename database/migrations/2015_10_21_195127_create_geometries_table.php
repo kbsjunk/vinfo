@@ -21,21 +21,21 @@ class CreateGeometriesTable extends Migration
             $table->text('source')->nullable();
             $table->string('format')->nullable();
             $table->text('properties')->nullable();
-            $table->unsignedInteger('region_id')->nullable();
+            $table->unsignedInteger('geometried_id')->nullable();
+			$table->string('geometried_type')->nullable();
             $table->timestamps();
             $table->softDeletes();
-
-            $table->foreign('region_id')->references('id')->on('regions')->onDelete('cascade');
 
             $table->engine = 'MyISAM';
         });
 
         DB::statement('ALTER TABLE `geometries`
         ADD COLUMN `geometry` GEOMETRY NOT NULL AFTER `id`,
-        ADD COLUMN `centroid` POINT NOT NULL AFTER `geometry`,
-        ADD SPATIAL INDEX `geometry` (`geometry`),
-        ADD SPATIAL INDEX `centroid` (`centroid`)
+        ADD SPATIAL INDEX `geometry` (`geometry`)
         ');
+		
+		// ADD COLUMN `centroid` POINT NOT NULL AFTER `geometry`
+		// ADD SPATIAL INDEX `centroid` (`centroid`)
     }
 
     /**
