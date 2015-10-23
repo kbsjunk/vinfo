@@ -4,52 +4,9 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c44398e3dea5d9bf130325094b76fd21",
-    "content-hash": "6d0bd4edac7ee5202dbaabaeebe909f5",
+    "hash": "1514502320d7ca928cd13acfc3af1cac",
+    "content-hash": "cfb7cb70e9d7748b80863d63807a469c",
     "packages": [
-        {
-            "name": "andynoelker/laravel-5-view-generator",
-            "version": "1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/andynoelker/laravel-5-view-generator.git",
-                "reference": "c18b1d9e0959cb5d7c5f83650b47464b81ea287d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/andynoelker/laravel-5-view-generator/zipball/c18b1d9e0959cb5d7c5f83650b47464b81ea287d",
-                "reference": "c18b1d9e0959cb5d7c5f83650b47464b81ea287d",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "~5.0",
-                "php": ">=5.4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Andynoelker\\Laravel5ViewGenerator\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Andy Noelker",
-                    "email": "andynoelker@gmail.com"
-                }
-            ],
-            "description": "Adds a Blade view generator to Laravel 5.",
-            "keywords": [
-                "blade",
-                "generators",
-                "laravel",
-                "views"
-            ],
-            "time": "2015-09-25 19:21:04"
-        },
         {
             "name": "baum/baum",
             "version": "1.1.1",
@@ -254,16 +211,16 @@
         },
         {
             "name": "dimsav/laravel-translatable",
-            "version": "v5.2",
+            "version": "v5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dimsav/laravel-translatable.git",
-                "reference": "aad1f1cca11439bee6cce57b3a703678d15bb8df"
+                "reference": "d38db2ed4d34e22ded79ac6bb257311d3f274a5b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dimsav/laravel-translatable/zipball/aad1f1cca11439bee6cce57b3a703678d15bb8df",
-                "reference": "aad1f1cca11439bee6cce57b3a703678d15bb8df",
+                "url": "https://api.github.com/repos/dimsav/laravel-translatable/zipball/d38db2ed4d34e22ded79ac6bb257311d3f274a5b",
+                "reference": "d38db2ed4d34e22ded79ac6bb257311d3f274a5b",
                 "shasum": ""
             },
             "require": {
@@ -301,7 +258,7 @@
                 "laravel",
                 "translation"
             ],
-            "time": "2015-10-18 12:22:57"
+            "time": "2015-10-23 07:36:11"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1207,6 +1164,90 @@
                 "overtrue"
             ],
             "time": "2015-04-19 06:23:23"
+        },
+        {
+            "name": "overtrue/laravel-pinyin",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/overtrue/laravel-pinyin.git",
+                "reference": "5e4d38d992063bb813682dc2caced5c1753a5efd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/overtrue/laravel-pinyin/zipball/5e4d38d992063bb813682dc2caced5c1753a5efd",
+                "reference": "5e4d38d992063bb813682dc2caced5c1753a5efd",
+                "shasum": ""
+            },
+            "require": {
+                "overtrue/pinyin": ">=2.5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Overtrue\\LaravelPinyin\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "overtrue",
+                    "email": "anzhengchao@gmail.com"
+                }
+            ],
+            "description": "Chinese to Pinyin translator.",
+            "keywords": [
+                "Chinese",
+                "Pinyin",
+                "laravel",
+                "overtrue"
+            ],
+            "time": "2015-03-19 07:40:13"
+        },
+        {
+            "name": "overtrue/pinyin",
+            "version": "2.6.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/overtrue/pinyin.git",
+                "reference": "5d98b7ecef58b325af1be117eb374346bc3a8de9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/overtrue/pinyin/zipball/5d98b7ecef58b325af1be117eb374346bc3a8de9",
+                "reference": "5d98b7ecef58b325af1be117eb374346bc3a8de9",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Overtrue\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Carlos",
+                    "homepage": "http://github.com/overtrue"
+                }
+            ],
+            "description": "Chinese to pinyin translator.",
+            "homepage": "https://github.com/overtrue/pinyin",
+            "keywords": [
+                "Chinese",
+                "Pinyin",
+                "cn2pinyin"
+            ],
+            "time": "2015-10-21 03:35:12"
         },
         {
             "name": "paragonie/random_compat",
@@ -2276,6 +2317,49 @@
     ],
     "packages-dev": [
         {
+            "name": "andynoelker/laravel-5-view-generator",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/andynoelker/laravel-5-view-generator.git",
+                "reference": "c18b1d9e0959cb5d7c5f83650b47464b81ea287d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/andynoelker/laravel-5-view-generator/zipball/c18b1d9e0959cb5d7c5f83650b47464b81ea287d",
+                "reference": "c18b1d9e0959cb5d7c5f83650b47464b81ea287d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Andynoelker\\Laravel5ViewGenerator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andy Noelker",
+                    "email": "andynoelker@gmail.com"
+                }
+            ],
+            "description": "Adds a Blade view generator to Laravel 5.",
+            "keywords": [
+                "blade",
+                "generators",
+                "laravel",
+                "views"
+            ],
+            "time": "2015-09-25 19:21:04"
+        },
+        {
             "name": "barryvdh/laravel-debugbar",
             "version": "v2.0.6",
             "source": {
@@ -2492,54 +2576,6 @@
                 "fixtures"
             ],
             "time": "2015-05-29 06:29:14"
-        },
-        {
-            "name": "gzero/eloquent-tree",
-            "version": "v2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/AdrianSkierniewski/eloquent-tree.git",
-                "reference": "5b7a1e7f787389cceac036297b99c762ad87bb2e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/AdrianSkierniewski/eloquent-tree/zipball/5b7a1e7f787389cceac036297b99c762ad87bb2e",
-                "reference": "5b7a1e7f787389cceac036297b99c762ad87bb2e",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5.9"
-            },
-            "require-dev": {
-                "orchestra/testbench": "3.1.*",
-                "phpunit/phpunit": "4.3.*"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "src/migrations"
-                ],
-                "psr-0": {
-                    "Gzero\\EloquentTree\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Adrian Skierniewski",
-                    "email": "adrian.skierniewski@gmail.com",
-                    "homepage": "https://github.com/AdrianSkierniewski"
-                }
-            ],
-            "description": "Eloquent Tree is a tree model for Laravel Eloquent ORM.",
-            "keywords": [
-                "eloquent",
-                "laravel"
-            ],
-            "time": "2015-06-13 13:57:14"
         },
         {
             "name": "hamcrest/hamcrest-php",
@@ -3213,16 +3249,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.8.15",
+            "version": "4.8.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "be8f7b9eacf8243940f8412f8b4a9a434c73dd7b"
+                "reference": "625f8c345606ed0f3a141dfb88f4116f0e22978e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/be8f7b9eacf8243940f8412f8b4a9a434c73dd7b",
-                "reference": "be8f7b9eacf8243940f8412f8b4a9a434c73dd7b",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/625f8c345606ed0f3a141dfb88f4116f0e22978e",
+                "reference": "625f8c345606ed0f3a141dfb88f4116f0e22978e",
                 "shasum": ""
             },
             "require": {
@@ -3281,7 +3317,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-10-22 09:05:37"
+            "time": "2015-10-23 06:48:33"
         },
         {
             "name": "phpunit/phpunit-mock-objects",

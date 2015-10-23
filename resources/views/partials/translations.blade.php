@@ -13,6 +13,7 @@
 					<a role="button" data-toggle="collapse" data-parent="#translations_accordion" href="#translations_{{ $translation->locale }}" aria-expanded="true" aria-controls="collapseOne">
 						{{ Punic\Language::getName($translation->locale, $translation->locale) }}
 					</a>
+					<small><span class="text-muted">{{ $translation->locale }}</span></small>
 				</h4>
 			</div>
 			<div id="translations_{{ $translation->locale }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading_{{ $translation->locale }}">
@@ -36,7 +37,7 @@
 		</div>
 		@endif
 		@endforeach
-		@foreach(array_diff(Config::get('translatable.locales'), $model->translations->pluck('locale')->toArray()) as $locale)
+		@foreach(array_diff(get_locales(true), $model->translations->lists('locale')->toArray()) as $locale)
 		@if ($locale !== App::getLocale())
 		<div class="panel panel-default">
 			<div class="panel-heading" role="tab" id="heading_{{ $locale }}">
@@ -45,6 +46,7 @@
 					<a role="button" data-toggle="collapse" data-parent="#translations_accordion" href="#translations_{{ $locale }}" aria-expanded="true" aria-controls="collapseOne" lang="{{ $locale }}">
 						{{ Punic\Language::getName($locale, $locale) }}
 					</a>
+					<small><span class="text-muted">{{ $locale }}</span></small>
 				</h4>
 			</div>
 			<div id="translations_{{ $locale }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading_{{ $locale }}">
@@ -69,7 +71,7 @@
 		@endif
 		@endforeach
 		@else
-		@foreach(Config::get('translatable.locales') as $locale)
+		@foreach(get_locales(true) as $locale)
 		@if ($locale !== App::getLocale())
 		<div class="panel panel-default">
 			<div class="panel-heading" role="tab" id="heading_{{ $locale }}">
@@ -78,6 +80,7 @@
 					<a role="button" data-toggle="collapse" data-parent="#translations_accordion" href="#translations_{{ $locale }}" aria-expanded="true" aria-controls="collapseOne" lang="{{ $locale }}">
 						{{ Punic\Language::getName($locale, $locale) }}
 					</a>
+					<small><span class="text-muted">{{ $locale }}</span></small>
 				</h4>
 			</div>
 			<div id="translations_{{ $locale }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading_{{ $locale }}">

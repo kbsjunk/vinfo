@@ -4,14 +4,14 @@ namespace Vinfo;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Dimsav\Translatable\Translatable;
+/* use Dimsav\Translatable\Translatable; */
 use Vinfo\Traits\TranslatableSortable;
 use SebastianBergmann\Money\Currency as MoneyCurrency;
 
 class Currency extends Model
 {
 	use SoftDeletes;
-    use Translatable;
+/*     use Translatable; */
     use TranslatableSortable;
 	
 	protected $fillable = [

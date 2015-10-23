@@ -10,7 +10,7 @@ return [
     | Contains an array with the applications available locales.
     |
     */
-    'locales' => ['en', 'de', 'es', 'fr', 'zh-Hans', 'ru', 'it'],
+    'locales' => ['en'=>['GB', 'US'], 'de', 'es' => ['ES', '419'], 'fr' => ['FR', 'CA'], 'zh' => ['Hans', 'Hant'], 'ru', 'it'],
 
     /*
     |--------------------------------------------------------------------------

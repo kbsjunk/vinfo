@@ -15,14 +15,14 @@ class LanguagesTableSeeder extends Seeder
     {
 		DB::table('languages')->delete();
 
-        $languages = Config::get('translatable.locales');
+        $languages = get_locales();//Config::get('translatable.locales');
 
 		foreach ($languages as $language) {
             $language = [
                 'code' => $language,
                 'name' => PunicLanguage::getName($language, $language),
             ];
-            language::create($language);
+            Language::create($language);
         }
     }
 }

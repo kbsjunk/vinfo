@@ -19,7 +19,7 @@
 			<tbody>
 				@foreach($regions as $i => $region)
 				@if ($i == 0 && $region->depth > 0)
-				@foreach ($region->getAncestors() as $ancestor)
+				@foreach ($region->ancestors()->with('country', 'regionType')->get() as $ancestor)
 				<tr>
 					<td>
 						<span style="margin-left:{{ $ancestor->depth * 20 }}px;margin-right:5px;">

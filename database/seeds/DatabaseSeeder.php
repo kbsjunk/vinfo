@@ -13,19 +13,20 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Model::unguard();
-        
-        $this->call(RegionsTableSeeder::class);
-        return;
+
+        $this->call(CurrenciesTableSeeder::class);
         $this->call(CountriesTableSeeder::class);
         $this->call(LanguagesTableSeeder::class);
-        $this->call(CurrenciesTableSeeder::class);
         $this->call(UsersTableSeeder::class); 
+		return;
         
         $this->call(BottleSizesTableSeeder::class); 
         // $this->call(BottleSizesTableSaver::class); 
         $this->call(ConsumedReasonsTableSeeder::class);
         $this->call(RegionTypesTableSeeder::class);
-        // $this->call(BottlesTableSeeder::class);
+        $this->call(RegionsTableSeeder::class);
+
+		// $this->call(BottlesTableSeeder::class);
         // $this->call(BottleCasesTableSeeder::class);
         // $this->call(WineriesTableSeeder::class);
         // $this->call(WinesTableSeeder::class);

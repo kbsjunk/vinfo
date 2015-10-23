@@ -129,22 +129,7 @@ class RegionsTableSeeder extends Seeder
 			$region = RegionTranslation::whereName($en)->whereLocale('en')->first()->region;
 			$region->fill(['de' => ['name' => $de]])->save();
 		}
-
-		// return;
-
-		// ---------------------------
-
-		$new = Region::create(['name' => 'South Eastern Australia', 'region_type_id' => 5, 'country_id' => $country_id]);
-		$new->makeLastChildOf($country);
 		
-		$subzones = RegionTranslation::whereIn('name', ['New South Wales', 'South Australia', 'Queensland', 'Victoria'])->whereLocale('en')->lists('region_id');
-		$subzones = Region::whereIn('id', $subzones);
-
-		foreach ($subzones as $subzone) {
-			$subzone = Region::create(['name' => $subzone->name, 'region_type_id' => 2, 'shortcut_id' => $subzone->id, 'country_id' => $country_id]);
-			$subzone->makeLastChildOf($new);
-		}
-
 		// ---------------------------
 
 		$existing = RegionTranslation::whereName('South Australia')->whereLocale('en')->pluck('region_id');
@@ -153,11 +138,24 @@ class RegionsTableSeeder extends Seeder
 		$new = Region::create(['name' => 'Adelaide', 'region_type_id' => 5, 'country_id' => $country_id]);
 		$new->makeFirstChildOf($existing);
 
-		$subzones = RegionTranslation::whereIn('name', ['Mount Lofty Ranges', 'Fleurieu', 'Barossa'])->whereLocale('en')->pluck('region_id');
-		$subzones = Region::whereIn('id', $subzones);
+		$subzones = RegionTranslation::whereIn('name', ['Mount Lofty Ranges', 'Fleurieu', 'Barossa'])->whereLocale('en')->lists('region_id');
+		$subzones = Region::whereIn('id', $subzones)->get();
 
 		foreach ($subzones as $subzone) {
 			$subzone = Region::create(['name' => $subzone->name, 'region_type_id' => 6, 'shortcut_id' => $subzone->id, 'country_id' => $country_id]);
+			$subzone->makeLastChildOf($new);
+		}
+		
+		// ---------------------------
+
+		$new = Region::create(['name' => 'South Eastern Australia', 'region_type_id' => 5, 'country_id' => $country_id]);
+		$new->makeLastChildOf($country);
+		
+		$subzones = RegionTranslation::whereIn('name', ['New South Wales', 'South Australia', 'Queensland', 'Victoria'])->whereLocale('en')->lists('region_id');
+		$subzones = Region::whereIn('id', $subzones)->get();
+
+		foreach ($subzones as $subzone) {
+			$subzone = Region::create(['name' => $subzone->name, 'region_type_id' => 2, 'shortcut_id' => $subzone->id, 'country_id' => $country_id]);
 			$subzone->makeLastChildOf($new);
 		}
 

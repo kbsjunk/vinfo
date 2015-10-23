@@ -42,7 +42,7 @@ class UsersTableSeeder extends Seeder
 		];
 
         $country = Country::whereCode('GB')->first();
-        $language = Language::whereCode('en')->first();
+        $language = Language::whereCode('en-GB')->first();
         $currency = Currency::whereCode('GBP')->first();
 
 		foreach ($users as $userData) {

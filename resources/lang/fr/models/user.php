@@ -19,7 +19,6 @@ return array (
     'password_confirmation_help' => 'Entrez à nouveau votre mot de passe.',
     'password_help' => 'Entrez votre mot de passe.',
     'remember_token' => 'Rester connecté&nbsp;?',
-    'email' => 'Adresse courriel',
-    'email_help' => 'Entrez l’adresse corriel de l’utilisateur.',
+    'email' => 'Adresse électronique',
   ),
 );

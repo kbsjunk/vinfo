@@ -5,14 +5,14 @@ namespace Vinfo;
 use Baum\Node;
 // use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Dimsav\Translatable\Translatable;
+/* use Dimsav\Translatable\Translatable; */
 use Vinfo\Traits\TranslatableSortable;
 
 class Region extends Node {
 
 	use SoftDeletes;
-    use Translatable;
-    use TranslatableSortable;
+/* 	use Translatable; */
+	use TranslatableSortable;
 
 	protected $fillable = [
 		'name',
@@ -20,11 +20,22 @@ class Region extends Node {
 		'is_structural',
 	];
 
-    public $fieldTypes = [
-    	'description' => 'textarea'
-    ];
+	public $fieldTypes = [
+		'description' => 'textarea'
+	];
 
-    public $translatedAttributes = ['name', 'description'];
+	public $with = [
+		'translations'
+	];
+
+	/**
+	   * Column to perform the default sorting
+	   *
+	   * @var string
+	   */
+	protected $orderColumn = 'lft';
+
+	public $translatedAttributes = ['name', 'description'];
 
 	/**
 	 * Columns which restrict what we consider our Nested Set list
@@ -59,7 +70,7 @@ class Region extends Node {
 	{
 		return $this->belongsTo('Vinfo\Country');
 	}
-	
+
 	public function geometries()
 	{
 		return $this->morphMany('Vinfo\Geometry', 'geometried');

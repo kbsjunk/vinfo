@@ -28,4 +28,24 @@ class Translator extends LaravelTranslator
 		
 		return $line;
     }
+	
+	/**
+     * Get the array of locales to be checked.
+     *
+     * @param  string|null  $locale
+     * @return array
+     */
+	protected function parseLocale($locale)
+	{
+		if (is_null($locale)) {
+			$locale = $this->locale;
+		}
+		
+		@list($fallback, $country) = explode(config('translatable.locale_separator', '-'), $locale);
+		
+		if ($fallback && $country) {
+			return array_filter([$locale, $fallback, $this->fallback]);
+		}
+		return parent::parseLocale($locale);
+	}
 }

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Vinfo\Http\Requests\RegionsFormRequest;
 use Vinfo\Http\Controllers\Controller;
 use Vinfo\Region;
+use Vinfo\Country;
 
 class RegionsController extends Controller
 {
@@ -17,9 +18,35 @@ class RegionsController extends Controller
      */
     public function index()
     {
-        $this->authorize('show', new Region);
+		$region = new Region;
+        $this->authorize('show', $region);
 
-        $regions = Region::withTranslation()->with('regionType', 'country')->paginate(25);
+        $regions = Region::withTranslation()
+			->with(['regionType', 'country' => function($query) {
+				return with(new Country)->scopeWithTranslation($query->getQuery());
+			}])
+			->whereNull($region->getParentColumnName())
+			->orderByRelationTranslation('country', 'name')
+			->orderBy($region->getQualifiedOrderColumnName())
+			->paginate(25);
+
+        return view('regions.index', compact('regions'));
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function countryIndex(Country $country)
+    {
+		$region = new Region;
+        $this->authorize('show', $region);
+
+        $regions = Region::withTranslation()
+			->with('regionType', 'country')
+			->orderBy($region->getQualifiedOrderColumnName())
+			->paginate(25);
 
         return view('regions.index', compact('regions'));
     }

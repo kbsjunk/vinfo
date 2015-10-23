@@ -4,7 +4,7 @@ namespace Vinfo;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Dimsav\Translatable\Translatable;
+/* use Dimsav\Translatable\Translatable; */
 use Vinfo\Traits\TranslatableSortable;
 use Punic\Unit;
 use App;
@@ -12,7 +12,7 @@ use App;
 class BottleSize extends Model
 {
     use SoftDeletes;
-    use Translatable;
+/*     use Translatable; */
     use TranslatableSortable;
 
     protected $fillable = [
