@@ -21,5 +21,6 @@ return array (
     'updated_at_help' => 'La date de mise à jour de l’enregistrement.',
     'updated_by' => 'Mise à jour pour',
     'updated_by_help' => 'Le nom de l’utilisateur qui a mis à jour l’enregistrement.',
+    'description' => 'Description',
   ),
 );

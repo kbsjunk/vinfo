@@ -44,7 +44,7 @@ trait HasGeometry {
                 if ($model->isDirty($column)) {
                     $model->attributes[$column] = DB::raw('GeomFromText(\''.strtoupper($model->attributes[$column]).'\')');
                 }
-				if (empty($model->attributes[$column])) {
+                if (empty($model->attributes[$column])) {
                     $model->attributes[$column] = DB::raw('GeomFromText(\'POINT(0 0)\')');
 				}
             }
@@ -110,11 +110,15 @@ trait HasGeometry {
     public function setAttribute($key, $value)
     {
         if ($this->isGeoCastable($key)) {
-            return $this->attributes[$key] = $this->fromGeometry($value);
+            $return = $this->attributes[$key] = $this->fromGeometry($value);
+            $this->doGeometryChecks();
+            return $return;
         }
 
         return parent::setAttribute($key, $value);
     }
+
+    public function doGeometryChecks() { }
 	
 	public function getPropertiesField()
 	{
@@ -147,12 +151,12 @@ trait HasGeometry {
 		$instance = new static;
 		
 		$properties = [
-			$instance->getPropertiesField() => array_filter($feature->getProperties()),
+			$instance->getPropertiesField() => array_filter($feature->getAllProperties()),
 			$instance->getGeometryField() => $feature->getGeometry(),
 		];
 		
 		$attributes = array_merge($attributes, $properties);
-		
+
         return parent::create($attributes);
     }
 
@@ -236,23 +240,43 @@ trait HasGeometry {
         return new Feature($this->geometry, $this->properties, $this->id);
     }
 
-    public function getPropertiesAttribute()
+    public function getAllPropertiesAttribute()
     {
         $properties = [
         'name'        => $this->getNameField() ? $this->getAttributeFromArray($this->getNameField()) : null,
         'description' => $this->getDescriptionField() ? $this->getAttributeFromArray($this->getDescriptionField()) : null,
         ];
 
-		$arrayProperties = $this->getAttributeFromArray($this->getPropertiesField());
-		
-		if (!is_array($arrayProperties)) {
-			$arrayProperties = json_decode($arrayProperties, true);
-		}
-		
+        $arrayProperties = $this->getAttributeFromArray($this->getPropertiesField());
+        
+        if (!is_array($arrayProperties)) {
+            $arrayProperties = json_decode($arrayProperties, true);
+        }
+        
         return array_merge($arrayProperties, $properties);
     }
 
+    public function getPropertiesAttribute()
+    {
+		$properties = $this->getAttributeFromArray($this->getPropertiesField());
+		
+        if (!$properties) {
+            return [];
+        }
+        
+		if (!is_array($properties)) {
+			$properties = json_decode($properties, true);
+		}
+		
+        return array_except($properties, ['name', 'description']);
+    }
+
     public function setPropertiesAttribute($properties)
+    {
+        return $this->attributes[$this->getPropertiesField()] = json_encode($properties);
+    }
+
+    public function setAllPropertiesAttribute($properties)
     {
 		if ($this->getNameField()) {
 			$this->setAttribute($this->getNameField(), @$properties['name']);
@@ -263,7 +287,7 @@ trait HasGeometry {
 			unset($properties['description']);
 		}
 
-        $this->attributes[$this->getPropertiesField()] = json_encode($properties);
+        return $this->attributes[$this->getPropertiesField()] = json_encode($properties);
     }
 
 }

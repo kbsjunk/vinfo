@@ -18,4 +18,9 @@ class Winery extends Model
 	{
 		return $this->belongsTo('Vinfo\Country');
 	}
+
+	public function geometries()
+	{
+		return $this->morphMany('Vinfo\Geometry', 'geometried');
+	}
 }

@@ -76,6 +76,8 @@ return [
     'unique'               => 'The :attribute has already been taken.',
     'url'                  => 'The :attribute format is invalid.',
 
+    'geometry' => 'The :attribute must be a valid GeoJSON string.',
+
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Language Lines

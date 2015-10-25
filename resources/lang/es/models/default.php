@@ -21,5 +21,6 @@ return array (
     'deleted_by' => 'Suprimido por',
     'updated_by' => 'Actualizado por',
     'updated_by_help' => 'El nombre del usuario que ha actualizado el registro.',
+    'description' => 'Descripción',
   ),
 );

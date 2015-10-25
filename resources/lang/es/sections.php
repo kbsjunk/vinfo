@@ -12,4 +12,5 @@ return array (
   'translations' => 'Traducciones',
   'users' => 'Usuarios',
   'avatar' => 'Foto de perfil',
+  'geometries' => 'Geometrías',
 );

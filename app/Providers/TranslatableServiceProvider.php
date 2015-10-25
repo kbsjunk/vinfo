@@ -6,7 +6,9 @@ use Illuminate\Support\ServiceProvider;
 use Vinfo\CurrencyTranslation;
 use Vinfo\CountryTranslation;
 use Vinfo\BottleSizeTranslation;
+use Vinfo\ConsumedReasonTranslation;
 use Vinfo\RegionTypeTranslation;
+use Vinfo\RegionTranslation;
 use Config;
 
 class TranslatableServiceProvider extends ServiceProvider
@@ -21,7 +23,9 @@ class TranslatableServiceProvider extends ServiceProvider
 		CurrencyTranslation::saved(function($translation) { $this->preventEmptyTranslation($translation); });
 		CountryTranslation::saved(function($translation) { $this->preventEmptyTranslation($translation); });
 		BottleSizeTranslation::saved(function($translation) { $this->preventEmptyTranslation($translation); });
+		ConsumedReasonTranslation::saved(function($translation) { $this->preventEmptyTranslation($translation); });
 		RegionTypeTranslation::saved(function($translation) { $this->preventEmptyTranslation($translation); });
+		RegionTranslation::saved(function($translation) { $this->preventEmptyTranslation($translation); });
     }
 		
 	private function preventEmptyTranslation($translation)

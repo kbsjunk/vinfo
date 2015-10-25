@@ -7,7 +7,9 @@ use Validator;
 use Punic\Language;
 use Locale;
 use App;
+use Exception;
 
+use GeoJson\GeoJson;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -18,7 +20,16 @@ class AppServiceProvider extends ServiceProvider
      */
 	public function boot()
 	{
-		//
+		Validator::extend('geometry', function($attribute, $value, $parameters, $validator) {
+            $value = json_decode($value);
+            try {
+                $value = GeoJson::jsonUnserialize($value);
+                return $value instanceof GeoJson;
+            }
+            catch (Exception $e) {
+                return false;
+            }
+        });
 	}
 
     /**

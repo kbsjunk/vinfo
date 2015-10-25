@@ -13,6 +13,7 @@
     "tests"
   ],
   "dependencies": {
-    "selectize": "~0.12.1"
+    "selectize": "~0.12.1",
+    "leaflet-minimap": "~3.0.0"
   }
 }

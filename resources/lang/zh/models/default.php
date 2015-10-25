@@ -15,5 +15,6 @@ return array (
     'updated_at_help' => '记录更新的日期。',
     'deleted_at' => '删除',
     'deleted_at_help' => '记录删除的日期。',
+    'description' => '描写',
   ),
 );

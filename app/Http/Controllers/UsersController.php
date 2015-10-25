@@ -17,7 +17,7 @@ class UsersController extends Controller
 
     private function getDropdowns()
     {
-        $countries = Country::withTranslationFallback()->whereActive()->orderByTranslation('name')->get()->lists('name', 'id');
+        $countries = Country::withTranslationFallback()->whereIsActive()->orderByTranslation('name')->get()->lists('name', 'id');
         $languages = Language::orderBy('name')->get()->lists('name', 'id');
         $currencies = Currency::withTranslationFallback()->orderByTranslation('name')->get()->lists('name', 'id');
 

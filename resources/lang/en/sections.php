@@ -14,4 +14,5 @@ return array (
   'consumed_reasons' => 'Consumed Reasons',
   'region_types' => 'Region Types',
   'avatar' => 'Profile Picture',
+  'geometries' => 'Geometries',
 );

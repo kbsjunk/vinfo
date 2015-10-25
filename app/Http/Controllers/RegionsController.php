@@ -21,11 +21,7 @@ class RegionsController extends Controller
 		$region = new Region;
         $this->authorize('show', $region);
 
-        $regions = Region::withTranslation()
-			->with(['regionType', 'country' => function($query) {
-				return with(new Country)->scopeWithTranslation($query->getQuery());
-			}])
-			->whereNull($region->getParentColumnName())
+        $regions = Region::with(['regionType', 'country'])
 			->orderByRelationTranslation('country', 'name')
 			->orderBy($region->getQualifiedOrderColumnName())
 			->paginate(25);
@@ -38,18 +34,18 @@ class RegionsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function countryIndex(Country $country)
-    {
-		$region = new Region;
-        $this->authorize('show', $region);
+  //   public function countryIndex(Country $country)
+  //   {
+		// $region = new Region;
+  //       $this->authorize('show', $region);
 
-        $regions = Region::withTranslation()
-			->with('regionType', 'country')
-			->orderBy($region->getQualifiedOrderColumnName())
-			->paginate(25);
+  //       $regions = Region::withTranslation()
+		// 	->with('regionType', 'country')
+		// 	->orderBy($region->getQualifiedOrderColumnName())
+		// 	->paginate(25);
 
-        return view('regions.index', compact('regions'));
-    }
+  //       return view('regions.index', compact('regions'));
+  //   }
 
     /**
      * Show the form for creating a new resource.

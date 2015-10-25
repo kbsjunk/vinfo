@@ -21,5 +21,6 @@ return array (
     'updated_at_help' => 'Das Aktualisierungsdatum des Datensatzes.',
     'updated_by' => 'Aktualisiert von',
     'updated_by_help' => 'Der Name des Benutzers, der den Datensatz aktualisiert hat.',
+    'description' => 'Beschreibung',
   ),
 );

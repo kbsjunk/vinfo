@@ -12,4 +12,5 @@ return array (
   'users' => 'Utenti',
   'bottle_sizes' => 'Formati di bottiglia',
   'avatar' => 'Immagine del profilo',
+  'geometries' => 'Geometrie',
 );

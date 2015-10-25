@@ -17,14 +17,18 @@ class RegionsTableSeeder extends Seeder
     {
         DB::table('regions')->delete();
 
-		$depths = [1, 2, 6, 7, 8];
+        $countries = Country::whereIsWine()->whereIsActive()->get();
 
-		$country_id = Country::whereCode('AU')->pluck('id');
+        foreach ($countries as $country) {
+        	$country = Region::create(['name' => $country->name, 'region_type_id' => 1, 'country_id' => $country->id]);
+        	$country->makeRoot();
+        }
 
-		$country = Region::create(['name' => 'Australia', 'region_type_id' => array_shift($depths), 'country_id' => $country_id]);
-		$country->makeRoot();
+        // --------------------------------------------------------------------
 
+		$country = Region::whereTranslation('name', 'Australia', 'en')->first();
 		$regions = [];
+		$depths  = [2, 6, 7, 8];
 
 		$regions['South Australia']                                                                = [];
 		$regions['South Australia']['Barossa']['Barossa Valley']                                   = [];
@@ -113,7 +117,7 @@ class RegionsTableSeeder extends Seeder
 		$regions['Australian Capital Territory']                                                   = [];
 
 		foreach ($regions as $region => $children) {
-			$this->makeChild($country, $region, $children, $depths, $country_id);
+			$this->makeChild($country, $region, $children, $depths, $country->country_id);
 		}
 
 		$deNames = [
@@ -126,43 +130,39 @@ class RegionsTableSeeder extends Seeder
 		];
 
 		foreach ($deNames as $en => $de) {
-			$region = RegionTranslation::whereName($en)->whereLocale('en')->first()->region;
+			$region = Region::whereTranslation('name', $en, 'en')->first();
 			$region->fill(['de' => ['name' => $de]])->save();
 		}
 		
-		// ---------------------------
+		// --------------------------------------------------------------------
 
-		$existing = RegionTranslation::whereName('South Australia')->whereLocale('en')->pluck('region_id');
-		$existing = Region::find($existing);
+		$existing = Region::whereTranslation('name', 'South Australia', 'en')->first();
 
-		$new = Region::create(['name' => 'Adelaide', 'region_type_id' => 5, 'country_id' => $country_id]);
+		$new = Region::create(['name' => 'Adelaide', 'region_type_id' => 5, 'country_id' => $country->country_id]);
 		$new->makeFirstChildOf($existing);
 
-		$subzones = RegionTranslation::whereIn('name', ['Mount Lofty Ranges', 'Fleurieu', 'Barossa'])->whereLocale('en')->lists('region_id');
-		$subzones = Region::whereIn('id', $subzones)->get();
+		$subzones = Region::whereTranslationIn('name', ['Mount Lofty Ranges', 'Fleurieu', 'Barossa'], 'en')->get();
 
 		foreach ($subzones as $subzone) {
-			$subzone = Region::create(['name' => $subzone->name, 'region_type_id' => 6, 'shortcut_id' => $subzone->id, 'country_id' => $country_id]);
+			$subzone = Region::create(['name' => $subzone->name, 'region_type_id' => 6, 'shortcut_id' => $subzone->id, 'country_id' => $country->country_id]);
 			$subzone->makeLastChildOf($new);
 		}
 		
-		// ---------------------------
+		// --------------------------------------------------------------------
 
-		$new = Region::create(['name' => 'South Eastern Australia', 'region_type_id' => 5, 'country_id' => $country_id]);
+		$new = Region::create(['name' => 'South Eastern Australia', 'region_type_id' => 5, 'country_id' => $country->country_id]);
 		$new->makeLastChildOf($country);
 		
-		$subzones = RegionTranslation::whereIn('name', ['New South Wales', 'South Australia', 'Queensland', 'Victoria'])->whereLocale('en')->lists('region_id');
-		$subzones = Region::whereIn('id', $subzones)->get();
+		$subzones = Region::whereTranslationIn('name', ['New South Wales', 'South Australia', 'Queensland', 'Victoria'], 'en')->get();
 
 		foreach ($subzones as $subzone) {
-			$subzone = Region::create(['name' => $subzone->name, 'region_type_id' => 2, 'shortcut_id' => $subzone->id, 'country_id' => $country_id]);
+			$subzone = Region::create(['name' => $subzone->name, 'region_type_id' => 2, 'shortcut_id' => $subzone->id, 'country_id' => $country->country_id]);
 			$subzone->makeLastChildOf($new);
 		}
 
-		// ---------------------------
+		// --------------------------------------------------------------------
 		
-		$existing = RegionTranslation::whereName('Murray Darling')->whereLocale('en')->pluck('region_id');
-		$existing = Region::whereId($existing);
+		$existing = Region::whereTranslation('name', 'Murray Darling', 'en')->first();
 
 		$first = $existing->first();
 		$last = $existing->orderBy('id', 'desc')->first();
@@ -170,10 +170,9 @@ class RegionsTableSeeder extends Seeder
 		$last->shortcut_id = $first->id;
 		$last->save();
 
-		// ---------------------------
+		// --------------------------------------------------------------------
 		
-		$existing = RegionTranslation::whereName('Swan Hill')->whereLocale('en')->pluck('region_id');
-		$existing = Region::whereId($existing);
+		$existing = Region::whereTranslation('name', 'Swan Hill', 'en')->first();
 
 		$first = $existing->first();
 		$last = $existing->orderBy('id', 'desc')->first();
@@ -181,16 +180,11 @@ class RegionsTableSeeder extends Seeder
 		$last->shortcut_id = $first->id;
 		$last->save();
 
-		// ---------------------------
+		// --------------------------------------------------------------------
 
-		$country_id = Country::whereCode('NZ')->pluck('id');
-
-		$depths = [1, 7, 8];
-
-		$country = Region::create(['name' => 'New Zealand', 'region_type_id' => array_shift($depths), 'country_id' => $country_id]);
-		$country->makeRoot();
-
+		$country = Region::whereTranslation('name', 'New Zealand', 'en')->first();
 		$regions = [];
+		$depths = [7, 8];
 
 		$regions["Northland"]                       = [];	
 		$regions["Auckland"]                        = [];	
@@ -228,7 +222,7 @@ class RegionsTableSeeder extends Seeder
 		$regions["Central Otago"]["Cromwell"]       = [];
 
 		foreach ($regions as $region => $children) {
-			$this->makeChild($country, $region, $children, $depths, $country_id);
+			$this->makeChild($country, $region, $children, $depths, $country->country_id);
 		}
 
     }

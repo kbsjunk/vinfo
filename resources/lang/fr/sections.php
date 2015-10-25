@@ -12,4 +12,5 @@ return array (
   'translations' => 'Traductions',
   'configuration' => 'Administration',
   'avatar' => 'Photo de profil',
+  'geometries' => 'Géométries',
 );

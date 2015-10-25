@@ -12,4 +12,5 @@ return array (
   'languages' => '语言',
   'details' => '资料',
   'avatar' => '头像',
+  'geometries' => '几何',
 );

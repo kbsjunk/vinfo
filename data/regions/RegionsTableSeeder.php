@@ -5,7 +5,9 @@ class RegionsTableSeeder extends Seeder {
 	public function run()
 	{
 
-		// DB::table('regions')->delete();
+		DB::table('regions')->delete();
+
+		
 
 		$depths = [1, 2, 6, 7, 8];
 

@@ -100,7 +100,7 @@ class LangMakeCommand extends Command
 
         if (Schema::hasTable($table)) {
 
-            $fields = Schema::getColumnListing($table);
+            $fields = $this->getFieldsList($table);
             $longest = $this->getLongestFieldLength($fields);
             
             $title = $this->getFieldLabel($modelName);
@@ -132,7 +132,7 @@ class LangMakeCommand extends Command
 	{
 		$fields = Schema::getColumnListing($table);
 		
-		$ignore = ['id', 'name', 'code', 'created_at', 'created_by', 'updated_at', 'updated_by', 'deleted_at', 'deleted_by'];
+		$ignore = ['id', 'name', 'code', 'description', 'created_at', 'created_by', 'updated_at', 'updated_by', 'deleted_at', 'deleted_by'];
 		
 		return array_diff($fields, $ignore);
 	}
@@ -163,7 +163,7 @@ class LangMakeCommand extends Command
         }
         else {
             if ($label == 'id') $label = 'ID';
-            $label = "Enter the $label of the $model.";
+            $label = "The $label of the $model.";
         }
         
         return $label;

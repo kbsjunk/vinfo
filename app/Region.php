@@ -45,20 +45,9 @@ class Region extends Node {
 	protected $scoped = ['country_id'];
 
 	public function setDepth() {
-		$self = $this;
 
 		$this->saveTranslations();
-
-		$this->getConnection()->transaction(function() use ($self) {
-			$self->reload();
-
-			$level = $self->getLevel();
-
-			$self->newNestedSetQuery()->where($self->getKeyName(), '=', $self->getKey())->update(array($self->getDepthColumnName() => $level));
-			$self->setAttribute($self->getDepthColumnName(), $level);
-		});
-
-		return $this;
+		return parent::setDepth();
 	}
 
 	public function regionType()
@@ -75,5 +64,25 @@ class Region extends Node {
 	{
 		return $this->morphMany('Vinfo\Geometry', 'geometried');
 	}
+
+    public function getAttribute($key)
+    {
+    	if ($key == 'name' && $this->region_type_id == 1) {
+			return $this->country->name;
+		}
+
+        if (str_contains($key, ':')) {
+            list($key, $locale) = explode(':', $key);
+        } else {
+            $locale = $this->locale();
+        }
+        if ($this->isTranslationAttribute($key)) {
+            if ($this->getTranslation($locale) === null) {
+                return;
+            }
+            return $this->getTranslation($locale)->$key;
+        }
+        return parent::getAttribute($key);
+    }
 
 }

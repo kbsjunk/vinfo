@@ -152,7 +152,8 @@ return [
         Dimsav\Translatable\TranslatableServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Baum\Providers\BaumServiceProvider::class,
-		Overtrue\LaravelPinyin\ServiceProvider::class,
+        Dingo\Api\Provider\LaravelServiceProvider::class,
+		// Overtrue\LaravelPinyin\ServiceProvider::class,
         
 		// DEV
         Kitbs\Viewgen\ViewGeneratorServiceProvider::class,
@@ -209,10 +210,14 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
+        'Str'       => Illuminate\Support\Str::class,
         
-		'Pinyin'    => Overtrue\Pinyin\Pinyin::class,
+		// 'Pinyin'    => Overtrue\Pinyin\Pinyin::class,
         'Form'      => Collective\Html\FormFacade::class,
         'Html'      => Collective\Html\HtmlFacade::class,
+        
+        'API'       => Dingo\Api\Facade\API::class,
+        'APIRoute'  => Dingo\Api\Facade\Route::class,
 
     ],
 

@@ -11,4 +11,5 @@ return array (
   'translations' => 'Vertalings',
   'users' => 'Gebruikers',
   'configuration' => 'Opset',
+  'avatar' => 'Profiel foto',
 );

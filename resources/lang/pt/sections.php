@@ -12,4 +12,5 @@ return array (
   'configuration' => 'Configuração',
   'bottle_sizes' => 'Tamanhos de garrafa',
   'avatar' => 'Foto do perfil',
+  'geometries' => 'Geometrias',
 );

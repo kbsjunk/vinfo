@@ -11,4 +11,5 @@ return array (
   'settings' => 'Настройки',
   'translations' => 'Переводы',
   'users' => 'Пользователи',
+  'geometries' => 'Геометрия',
 );
