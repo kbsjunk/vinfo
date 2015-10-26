@@ -15,7 +15,8 @@
         "dimsav/laravel-translatable": "^5.3",
         "baum/baum": "^1.1",
         "overtrue/laravel-pinyin": "^1.2",
-        "dingo/api": "^0.10.0"
+        "dingo/api": "^0.10.0",
+        "mcordingley/linearalgebra": "^0.9.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
