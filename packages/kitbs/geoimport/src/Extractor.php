@@ -1,21 +1,20 @@
 <?php
 
-namespace Kitbs\Geoimport\WKT;
+namespace Kitbs\Geoimport;
 
-use GeoIO\Extractor;
+use GeoIO\Extractor as BaseExtractor;
 use GeoIO\Dimension;
 
-use Kitbs\Geoimport\Geometry\Geometry;
-use Kitbs\Geoimport\Geometry\GeometryCollection;
-use Kitbs\Geoimport\Geometry\Point;
-use Kitbs\Geoimport\Geometry\Polygon;
-use Kitbs\Geoimport\Geometry\LineString;
-use Kitbs\Geoimport\Geometry\LinearRing;
-use Kitbs\Geoimport\Geometry\MultiLineString;
-use Kitbs\Geoimport\Geometry\MultiPoint;
-use Kitbs\Geoimport\Geometry\MultiPolygon;
+use GeoJson\Geometry\GeometryCollection;
+use GeoJson\Geometry\LineString;
+use GeoJson\Geometry\LinearRing;
+use GeoJson\Geometry\MultiLineString;
+use GeoJson\Geometry\MultiPoint;
+use GeoJson\Geometry\MultiPolygon;
+use GeoJson\Geometry\Point;
+use GeoJson\Geometry\Polygon;
 
-class Reader implements Extractor
+class Extractor implements BaseExtractor
 {
     /**
      * @param $geometry
