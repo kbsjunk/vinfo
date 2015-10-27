@@ -6,9 +6,10 @@ use GEOSGeometry;
 use GEOSWKTReader;
 use GEOSWKTWriter;
 
-use Kitbs\Geoimport\Generator;
-use GeoIO\WKT\Parser\Parser;
-
+use Kitbs\Geoimport\Generator as GeoJsonGenerator;
+use Kitbs\Geoimport\Extractor as GeoJsonExtractor;
+use GeoIO\WKT\Parser\Parser as WKTParser;
+use GeoIO\WKT\Generator\Generator as WKTGenerator;
 
 use mcordingley\LinearAlgebra\Matrix;
 use GeoJson\Geometry\Geometry;
@@ -17,16 +18,20 @@ class Inspector {
 
 	protected $reader;
 	protected $writer;
+	protected $parser;
+	protected $generator;
 	protected $matrix;
 
 	public function __construct()
 	{
 		$this->reader = new GEOSWKTReader();
 		$this->writer = new GEOSWKTWriter();
-		$factory = new Kitbs\Geoimport\Generator();
-		$this->parser = new GeoIO\WKT\Parser\Parser($factory); 
-
-		$geo = $parser->parse($wkt);
+		
+		$factory = new GeoJsonGenerator();
+		$this->parser = new WKTParser($factory);
+		
+		$extractor = new Extractor();
+		$this->generator = new WKTGenerator($extractor);
 	}
 	
 	public function centroid(Geometry $geometry)
@@ -82,6 +87,8 @@ class Inspector {
 	public function toWkt(Geometry $geometry)
 	{
 
+
+			return $generator->generate($geometry);
 	}
 
 	public function toWkb(Geometry $geometry)
@@ -115,7 +122,7 @@ class Inspector {
 
 	public function translate(Geometry $geometry, $x = 0, $y = 0)
 	{
-		$center = $this->centroid($geometry);
+
 	}
 
 	public function dilate(Geometry $geometry, $x = 0, $y = 0)
@@ -151,7 +158,7 @@ class Inspector {
 
 	private function zeroPosition(Geometry $geometry)
 	{
-		
+		$this->center = $this->centroid($geometry);
 	}
 
 	private function resetPosition(Geometry $geometry)
