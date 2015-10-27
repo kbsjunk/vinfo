@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0a4e9e19930320aa1b217f7f55995ea1",
-    "content-hash": "1726dd9a806cc47c11c77fb4c17fdf4d",
+    "hash": "41114e393664f73687077d6be9a2ed20",
+    "content-hash": "9b9c237c8d5585226ad4bb259dd80b75",
     "packages": [
         {
             "name": "baum/baum",
@@ -1177,53 +1177,6 @@
                 "rest"
             ],
             "time": "2015-03-19 15:16:43"
-        },
-        {
-            "name": "mcordingley/linearalgebra",
-            "version": "0.9.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mcordingley/LinearAlgebra.git",
-                "reference": "67b65377c34ee765afb84fd71cbb3f5a353d2c8c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mcordingley/LinearAlgebra/zipball/67b65377c34ee765afb84fd71cbb3f5a353d2c8c",
-                "reference": "67b65377c34ee765afb84fd71cbb3f5a353d2c8c",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "mcordingley\\LinearAlgebra": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "James Thomin",
-                    "email": "james.thomin@gmail.com"
-                },
-                {
-                    "name": "Michael Cordingley",
-                    "email": "Michael.Cordingley@gmail.com"
-                }
-            ],
-            "description": "Matrix math for PHP.",
-            "keywords": [
-                "linear-algebra",
-                "matrix"
-            ],
-            "time": "2015-03-16 20:37:25"
         },
         {
             "name": "moltin/currency",
