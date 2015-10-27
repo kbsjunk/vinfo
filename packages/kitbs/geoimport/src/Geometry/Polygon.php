@@ -5,9 +5,9 @@ namespace Kitbs\Geoimport\Geometry;
 use Illuminate\Contracts\Support\Jsonable;
 use Illuminate\Contracts\Support\Arrayable;
 
-use GeoJson\Geometry\Point as BasePoint;
+use GeoJson\Geometry\Polygon as BasePolygon;
 
-class Point extends BasePoint implements GeometryInterface, Jsonable, Arrayable {
+class Polygon extends BasePolygon implements GeometryInterface, Jsonable, Arrayable {
 
 	use GeometryOutputTrait;
 
@@ -28,7 +28,6 @@ class Point extends BasePoint implements GeometryInterface, Jsonable, Arrayable 
 
 	public function convexHull()
 	{
-		dd([$this->getCoordinates(), $this->getCoordinates(), $this->getCoordinates(), $this->getCoordinates()]);
 		return new Polygon([$this->getCoordinates(), $this->getCoordinates(), $this->getCoordinates(), $this->getCoordinates()]);
 	}
 

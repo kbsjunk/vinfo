@@ -14,7 +14,9 @@ interface GeometryInterface {
 
 	public function simplify();
 
-	public function distanceTo(Geometry $geometry);
+	public function distanceTo(Geometry $geometry, $unit = 'km');
+
+	public function hausdorffDistanceTo(Geometry $geometry, $unit = 'km');
 
 	public function union(Geometry $geometry);
 

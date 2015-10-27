@@ -6,6 +6,8 @@ Route::get('/test/geom', function() {
 
 	$geom = new Kitbs\Geoimport\Geometry\Point([1,2]);
 
+	dd($geom->convexHull());
+
 });
 
 
