@@ -1,42 +1,7 @@
 <?php
 
-<<<<<<< HEAD
 use \mcordingley\LinearAlgebra\Matrix;
 
-Route::get('/test/geom', function() {
-
-	$geom = new Kitbs\Geoimport\Geometry\Point([1,2]);
-
-	dd($geom->convexHull());
-
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
->>>>>>> parent of 6e4c829... geometry matrix transforms
 Route::get('/test/geos', function() {
 
       $reader = new GEOSWKTReader();
