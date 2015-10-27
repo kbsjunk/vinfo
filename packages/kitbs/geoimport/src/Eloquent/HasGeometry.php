@@ -1,21 +1,21 @@
 <?php
 
-namespace Kitbs\Geoimport;
+namespace Kitbs\Geoimport\Eloquent;
 
 use Kitbs\Geoimport\Generator;
 use Kitbs\Geoimport\Extractor;
 use Kitbs\Geoimport\Collection;
 
 use GeoJson\GeoJson;
-use GeoJson\Geometry\Geometry;
-use GeoJson\Geometry\GeometryCollection;
-use GeoJson\Feature\Feature;
-use GeoJson\Feature\FeatureCollection;
+use Kitbs\Geoimport\Geometry\Geometry;
+use Kitbs\Geoimport\Geometry\GeometryCollection;
+use Kitbs\Geoimport\Feature\Feature;
+use Kitbs\Geoimport\Feature\FeatureCollection;
 
 use GeoIO\WKT\Parser\Parser as WKTParser;
 use GeoIO\WKT\Generator\Generator as WKTGenerator;
 
-use DB;
+use Illuminate\Support\Facades\DB;
 use Exception;
 
 // https://github.com/mjaschen/phpgeo

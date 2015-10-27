@@ -1,6 +1,6 @@
 <?php
 
-namespace Kitbs\Geoimport;
+namespace Kitbs\Geoimport\Eloquent;
 
 use Illuminate\Database\Eloquent\Collection as BaseCollection;
 use GeoJson\Feature\FeatureCollection;

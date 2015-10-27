@@ -2,6 +2,36 @@
 
 use \mcordingley\LinearAlgebra\Matrix;
 
+Route::get('/test/geom', function() {
+
+	$geom = new Kitbs\Geoimport\Geometry\Point([1,2]);
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Route::get('/test/geos', function() {
 
 	$reader = new GEOSWKTReader();
