@@ -20,7 +20,7 @@
 				@foreach($regions as $i => $region)
 				@if ($i == 0 && $region->depth > 0)
 				@foreach ($region->ancestors()->with('translations', 'country', 'regionType')->get() as $ancestor)
-				<tr data-lft="{{ $ancestor->lft }}" data-rgt="{{ $ancestor->rgt }}" data-root="{{ $ancestor->country_id }}" class="collapse in active">
+				<tr data-lft="{{ $ancestor->lft }}" data-rgt="{{ $ancestor->rgt }}" data-root="{{ $ancestor->country_id }}" class="collapse in text-muted">
 					<td>
 						<span style="margin-left:{{ $ancestor->depth * 20 }}px;margin-right:5px;">
 							@if (!$ancestor->isLeaf())
@@ -29,11 +29,12 @@
 							<span style="margin-left:20px;"></span>
 							@endif
 						</span>
+						{{ $ancestor->name }}
 						@if ($ancestor->shortcut_id)
-						<a href="{{ action('RegionsController@edit', $ancestor->id) }}">{{ $ancestor->name }}</a> ({{ trans('tree.continued') }})
-						<a href="{{ action('RegionsController@edit', $ancestor->shortcut_id) }}" class="btn btn-xs btn-link"><i class="fa fa-share"></i></a>
+						{{-- <a href="{{ action('RegionsController@edit', $ancestor->id) }}">{{ $ancestor->name }}</a> ({{ trans('tree.continued') }}) --}}
+						{{-- <a href="{{ action('RegionsController@edit', $ancestor->shortcut_id) }}" class="btn btn-xs btn-link"><i class="fa fa-share"></i></a> --}}
 						@else
-						<a href="{{ action('RegionsController@edit', $ancestor->id) }}" class="{{ $ancestor->is_structural ? 'structural' : null}} {{ $ancestor->region_type_id == 1 ? 'country' : null}}">{{ $ancestor->name }}</a>
+						{{-- <a href="{{ action('RegionsController@edit', $ancestor->id) }}" class="{{ $ancestor->is_structural ? 'structural' : null}} {{ $ancestor->region_type_id == 1 ? 'country' : null}}">{{ $ancestor->name }}</a> --}}
 						@endif
 					</td>
 					@if (App::getLocale() != 'en')
