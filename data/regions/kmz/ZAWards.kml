@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>ZAWards.kml</name>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<color>ffff00ff</color>
+			<scale>0.72</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/placemark_square_highlight.png</href>
+			</Icon>
+		</IconStyle>
+		<ListStyle>
+		</ListStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<color>ffff00ff</color>
+			<scale>0.6</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/placemark_square.png</href>
+			</Icon>
+		</IconStyle>
+		<ListStyle>
+		</ListStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Folder>
+		<name>Wards</name>
+		<Placemark id="placemark32">
+			<name>Rietrivier VS</name>
+			<description>Rietrivier FS</description>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>25.43881503391316,-29.00567970894262,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark30">
+			<name>Hartswater</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>24.76124673686261,-27.78496809490672,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark31">
+			<name>Benede Oranje</name>
+			<description>Lower Orange</description>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>21.41495419230585,-28.43929513848817,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark69">
+			<name>Polkadraai Heuwels</name>
+			<description>Polkadraai Hills</description>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>18.72368983366309,-33.93556240872007,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark84">
+			<name>Bo Hemel-en-Aarde Vallei</name>
+			<description>Upper Hemel-en-Aarde Valley</description>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>19.25692806182916,-34.34031496257146,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark83">
+			<name>Hemel-en-Aarde Vallei</name>
+			<description>Hemel-en-Aarde Valley</description>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>19.22400605558635,-34.38612119502883,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark45">
+			<name>Scherpenheuvel</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>19.57703557860782,-33.7825444095324,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark80">
+			<name>Kleinrivier</name>
+			<description>Klein River</description>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>19.62854691047368,-34.39227399570496,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark90">
+			<name>Prins Albert Vallei</name>
+			<description>Prince Albert Valley</description>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>22.11438670466152,-33.31547525000688,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark91">
+			<name>Swartberg</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>22.39626359232858,-33.40588461580526,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark88">
+			<name>Herbertsdale</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>21.64758922365114,-34.00744100571752,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark38">
+			<name>Klaasvoogds</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>19.97821180886509,-33.80042833494729,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark34">
+			<name>Bonnievale</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>20.08975931277301,-33.95806183618437,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark72">
+			<name>Riebeekberg</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>18.88769882591347,-33.37540958316274,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark36">
+			<name>Eilandia</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>19.66472942453496,-33.77637705427026,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark70">
+			<name>Simonsberg-Stellenbosch</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>18.89132420719952,-33.88728385803193,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark40">
+			<name>McGregor</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>19.81524687742344,-33.99904507391314,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark62">
+			<name>Durbanville</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>18.59499764900056,-33.81957321430604,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark37">
+			<name>Hoopsrivier</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>19.92163569347153,-33.76874905702431,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark87">
+			<name>Ceres</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>19.38596353624487,-33.36307864660187,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark46">
+			<name>Goudini</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>19.31351962493311,-33.68765349553969,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark58">
+			<name>Franschhoekvallei</name>
+			<description>Franschhoek Valley</description>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>19.07908733288427,-33.90121025160498,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark65">
+			<name>Bottelary</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>18.76404190358435,-33.8891549190096,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark57">
+			<name>Groenekloof</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>18.46096195506815,-33.43668243982172,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark61">
+			<name>Wellington</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>19.01728784147993,-33.59498961950688,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark78">
+			<name>Elim</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>19.8094352176672,-34.61405288543075,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark67">
+			<name>Jonkershoek Vallei</name>
+			<description>Jonkershoek Valley</description>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>18.90795165363821,-33.9363562790422,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark63">
+			<name>Philadelphia</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>18.57947265106406,-33.71075368413969,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark71">
+			<name>Malmesbury</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>18.67724053195161,-33.41607285408082,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark55">
+			<name>Constantia</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>18.42058157327717,-34.01856864281479,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark79">
+			<name>Elgin</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>19.04544613212847,-34.22569501178968,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark66">
+			<name>Devon Valley</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>18.81110113194731,-33.91778534526139,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark68">
+			<name>Papegaaiberg</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>18.88028840094799,-33.89047430443748,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark47">
+			<name>Slanghoek</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>19.20662726890248,-33.61391389378311,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark60">
+			<name>Voor Paardeberg</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>18.85646683465586,-33.61556465568637,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark53">
+			<name>Outeniqua</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>22.30557183395357,-33.89684271617006,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Ruiterbosch!</name>
+			<LookAt>
+				<longitude>21.7841933793717</longitude>
+				<latitude>-33.29506645372445</latitude>
+				<altitude>0</altitude>
+				<range>509941.34926202</range>
+				<tilt>0</tilt>
+				<heading>-0.5328603093124015</heading>
+				<altitudeMode>relativeToGround</altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>21.96796934633677,-33.98925179382661,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark64">
+			<name>Banghoek</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>18.93609001924539,-33.91207791352115,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark54">
+			<name>Bo-Langkloof</name>
+			<description>Upper Langkloof</description>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>22.57467430426477,-33.85177622401005,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark41">
+			<name>Vinkrivier</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>19.75666726649898,-33.74692996770016,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark73">
+			<name>Piekenierskloof</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>18.88292977121098,-32.53819217867717,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark74">
+			<name>Bamboesbaai</name>
+			<description>Bamboes Bay</description>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>18.27118914632999,-31.88188600676941,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark86">
+			<name>Cederberg</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>19.31649373179173,-32.55658474335666,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark76">
+			<name>Spruitdrift</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>18.49972696835025,-31.76599773769622,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark77">
+			<name>Vredendal</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>18.4415150612243,-31.70960555024739,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark75">
+			<name>Koekenaap</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>18.23579293737186,-31.60814666867906,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark44">
+			<name>Nuy</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>19.61561965991619,-33.67689207758441,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark39">
+			<name>Le Chasseur</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>19.71601078048267,-33.86728666010471,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark42">
+			<name>Aan-de-Doorns</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>19.49537111375942,-33.69664747219177,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark49">
+			<name>Stormsvlei</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>20.01073041343465,-34.09964680099289,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark35">
+			<name>Boesmansrivier</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>19.98044819752149,-34.01030104838497,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark50">
+			<name>Montagu</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>20.13698044961256,-33.80093331887234,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark33">
+			<name>Agterkliphoogte</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>19.63177432863744,-33.92453233412108,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark52">
+			<name>Tradouw Hoogland</name>
+			<description>Tradouw Highlands</description>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>20.64097928923465,-33.92196906064688,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark48">
+			<name>Buffeljags</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>20.51359834887868,-34.05281535692414,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="placemark51">
+			<name>Tradouw</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>20.57788391949723,-33.93240473737612,0</coordinates>
+			</Point>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

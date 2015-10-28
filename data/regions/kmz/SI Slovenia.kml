@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>SI Slovenia.kml</name>
+	<Folder>
+		<name>Slovenia</name>
+		<visibility>0</visibility>
+		<open>1</open>
+		<Placemark>
+			<name>Primorska</name>
+			<visibility>0</visibility>
+			<description>Vinorodna dežela</description>
+			<LookAt>
+				<longitude>14.85485769456482</longitude>
+				<latitude>45.92202731549163</latitude>
+				<altitude>0</altitude>
+				<range>196365.8138038299</range>
+				<tilt>0</tilt>
+				<heading>-0.2266934640854237</heading>
+				<altitudeMode>relativeToGround</altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>13.77544121542311,45.85129402511839,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Podravje</name>
+			<visibility>0</visibility>
+			<description>Vinorodna dežela</description>
+			<LookAt>
+				<longitude>14.85485772784782</longitude>
+				<latitude>45.92202735938118</latitude>
+				<altitude>0</altitude>
+				<range>196405.1743704714</range>
+				<tilt>0</tilt>
+				<heading>2.391027304694408e-008</heading>
+				<altitudeMode>relativeToGround</altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>15.97829180120868,46.55041240280919,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Posavje</name>
+			<visibility>0</visibility>
+			<description>Vinorodna dežela</description>
+			<LookAt>
+				<longitude>14.85485772784782</longitude>
+				<latitude>45.92202735938118</latitude>
+				<altitude>0</altitude>
+				<range>196405.1743704714</range>
+				<tilt>0</tilt>
+				<heading>2.391027304694408e-008</heading>
+				<altitudeMode>relativeToGround</altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>15.36921427719144,45.98738710301534,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Kras</name>
+			<visibility>0</visibility>
+			<description>Vinorodni okoliš</description>
+			<LookAt>
+				<longitude>14.85485775621475</longitude>
+				<latitude>45.92202740328743</latitude>
+				<altitude>0</altitude>
+				<range>317522.739232294</range>
+				<tilt>0</tilt>
+				<heading>4.42888740783645e-008</heading>
+				<altitudeMode>relativeToGround</altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>13.77615395327617,45.77708920959438,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Slovenska Istra</name>
+			<visibility>0</visibility>
+			<description>Vinorodni okoliš</description>
+			<LookAt>
+				<longitude>14.85485775621475</longitude>
+				<latitude>45.92202740328743</latitude>
+				<altitude>0</altitude>
+				<range>317522.739232294</range>
+				<tilt>0</tilt>
+				<heading>4.42888740783645e-008</heading>
+				<altitudeMode>relativeToGround</altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>13.78018088633562,45.49686740920088,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Vipavska dolina</name>
+			<visibility>0</visibility>
+			<description>Vinorodni okoliš</description>
+			<LookAt>
+				<longitude>14.85485775621475</longitude>
+				<latitude>45.92202740328743</latitude>
+				<altitude>0</altitude>
+				<range>317522.739232294</range>
+				<tilt>0</tilt>
+				<heading>4.42888740783645e-008</heading>
+				<altitudeMode>relativeToGround</altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>13.77494343381876,45.87677742819531,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Goriška Brda</name>
+			<visibility>0</visibility>
+			<description>Vinorodni okoliš</description>
+			<LookAt>
+				<longitude>14.85485775621475</longitude>
+				<latitude>45.92202740328743</latitude>
+				<altitude>0</altitude>
+				<range>317522.739232294</range>
+				<tilt>0</tilt>
+				<heading>4.42888740783645e-008</heading>
+				<altitudeMode>relativeToGround</altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>13.53983745346334,45.99651539718385,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Prekmurje</name>
+			<visibility>0</visibility>
+			<description>Vinorodni okoliš</description>
+			<LookAt>
+				<longitude>14.85485775621475</longitude>
+				<latitude>45.92202740328743</latitude>
+				<altitude>0</altitude>
+				<range>317522.739232294</range>
+				<tilt>0</tilt>
+				<heading>4.42888740783645e-008</heading>
+				<altitudeMode>relativeToGround</altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>16.15425778467096,46.77403391219613,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Bizeljsko Sremič</name>
+			<visibility>0</visibility>
+			<description>Vinorodni okoliš</description>
+			<LookAt>
+				<longitude>14.85485775621475</longitude>
+				<latitude>45.92202740328743</latitude>
+				<altitude>0</altitude>
+				<range>317522.739232294</range>
+				<tilt>0</tilt>
+				<heading>4.42888740783645e-008</heading>
+				<altitudeMode>relativeToGround</altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>14.85485775621475,45.92202740328744,0</coordinates>
+			</Point>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>
