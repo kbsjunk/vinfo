@@ -182,6 +182,25 @@ h4 small .badge {
 	border-bottom: 4px solid \9;
 }
 
+.collapsed .caret {
+	content: "";
+	border-top: 0;
+	border-bottom: 4px dashed;
+	border-bottom: 4px solid \9;
+}
+
+tr.structural {
+	opacity: 0.7;
+}
+
+a.structural {
+	font-style: italic;
+}
+
+a.country {
+	font-weight: bold;
+}
+
 .table.table-form tbody > tr > td {
 	border:none;
 	padding:0 5px;

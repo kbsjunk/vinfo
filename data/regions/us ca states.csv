@@ -1,0 +1,62 @@
+Country,Name,Code,Type,Abbrev
+US,Alabama,AL,State,Ala.
+US,Alaska,AK,State,Alaska
+US,Arizona,AZ,State,Ariz.
+US,Arkansas,AR,State,Ark.
+US,California,CA,State,Calif.
+US,Colorado,CO,State,Colo.
+US,Connecticut,CT,State,Conn.
+US,Delaware,DE,State,Del.
+US,Florida,FL,State,Fla.
+US,Georgia,GA,State,Ga.
+US,Hawaii,HI,State,Hawaii
+US,Idaho,ID,State,Idaho
+US,Illinois,IL,State,Ill.
+US,Indiana,IN,State,Ind.
+US,Iowa,IA,State,Iowa
+US,Kansas,KS,State,Kan.
+US,Kentucky,KY,State,Ky.
+US,Louisiana,LA,State,La.
+US,Maine,ME,State,Maine
+US,Maryland,MD,State,Md.
+US,Massachusetts,MA,State,Mass.
+US,Michigan,MI,State,Mich.
+US,Minnesota,MN,State,Minn.
+US,Mississippi,MS,State,Miss.
+US,Missouri,MO,State,Mo.
+US,Montana,MT,State,Mont.
+US,Nebraska,NE,State,Nebr.
+US,Nevada,NV,State,Nev.
+US,New Hampshire,NH,State,N.H.
+US,New Jersey,NJ,State,N.J.
+US,New Mexico,NM,State,N.M.
+US,New York,NY,State,N.Y.
+US,North Carolina,NC,State,N.C.
+US,North Dakota,ND,State,N.D.
+US,Ohio,OH,State,Ohio
+US,Oklahoma,OK,State,Okla.
+US,Oregon,OR,State,Ore.
+US,Pennsylvania,PA,State,Pa.
+US,Rhode Island,RI,State,R.I.
+US,South Carolina,SC,State,S.C.
+US,South Dakota,SD,State,S.D.
+US,Tennessee,TN,State,Tenn.
+US,Texas,TX,State,Texas
+US,Utah,UT,State,Utah
+US,Vermont,VT,State,Vt.
+US,Virginia,VA,State,Va.
+US,Washington,WA,State,Wash.
+US,West Virginia,WV,State,W.Va.
+US,Wisconsin,WI,State,Wis.
+US,Wyoming,WY,State,Wyo.
+US,Washington DC,DC,State,
+CA,Alberta,AB,Province,
+CA,British Columbia,BC,Province,
+CA,Manitoba,MB,Province,
+CA,New Brunswick,NB,Province,
+CA,Newfoundland and Labrador,NL,Province,
+CA,Nova Scotia,NS,Province,
+CA,Ontario,ON,Province,
+CA,Prince Edward Island,PE,Province,
+CA,Quebec,QC,Province,
+CA,Saskatchewan,SK,Province,

@@ -8,6 +8,9 @@ class RegionTypesTableSeeder extends Seeder {
 
 	public function run()
 	{
+
+		DB::table('region_types')->delete();
+
 		$regions = [
 		1 => [
 		'en' => 'Country',
@@ -38,6 +41,9 @@ class RegionTypesTableSeeder extends Seeder {
 		],
 		10 => [
 		'en' => 'Area',
+		],
+		11 => [
+		'en' => 'American Viticultural Area',
 		],
 		];
 

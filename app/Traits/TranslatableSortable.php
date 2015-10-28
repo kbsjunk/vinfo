@@ -18,6 +18,7 @@ trait TranslatableSortable
   public function getNameEnAttribute()
   {
     return $this->translate('en')->name;
+    // return $this->translate('en')->name !== $this->name ? $this->translate('en')->name : null;
   }
 
   public function scopeWithTranslations(Builder $query)

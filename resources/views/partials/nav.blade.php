@@ -40,6 +40,9 @@
           {{ trans('sections.configuration') }} <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
+            <li><a href="{{ route('admin.regions.index') }}">{{ trans('sections.regions') }}</a></li>
+            <li><a href="{{ route('admin.geometries.index') }}">{{ trans('sections.geometries') }}</a></li>
+            <li role="separator" class="divider"></li>
             <li><a href="{{ route('admin.countries.index') }}">{{ trans('sections.countries') }}</a></li>
             <li><a href="{{ route('admin.currencies.index') }}">{{ trans('sections.currencies') }}</a></li>
             <li><a href="{{ route('admin.languages.index') }}">{{ trans('sections.languages') }}</a></li>
