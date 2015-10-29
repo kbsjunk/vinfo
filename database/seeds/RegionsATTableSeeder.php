@@ -11,6 +11,7 @@ class RegionsATTableSeeder extends RegionsTableSeeder
      */
     public function run()
     {
+    	die;
 
 		$country = Region::whereTranslation('name', 'Austria', 'en')->first();
 		$regions = [];

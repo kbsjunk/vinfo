@@ -9,7 +9,7 @@ class RegionTypesTableSeeder extends Seeder {
 	public function run()
 	{
 
-		DB::table('region_types')->delete();
+		// DB::table('region_types')->delete();
 
 		$regions = [
 		1 => [
@@ -45,6 +45,15 @@ class RegionTypesTableSeeder extends Seeder {
 		11 => [
 		'en' => 'American Viticultural Area',
 		],
+		12 => [
+		'en' => 'Appellation',
+		],
+		13 => [
+		'en' => 'Collective Sub-Appellation',
+		],
+		14 => [
+		'en' => 'Sub-Appellation',
+		],
 		];
 
 		foreach ($regions as $id => $region) {
@@ -52,7 +61,7 @@ class RegionTypesTableSeeder extends Seeder {
 				'id' => $id,
 				'en' => ['name' => $region['en']],
 			];
-			RegionType::create($region);
+			RegionType::updateOrCreate(['id' => $id], $region);
 		}
 	}
 

@@ -7,8 +7,6 @@ class RegionsTableSeeder extends Seeder {
 
 		DB::table('regions')->delete();
 
-		
-
 		$depths = [1, 2, 6, 7, 8];
 
 		$country = new Region(['name' => 'Australia', 'region_type_id' => array_shift($depths)]);
