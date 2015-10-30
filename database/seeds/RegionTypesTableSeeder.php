@@ -14,15 +14,23 @@ class RegionTypesTableSeeder extends Seeder {
 		$regions = [
 		1 => [
 		'en' => 'Country',
+		'de' => 'Land',
+		'fr' => 'Pays',
 		],
 		2 => [
 		'en' => 'State',
+		'de' => 'Bundesland',
+		'fr' => 'État',
+		'zh' => '州',
 		],
 		3 => [
 		'en' => 'Province',
+		'de' => 'Provinz',
 		],
 		4 => [
 		'en' => 'Territory',
+		'de' => 'Territorium',
+		'fr' => 'Territoire',
 		],
 		5 => [
 		'en' => 'Superzone',
@@ -32,18 +40,22 @@ class RegionTypesTableSeeder extends Seeder {
 		],
 		7 => [
 		'en' => 'Region',
+		'de' => 'Gebiet',
 		],
 		8 => [
 		'en' => 'Subregion',
 		],
 		9 => [
 		'en' => 'District',
+		'de' => 'Bereich',
 		],
 		10 => [
 		'en' => 'Area',
 		],
 		11 => [
 		'en' => 'American Viticultural Area',
+		'es' => 'Área Vitivinícola Americana',
+		'fr' => 'Région viticole américaine',
 		],
 		12 => [
 		'en' => 'Appellation',
@@ -54,13 +66,26 @@ class RegionTypesTableSeeder extends Seeder {
 		14 => [
 		'en' => 'Sub-Appellation',
 		],
+		15 => [
+		'en' => 'Districtus Austriae Controllatus',
+		],
+/* 		16 => [
+		'de' => 'Großlage',
+		],
+		17 => [
+		'de' => 'Einzellage',
+		], */
 		];
 
-		foreach ($regions as $id => $region) {
+		foreach ($regions as $id => $locales) {
 			$region = [
 				'id' => $id,
-				'en' => ['name' => $region['en']],
 			];
+			
+			foreach ($locales as $locale => $name) {
+				$region[$locale] = ['name' => $name];
+			}
+			
 			RegionType::updateOrCreate(['id' => $id], $region);
 		}
 	}

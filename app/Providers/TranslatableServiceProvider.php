@@ -11,6 +11,8 @@ use Vinfo\RegionTypeTranslation;
 use Vinfo\RegionTranslation;
 use Config;
 
+use Punic\Territory;
+
 class TranslatableServiceProvider extends ServiceProvider
 {
     /**
@@ -25,6 +27,13 @@ class TranslatableServiceProvider extends ServiceProvider
 		BottleSizeTranslation::saved(function($translation) { $this->preventEmptyTranslation($translation); });
 		ConsumedReasonTranslation::saved(function($translation) { $this->preventEmptyTranslation($translation); });
 		RegionTypeTranslation::saved(function($translation) { $this->preventEmptyTranslation($translation); });
+		RegionTranslation::saving(function($translation) { 
+			$locale = str_replace('-', '_', $translation->locale);
+			$country = $translation->region->country->code;
+			$languages = Territory::getLanguages($country, 'of', true);
+			$languages[] = $locale.'_'.$country;
+			$translation->is_native = in_array($locale, $languages);
+		});
 		RegionTranslation::saved(function($translation) { $this->preventEmptyTranslation($translation); });
     }
 		

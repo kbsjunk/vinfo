@@ -3,6 +3,26 @@
 use \mcordingley\LinearAlgebra\Matrix;
 use Vinfo\Region;
 
+Route::get('/test/region-names', function() {
+	die;
+	$regions = Region::whereTranslation('name', 'Wienn')->get();
+	
+	foreach ($regions as $region) {
+		$names = [
+			'en' => ['name' => 'Vienna'],
+			'de' => ['name' => 'Wien'],
+		];
+		$region->fill($names);
+		$region->save();
+	}
+	
+	echo '<pre>';
+	echo $regions->toJson(JSON_PRETTY_PRINT);
+	echo '</pre>';
+	
+});
+
+
 Route::get('/test/children', function() {
 
 

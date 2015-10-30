@@ -13,6 +13,8 @@ class RegionsAUTableSeeder extends RegionsTableSeeder
     {
 
 		$country = Region::whereTranslation('name', 'Australia', 'en')->first();
+		DB::table('regions')->where('country_id', $country->country_id)->where('id', '!=', $country->id)->delete();
+		
 		$regions = [];
 		$depths  = [2, 6, 7, 8];
 
@@ -136,6 +138,8 @@ class RegionsAUTableSeeder extends RegionsTableSeeder
 		foreach ($regions as $region => $children) {
 			$this->makeChild($country, $region, $children, $depths, $country->country_id);
 		}
+		
+		$existing = Region::whereTranslationIn('name', ['Australian Capital Territory', 'Northern Territory'], 'en')->update(['region_type_id' => 4]);
 
     }
 

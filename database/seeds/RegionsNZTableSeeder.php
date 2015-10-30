@@ -13,6 +13,8 @@ class RegionsNZTableSeeder extends RegionsTableSeeder
     {
 
 		$country = Region::whereTranslation('name', 'New Zealand', 'en')->first();
+		DB::table('regions')->where('country_id', $country->country_id)->where('id', '!=', $country->id)->delete();
+		
 		$regions = [];
 		$depths  = [7, 8];
 
@@ -26,8 +28,8 @@ class RegionsNZTableSeeder extends RegionsTableSeeder
 		$regions["Waikato"]                                         = [];
 		$regions["Bay of Plenty"]                                   = [];
 		$regions["Gisborne"]                                        = [];
-		$regions["Hawke's Bay"]                                     = [];
-		$regions["Hawke's Bay"]["Gimblett Gravels"]                 = [];
+		$regions["Hawke’s Bay"]                                     = [];
+		$regions["Hawke’s Bay"]["Gimblett Gravels"]                 = [];
 		$regions["Wairarapa"]                                       = [];
 		$regions["Wairarapa"]["Carterton"]                          = [];
 		$regions["Wairarapa"]["Masterton"]                          = [];

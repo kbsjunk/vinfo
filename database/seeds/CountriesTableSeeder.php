@@ -58,9 +58,9 @@ class CountriesTableSeeder extends Seeder
 				}
             }
 			
-			if (isset($country['zh']['name'])) {
+/* 			if (isset($country['zh']['name'])) {
 				$country['zh-Latn-pinyin']['name'] = Pinyin::trans($country['zh']['name']);
-			}
+			} */
 
             $country = Country::create($country);
         }

@@ -14,7 +14,7 @@
 Route::get('/', 'HomeController@index');
 
 if (config('app.debug')) {
-	include dirname(__FILE__).'/../../.wk/testroutes.php';
+	require dirname(__FILE__).'/../../.wk/testroutes.php';
 }
 
 require 'api-routes.php';

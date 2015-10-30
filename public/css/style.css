@@ -77,6 +77,10 @@ input.input-default {
 	border-top: none;
 }
 
+.table tr.folded td {
+	border-bottom: 3px solid #ddd;
+}
+
 .panel-default>.panel-heading, .panel-heading {
 	background: none;
 }

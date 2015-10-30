@@ -173,7 +173,7 @@ class RegionsUSTableSeeder extends RegionsTableSeeder
     	$regions['Maryland']['Catoctin']                                                            = [];
     	$regions['Maryland']['Cumberland Valley']                                                   = [];
     	$regions['Maryland']['Linganore']                                                           = [];
-    	$regions['Massachusetts']['Martha\'s Vineyard']                                              = [];
+    	$regions['Massachusetts']['Martha’s Vineyard']                                              = [];
     	$regions['Massachusetts']['Southeastern New England']                                       = '_SHORTCUT';
     	$regions['Michigan']['Fennville']                                                           = [];
     	$regions['Michigan']['Lake Michigan Shore']                                                 = [];
@@ -260,7 +260,7 @@ class RegionsUSTableSeeder extends RegionsTableSeeder
     	$regions['Virginia']['Northern Neck George Washington Birthplace']                          = [];
     	$regions['Virginia']['Rocky Knob']                                                          = [];
     	$regions['Virginia']['Shenandoah Valley']                                                   = [];
-    	$regions['Virginia']['Virginia\'s Eastern Shore']                                            = [];
+    	$regions['Virginia']['Virginia’s Eastern Shore']                                            = [];
     	$regions['Washington']['Ancient Lakes of Columbia Valley']                                  = [];
     	$regions['Washington']['Columbia Gorge']                                                    = '_SHORTCUT';
     	$regions['Washington']['Columbia Valley']                                                   = '_SHORTCUT';
@@ -274,7 +274,7 @@ class RegionsUSTableSeeder extends RegionsTableSeeder
     	$regions['Washington']['Wahluke Slope']                                                     = [];
     	$regions['Washington']['Walla Walla Valley']                                                = '_SHORTCUT';
     	$regions['Washington']['Yakima Valley']                                                     = [];
-    	$regions['Washington DC']                                                                   = [];
+    	$regions['Washington D.C.']                                                                   = [];
     	$regions['West Virginia']['Kanawha River Valley']                                           = [];
     	$regions['West Virginia']['Ohio River Valley']                                              = '_SHORTCUT';
     	$regions['West Virginia']['Shenandoah Valley']                                              = '_SHORTCUT';
@@ -287,14 +287,314 @@ class RegionsUSTableSeeder extends RegionsTableSeeder
     		$this->makeChild($country, $region, $children, $depths, $country->country_id);
     	}
 
-    	Region::whereTranslation('name', 'Central Valley', 'en')
+    	Region::whereTranslationIn('name', ['Central Valley', 'Klamath Mountains'], 'en')
 			->where('country_id', $country->country_id)
 			->update(['is_structural' => true, 'region_type_id' => 7]);
 
-    	Region::whereTranslation('name', 'Klamath Mountains', 'en')
-			->where('country_id', $country->country_id)
-			->update(['is_structural' => true, 'region_type_id' => 7]);
+		$names = [
+			'Alabama'        => [
+				'ru'             => 'Алабама',
+				'zh'             => '亚拉巴马',
+				'zh-Hant'        => '阿拉巴馬',
+			],
+			'Alaska'         => [
+				'ru'             => 'Аляска',
+				'zh'             => '阿拉斯加',
+				'zh-Hant'        => '阿拉斯加',
+			],
+			'Arizona'        => [
+				'ru'             => 'Аризона',
+				'zh'             => '亚利桑那',
+				'zh-Hant'        => '亞利桑那',
+			],
+			'Arkansas'       => [
+				'ru'             => 'Арканзас',
+				'zh'             => '阿肯色',
+				'zh-Hant'        => '阿肯色',
+			],
+			'California'     => [
+				'fr'             => 'Californie',
+				'ru'             => 'Калифорния',
+				'zh'             => '加利福尼亚',
+				'zh-Hant'        => '加利福尼亞',
+			],
+			'Colorado'       => [
+				'ru'             => 'Колорадо',
+				'zh'             => '科罗拉多',
+				'zh-Hant'        => '科羅拉多',
+			],
+			'Connecticut'    => [
+				'ru'             => 'Коннектикут',
+				'zh'             => '康涅狄格',
+				'zh-Hant'        => '康涅狄格',
+			],
+			'Delaware'       => [
+				'ru'             => 'Делавэр',
+				'zh'             => '特拉华',
+				'zh-Hant'        => '特拉華',
+			],
+			'Florida'        => [
+				'fr'             => 'Floride',
+				'ru'             => 'Флорида',
+				'zh'             => '佛罗里达',
+				'zh-Hant'        => '佛羅里達',
+			],
+			'Georgia'        => [
+				'fr'             => 'Géorgie',
+				'ru'             => 'Джорджия',
+				'zh'             => '佐治亚',
+				'zh-Hant'        => '佐治亞',
+			],
+			'Hawaii'         => [
+				'es'             => 'Hawái',
+				'fr'             => 'Hawaï',
+				'ru'             => 'Гавайи',
+				'zh'             => '夏威夷',
+				'zh-Hant'        => '夏威夷',
+			],
+			'Idaho'          => [
+				'ru'             => 'Айдахо',
+				'zh'             => '爱达荷',
+				'zh-Hant'        => '愛達荷',
+			],
+			'Illinois'       => [
+				'ru'             => 'Иллинойс',
+				'zh'             => '伊利诺伊',
+				'zh-Hant'        => '伊利諾伊',
+			],
+			'Indiana'        => [
+				'ru'             => 'Индиана',
+				'zh'             => '印第安纳',
+				'zh-Hant'        => '印第安納',
+			],
+			'Iowa'           => [
+				'ru'             => 'Айова',
+				'zh'             => '艾奥瓦',
+				'zh-Hant'        => '艾奧瓦',
+			],
+			'Kansas'         => [
+				'ru'             => 'Канзас',
+				'zh'             => '堪萨斯',
+				'zh-Hant'        => '堪薩斯',
+			],
+			'Kentucky'       => [
+				'ru'             => 'Кентукки',
+				'zh'             => '肯塔基',
+				'zh-Hant'        => '肯塔基',
+			],
+			'Louisiana'      => [
+				'es'             => 'Luisiana',
+				'fr'             => 'Louisiane',
+				'ru'             => 'Луизиана',
+				'zh'             => '路易斯安那',
+				'zh-Hant'        => '路易斯安那',
+			],
+			'Maine'          => [
+				'ru'             => 'Мэн',
+				'zh'             => '缅因',
+				'zh-Hant'        => '緬因',
+			],
+			'Maryland'       => [
+				'ru'             => 'Мэриленд',
+				'zh'             => '马里兰',
+				'zh-Hant'        => '馬里蘭',
+			],
+			'Massachusetts'  => [
+				'ru'             => 'Массачусетс',
+				'zh'             => '马萨诸塞',
+				'zh-Hant'        => '馬薩諸塞',
+			],
+			'Michigan'       => [
+				'es'             => 'Míchigan',
+				'ru'             => 'Мичиган',
+				'zh'             => '密西根',
+				'zh-Hant'        => '密西根',
+			],
+			'Minnesota'      => [
+				'ru'             => 'Миннесота',
+				'zh'             => '明尼苏达',
+				'zh-Hant'        => '明尼蘇達',
+			],
+			'Mississippi'    => [
+				'es'             => 'Misisipi',
+				'ru'             => 'Миссисипи',
+				'zh'             => '密西西比',
+				'zh-Hant'        => '密西西比',
+			],
+			'Missouri'       => [
+				'es'             => 'Misuri',
+				'ru'             => 'Миссури',
+				'zh'             => '密苏里',
+				'zh-Hant'        => '密蘇里',
+			],
+			'Montana'        => [
+				'ru'             => 'Монтана',
+				'zh'             => '蒙大拿',
+				'zh-Hant'        => '蒙大拿',
+			],
+			'Nebraska'       => [
+				'ru'             => 'Небраска',
+				'zh'             => '内布拉斯加',
+				'zh-Hant'        => '內布拉斯加',
+			],
+			'Nevada'         => [
+				'ru'             => 'Невада',
+				'zh'             => '内华达',
+				'zh-Hant'        => '內華達',
+			],
+			'New Hampshire'  => [
+				'es'             => 'Nuevo Hampshire',
+				'ru'             => 'Нью-Гэмпшир',
+				'zh'             => '新罕布什尔',
+				'zh-Hant'        => '新罕布什爾',
+			],
+			'New Jersey'     => [
+				'es'             => 'Nueva Jersey',
+				'ru'             => 'Нью-Джерси',
+				'zh'             => '新泽西',
+				'zh-Hant'        => '新澤西',
+			],
+			'New Mexico'     => [
+				'es'             => 'Nuevo México',
+				'fr'             => 'Nouveau-Mexique',
+				'ru'             => 'Нью-Мексико',
+				'zh'             => '新墨西哥',
+				'zh-Hant'        => '新墨西哥',
+			],
+			'New York'       => [
+				'es'             => 'Nueva York',
+				'ru'             => 'Нью-Йорк',
+				'zh'             => '纽约',
+				'zh-Hant'        => '紐約',
+			],
+			'North Carolina' => [
+				'es'             => 'Carolina del Norte',
+				'fr'             => 'Caroline du Nord',
+				'ru'             => 'Северная Каролина',
+				'zh'             => '北卡罗来纳',
+				'zh-Hant'        => '北卡羅來納',
+			],
+			'North Dakota'   => [
+				'es'             => 'Dakota del Norte',
+				'fr'             => 'Dakota du Nord',
+				'ru'             => 'Северная Дакота',
+				'zh'             => '北达科他',
+				'zh-Hant'        => '北達科他',
+			],
+			'Ohio'           => [
+				'ru'             => 'Огайо',
+				'zh'             => '俄亥俄',
+				'zh-Hant'        => '俄亥俄',
+			],
+			'Oklahoma'       => [
+				'ru'             => 'Оклахома',
+				'zh'             => '奧克拉荷馬',
+				'zh-Hant'        => '奧克拉荷馬',
+			],
+			'Oregon'         => [
+				'es'             => 'Oregón',
+				'ru'             => 'Орегон',
+				'zh'             => '俄勒冈',
+				'zh-Hant'        => '俄勒岡',
+			],
+			'Pennsylvania'   => [
+				'es'             => 'Pensilvania',
+				'fr'             => 'Pennsylvanie',
+				'ru'             => 'Пенсильвания',
+				'zh'             => '宾夕法尼亚',
+				'zh-Hant'        => '賓夕法尼亞',
+			],
+			'Rhode Island'   => [
+				'ru'             => 'Род-Айленд',
+				'zh'             => '罗得岛',
+				'zh-Hant'        => '羅得島',
+			],
+			'South Carolina' => [
+				'es'             => 'Carolina del Sur',
+				'fr'             => 'Caroline du Sud',
+				'ru'             => 'Южная Каролина',
+				'zh'             => '南卡罗来纳',
+				'zh-Hant'        => '南卡羅來納',
+			],
+			'South Dakota'   => [
+				'es'             => 'Dakota del Sur',
+				'fr'             => 'Dakota du Sud',
+				'ru'             => 'Южная Дакота',
+				'zh'             => '南达科他',
+				'zh-Hant'        => '南達科他',
+			],
+			'Tennessee'      => [
+				'ru'             => 'Теннесси',
+				'zh'             => '田纳西',
+				'zh-Hant'        => '田納西',
+			],
+			'Texas'          => [
+				'ru'             => 'Техас',
+				'zh'             => '得克萨斯',
+				'zh-Hant'        => '得克薩斯',
+			],
+			'Utah'           => [
+				'ru'             => 'Юта',
+				'zh'             => '犹他',
+				'zh-Hant'        => '猶他',
+			],
+			'Vermont'        => [
+				'ru'             => 'Вермонт',
+				'zh'             => '佛蒙特',
+				'zh-Hant'        => '佛蒙特',
+			],
+			'Virginia'       => [
+				'fr'             => 'Virginie',
+				'ru'             => 'Виргиния',
+				'zh'             => '弗吉尼亚',
+				'zh-Hant'        => '弗吉尼亞',
+			],
+			'Washington'     => [
+				'ru'             => 'Вашингтон',
+				'zh'             => '华盛顿',
+				'zh-Hant'        => '華盛頓',
+			],
+			'West Virginia'  => [
+				'es'             => 'Virginia Occidental',
+				'fr'             => 'Virginie-Occidentale',
+				'ru'             => 'Западная Виргиния',
+				'zh'             => '西弗吉尼亚',
+				'zh-Hant'        => '西弗吉尼亞',
+			],
+			'Wisconsin'      => [
+				'ru'             => 'Висконсин',
+				'zh'             => '威斯康星',
+				'zh-Hant'        => '威斯康星',
+			],
+			'Wyoming'        => [
+				'ru'             => 'Вайоминг',
+				'zh'             => '怀俄明',
+				'zh-Hant'        => '懷俄明',
+			],
+		];
 
+		foreach ($names as $en => $locales) {
+			$region = Region::whereTranslation('name', $en, 'en')->where('country_id', $country->country_id)->first();
+			
+			if ($region) {
+			
+			$attr = [];
+
+			foreach ($locales as $locale => $name) {
+				$attr[$locale] = ['name' => $name];
+			}
+			
+			if (@$attr['zh-Hant'] == @$attr['zh']) {
+				unset($attr['zh-Hant']);
+			}
+
+			$region->fill($attr)->save();
+			}
+			else {
+				dd($en);
+			}
+		}
+		
     }
 
 }
