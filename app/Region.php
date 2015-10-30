@@ -25,7 +25,8 @@ class Region extends Node {
 	];
 
 	public $with = [
-		'translations'
+		'translations',
+		'native_names_translations',
 	];
 
 	/**
@@ -36,6 +37,8 @@ class Region extends Node {
 	protected $orderColumn = 'lft';
 
 	public $translatedAttributes = ['name', 'description'];
+	
+	protected $nativeNameCache = [];
 
 	/**
 	 * Columns which restrict what we consider our Nested Set list
@@ -84,5 +87,20 @@ class Region extends Node {
         }
         return parent::getAttribute($key);
     }
+
+	public function getNativeNameAttribute()
+	{
+		if (empty($this->native_name_cache)) {
+			$translations = $this->native_names_translations;
+			$this->native_name_cache = $translations->lists('name')->toArray() ?: [$this->name];
+		}
+		
+		return $this->native_name_cache;
+	}
+
+	public function native_names_translations()
+	{
+		return $this->translations()->where('is_native', true);
+	}
 
 }

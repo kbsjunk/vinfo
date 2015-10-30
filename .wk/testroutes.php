@@ -2,9 +2,28 @@
 
 use \mcordingley\LinearAlgebra\Matrix;
 use Vinfo\Region;
+use Vinfo\RegionTranslation;
+
+use Punic\Territory;
 
 Route::get('/test/region-names', function() {
+	
 	die;
+	
+	$translations = RegionTranslation::with('region.country')->get();
+	//->where('id', '>', 640)->limit(10)
+	
+	foreach ($translations as $translation) {
+			$locale = str_replace('-', '_', $translation->locale);
+			$country = $translation->region->country->code;
+			$languages = Territory::getLanguages($country, 'of', true);
+			$languages[] = $locale.'_'.$country;
+			$translation->is_native = in_array($locale, $languages);
+			$translation->save();
+	}
+	
+	
+	return $translations;
 	$regions = Region::whereTranslation('name', 'Wienn')->get();
 	
 	foreach ($regions as $region) {

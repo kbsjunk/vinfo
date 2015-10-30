@@ -9,9 +9,7 @@
 			<thead>
 				<tr>
 					<th>{{ trans('models/region.attributes.name') }}</th>
-					@if (App::getLocale() != 'en')
-					<th>{{ trans('models/regions.attributes.name') }} ({{ Punic\Language::getName('en', App::getLocale()) }})</th>
-					@endif
+					<th>{{ trans('models/regions.attributes.name') }} ({{ Punic\Language::getName(substr(App::getLocale(), 0, 2), App::getLocale()) }})</th>
 					<th>{{ trans('models/region.attributes.region_type_id') }}</th>
 					<th>{{ trans('models/region.attributes.country_id') }}</th>
 				</tr>
@@ -29,7 +27,15 @@
 							<span style="margin-left:20px;"></span>
 							@endif
 						</span>
+						@if($ancestor->region_type_id == 1)
 						{{ $ancestor->name }}
+						@else
+						{{ implode(', ', $ancestor->native_name) }}
+						@if(!in_array($ancestor->name, $ancestor->native_name))
+						<small class="text-muted"><i>({{ $ancestor->name }})</i></small>
+						@endif
+						@endif
+
 						@if ($ancestor->shortcut_id)
 						{{-- <a href="{{ action('RegionsController@edit', $ancestor->id) }}">{{ $ancestor->name }}</a> ({{ trans('tree.continued') }}) --}}
 						{{-- <a href="{{ action('RegionsController@edit', $ancestor->shortcut_id) }}" class="btn btn-xs btn-link"><i class="fa fa-share"></i></a> --}}
@@ -37,9 +43,7 @@
 						{{-- <a href="{{ action('RegionsController@edit', $ancestor->id) }}" class="{{ $ancestor->is_structural ? 'structural' : null}} {{ $ancestor->region_type_id == 1 ? 'country' : null}}">{{ $ancestor->name }}</a> --}}
 						@endif
 					</td>
-					@if (App::getLocale() != 'en')
-					<td>{{ $ancestor->name_en }}</td>
-					@endif
+					<td>{{ $ancestor->name }}</td>
 					<td>{{ $ancestor->regionType->name }}</td>
 					<td>{{ $ancestor->country->name }}</td>
 				</tr>
@@ -60,15 +64,29 @@
 							@endif
 						</span>
 						@if ($region->shortcut_id)
-						<a href="{{ action('RegionsController@edit', $region->id) }}" class="{{ $region->is_structural ? 'structural' : null }}">{{ $region->name }}</a> 
+						<a href="{{ action('RegionsController@edit', $region->id) }}" class="{{ $region->is_structural ? 'structural' : null }}">
+							@if($region->region_type_id == 1)
+							{{ $region->name }}
+							@else
+							{{ implode(', ', $region->native_name) }}
+							@endif
+						</a> 
 						<a href="{{ action('RegionsController@edit', $region->shortcut_id) }}" class="btn btn-xs btn-link"><i class="fa fa-share"></i></a>
 						@else
-						<a href="{{ action('RegionsController@edit', $region->id) }}" class="{{ $region->is_structural ? 'structural' : null}} {{ $region->region_type_id == 1 ? 'country' : null}}">{{ $region->name }}</a>
+						<a href="{{ action('RegionsController@edit', $region->id) }}" class="{{ $region->is_structural ? 'structural' : null}} {{ $region->region_type_id == 1 ? 'country' : null}}">
+							@if($region->region_type_id == 1)
+							{{ $region->name }}
+							@else
+							{{ implode(', ', $region->native_name) }}
+							@endif
+						</a>
+						@endif
+
+						@if(!in_array($region->name, $region->native_name))
+						<small class="text-muted"><i>({{ $region->name }})</i></small>
 						@endif
 					</td>
-					@if (App::getLocale() != 'en')
-					<td>{{ $region->name_en }}</td>
-					@endif
+					<td>{{ $region->name }}</td>
 					<td>{{ $region->regionType->name }}</td>
 					<td>{{ $region->country->name }}</td>
 				</tr>
