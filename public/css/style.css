@@ -14,6 +14,10 @@ textarea.plaintext {
 	font-size: 10pt;
 }
 
+[lang^="zh"] i {
+	font-style: normal !important;
+}
+
 html {
 	position: relative;
 	min-height: 100%;

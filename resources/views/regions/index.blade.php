@@ -9,7 +9,6 @@
 			<thead>
 				<tr>
 					<th>{{ trans('models/region.attributes.name') }}</th>
-					<th>{{ trans('models/regions.attributes.name') }} ({{ Punic\Language::getName(substr(App::getLocale(), 0, 2), App::getLocale()) }})</th>
 					<th>{{ trans('models/region.attributes.region_type_id') }}</th>
 					<th>{{ trans('models/region.attributes.country_id') }}</th>
 				</tr>
@@ -31,7 +30,7 @@
 						{{ $ancestor->name }}
 						@else
 						{{ implode(', ', $ancestor->native_name) }}
-						@if(!in_array($ancestor->name, $ancestor->native_name))
+						@if($ancestor->name && !in_array($ancestor->name, $ancestor->native_name))
 						<small class="text-muted"><i>({{ $ancestor->name }})</i></small>
 						@endif
 						@endif
@@ -43,7 +42,6 @@
 						{{-- <a href="{{ action('RegionsController@edit', $ancestor->id) }}" class="{{ $ancestor->is_structural ? 'structural' : null}} {{ $ancestor->region_type_id == 1 ? 'country' : null}}">{{ $ancestor->name }}</a> --}}
 						@endif
 					</td>
-					<td>{{ $ancestor->name }}</td>
 					<td>{{ $ancestor->regionType->name }}</td>
 					<td>{{ $ancestor->country->name }}</td>
 				</tr>
@@ -81,12 +79,11 @@
 							@endif
 						</a>
 						@endif
-
-						@if(!in_array($region->name, $region->native_name))
+						&nbsp;
+						@if($region->name && !in_array($region->name, $region->native_name))
 						<small class="text-muted"><i>({{ $region->name }})</i></small>
 						@endif
 					</td>
-					<td>{{ $region->name }}</td>
 					<td>{{ $region->regionType->name }}</td>
 					<td>{{ $region->country->name }}</td>
 				</tr>

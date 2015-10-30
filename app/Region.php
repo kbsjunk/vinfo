@@ -92,7 +92,7 @@ class Region extends Node {
 	{
 		if (empty($this->native_name_cache)) {
 			$translations = $this->native_names_translations;
-			$this->native_name_cache = $translations->lists('name')->toArray() ?: [$this->name];
+			$this->native_name_cache = $translations->lists('name', 'locale')->toArray() ?: [$this->name];
 		}
 		
 		return $this->native_name_cache;
