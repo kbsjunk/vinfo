@@ -9,4 +9,9 @@ class CountryTranslation extends Model {
 
     protected $fillable = ['name'];
 
+    public function country()
+    {
+    	return $this->belongsTo('Vinfo\Country');
+    }
+
 }

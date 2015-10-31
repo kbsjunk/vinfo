@@ -9,13 +9,15 @@ class RegionTypesTableSeeder extends Seeder {
 	public function run()
 	{
 
-		// DB::table('region_types')->delete();
+		DB::table('region_types')->delete();
 
 		$regions = [
 		1 => [
-		'en' => 'Country',
-		'de' => 'Land',
-		'fr' => 'Pays',
+		'en'      => 'Country',
+		'de'      => 'Land',
+		'fr'      => 'Pays',
+		'zh'      => '国家',
+		'zh-Hant' => '國家',
 		],
 		2 => [
 		'en' => 'State',
@@ -40,10 +42,12 @@ class RegionTypesTableSeeder extends Seeder {
 		],
 		7 => [
 		'en' => 'Region',
+		'fr' => 'Région',
 		'de' => 'Gebiet',
 		],
 		8 => [
 		'en' => 'Subregion',
+		'fr' => 'Sous-région',
 		],
 		9 => [
 		'en' => 'District',
@@ -65,6 +69,7 @@ class RegionTypesTableSeeder extends Seeder {
 		],
 		14 => [
 		'en' => 'Sub-Appellation',
+		'fr' => 'Sous-appellation',
 		],
 		15 => [
 		'en' => 'Districtus Austriae Controllatus',
@@ -86,7 +91,8 @@ class RegionTypesTableSeeder extends Seeder {
 				$region[$locale] = ['name' => $name];
 			}
 			
-			RegionType::updateOrCreate(['id' => $id], $region);
+			// RegionType::updateOrCreate(['id' => $id], $region);
+			RegionType::create($region);
 		}
 	}
 

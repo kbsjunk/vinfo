@@ -18,7 +18,10 @@ class BottleSizesController extends Controller
     {   
         $this->authorize('show', new BottleSize);
 
-        $bottle_sizes = BottleSize::withTranslation()->orderBy('is_common', 'desc')->orderBy('capacity')->paginate(25);
+        $bottle_sizes = BottleSize::withTranslation()
+        ->orderBy('is_common', 'desc')
+        ->orderBy('capacity')
+        ->paginate(25);
 
         return view('bottle_sizes.index', compact('bottle_sizes'));
     }

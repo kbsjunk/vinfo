@@ -6,6 +6,94 @@ use Vinfo\RegionTranslation;
 
 use Punic\Territory;
 
+Route::get('/test/collate', function() {
+
+
+        // $countries = Country::get();
+
+		$locale = 'de';
+
+		$str = 'الإقليم البريطاني في المحيط الهندي';
+		$str = 'L\'aîle';
+		$str = 'Die saîle';
+
+		echo $str;
+
+		echo '<br>';
+
+		// $art = ['ال'];
+		// $art = ['los', 'les', 'unas', 'l\''];
+
+		// $break = '(\s+|\b)';
+		// $str = trim(preg_replace('/^('.implode('|', $art).')'.$break.'/ui', '', $str));
+
+		$str = Kitbs\Collator\Collator::getString($str, $locale);
+
+		echo $str;
+		die;
+
+        App::setLocale($locale);
+
+        $countries = Territory::getCountries($locale);
+
+        dd($countries);
+
+        // // $coll = collator_create(App::getLocale());
+
+        // // $countries = $countries->sort(function($a, $b) use ($coll) {
+        // //     return collator_compare( $coll, $a->name, $b->name );
+        // // });
+
+        // return '='.$countries->lists('name');
+
+// 	$arr  = array( 'Köpfe', 'Kypper', 'Kopfe' );
+// $coll = collator_create( 'en' );
+
+// collator_sort_with_sort_keys( $coll, $arr );
+// var_export( $arr );
+// die;
+
+	// $s1 = 'Hello';
+
+	$locale = 'zh';
+
+	$en = collator_create( 'en' );
+	$coll = collator_create( $locale );
+
+	// $res  = collator_get_sort_key( $coll, $s1);
+
+	// echo urlencode($res);
+
+	App::setLocale($locale);
+
+	$countries = Vinfo\Country::get()->lists('name')->toArray();
+
+	// collator_sort_with_sort_keys ($coll, $countries);
+
+	foreach ($countries as &$country) {
+		$country = [
+			'name' => $country,
+			'pinyin' => Overtrue\Pinyin\Pinyin::trans($country),
+			'en'   => collator_get_sort_key( $en, $country),
+			'coll' => collator_get_sort_key( $coll, $country),
+		];
+	}
+
+	$countries = new Illuminate\Support\Collection($countries);
+
+	$countries = $countries->sortBy('coll');
+
+	foreach ($countries as $country) {
+		echo $country['pinyin'].'<br>';
+	}
+
+	return ' ';
+
+	dd($countries);
+
+});
+
+
 Route::get('/test/region-names', function() {
 	
 	die;

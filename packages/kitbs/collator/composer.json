@@ -1,0 +1,8 @@
+{
+    "name": "kitbs/collator",
+    "autoload": {
+        "psr-4": {
+            "Kitbs\\Collator\\": "src/"
+        }
+    }
+}

@@ -3,6 +3,7 @@
         "kitbs/viewgen": "packages/kitbs/viewgen",
         "barryvdh/laravel-translation-manager": "packages/kitbs/laravel-translation-manager",
         "kitbs/translation": "packages/kitbs/translation",
-        "kitbs/geoimport": "packages/kitbs/geoimport"
+        "kitbs/geoimport": "packages/kitbs/geoimport",
+        "kitbs/collator": "packages/kitbs/collator"
     }
 }

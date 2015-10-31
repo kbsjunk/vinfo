@@ -19,7 +19,9 @@ class ConsumedReasonsController extends Controller
     {
         $this->authorize('show', new ConsumedReason);
 
-        $consumed_reasons = ConsumedReason::withTranslation()->orderBy('is_drank', 'desc')->orderByTranslation('name')->paginate(25);
+        $consumed_reasons = ConsumedReason::withTranslation()
+        ->orderBy('is_drank', 'desc')
+        ->orderByTranslation('sortas')->paginate(25);
 
         return view('consumed_reasons.index', compact('consumed_reasons'));
     }

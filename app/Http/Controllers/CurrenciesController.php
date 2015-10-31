@@ -19,7 +19,9 @@ class CurrenciesController extends Controller
     {
         $this->authorize('show', new Currency);
 
-        $currencies = Currency::withTranslation()->orderBy('is_used', 'DESC')->orderByTranslation('name')->paginate(25);
+        $currencies = Currency::withTranslation()
+        ->orderBy('is_used', 'DESC')
+        ->orderByTranslation('sortas')->paginate(25);
 
         return view('currencies.index', compact('currencies'));
     }

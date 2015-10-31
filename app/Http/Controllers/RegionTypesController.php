@@ -18,7 +18,7 @@ class RegionTypesController extends Controller
     {   
         $this->authorize('show', new RegionType);
 
-        $region_types = RegionType::withTranslation()->orderByTranslation('name')->paginate(25);
+        $region_types = RegionType::withTranslation()->orderByTranslation('sortas')->paginate(25);
 
         return view('region_types.index', compact('region_types'));
     }

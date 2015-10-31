@@ -7,6 +7,8 @@ use Vinfo\Http\Requests\CountriesFormRequest;
 use Vinfo\Http\Controllers\Controller;
 use Vinfo\Country;
 
+use App;
+
 class CountriesController extends Controller
 {
 
@@ -19,7 +21,11 @@ class CountriesController extends Controller
     {
         $this->authorize('show', new Country);
 
-        $countries = Country::withTranslation()->orderByIsActive('desc')->orderBy('is_wine', 'desc')->orderByTranslation('name')->paginate(25);
+        $countries = Country::withTranslation()
+        ->orderByIsActive('desc')
+        ->orderBy('is_wine', 'desc')
+        ->orderByTranslation('sortas')
+        ->paginate(25);
 
         return view('countries.index', compact('countries'));
     }

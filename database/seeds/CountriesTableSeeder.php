@@ -17,6 +17,7 @@ class CountriesTableSeeder extends Seeder
         DB::table('countries')->delete();
 
         $locales = Config::get('translatable.locales');
+        // $locales = get_locales(true);
 
         $countries = Territory::getCountries('en');
 		
@@ -38,13 +39,17 @@ class CountriesTableSeeder extends Seeder
 				'is_wine' => in_array($code, $producing),
             ];
 
+            $nameEn = Territory::getName($code, 'en');
+
             foreach ($locales as $key => $locale) {
 				if (is_array($locale)) {
 					$country[$key] = [
 						'name' => Territory::getName($code, $key),
 					];
 					foreach ($locale as $countryLocale) {
-						if (($name = Territory::getName($code, $key.'-'.$countryLocale)) != $country[$key]['name']) {
+						$name = Territory::getName($code, $key.'-'.$countryLocale);
+
+						if ($name != $country[$key]['name'] && $name != $nameEn) {
 							$country[$key.'-'.$countryLocale] = [
 								'name' => $name,
 							];
@@ -52,17 +57,31 @@ class CountriesTableSeeder extends Seeder
 					}
 				}
 				else {
-					$country[$locale] = [
-						'name' => Territory::getName($code, $locale),
-					];
+					$name = Territory::getName($code, $locale);
+					if ($name != $nameEn) {
+						$country[$locale] = [
+							'name' => $name,
+						];
+					}
 				}
-            }
-			
-/* 			if (isset($country['zh']['name'])) {
-				$country['zh-Latn-pinyin']['name'] = Pinyin::trans($country['zh']['name']);
-			} */
+			}
 
             $country = Country::create($country);
+
+            $langs = Territory::getLanguages($code, 'of', true);
+            $langs = array_map(function($lang) {
+            	return str_replace('_', '-', $lang);
+            }, $langs);
+            $langs = array_diff($langs, get_locales(true));
+
+            foreach ($langs as $lang) {
+            	$name = Territory::getName($code, str_replace('-', '_', $lang));
+
+            	$translation = $country->getNewTranslation($lang);
+            	$translation->name = $name;
+            	$translation->country_id = $country->id;
+            	$translation->save();
+            }
         }
 		
 		$countries = [
