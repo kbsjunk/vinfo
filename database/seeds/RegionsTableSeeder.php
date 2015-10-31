@@ -46,10 +46,12 @@ class RegionsTableSeeder extends Seeder
 		}
 		
 		$name = isset($localeNames['en']) ? $localeNames['en'] : head($localeNames);
-		$name = $name['name'];
 		
-		//reset($localeNames);
-		//$locale = isset($localeNames['en']) ? 'en' : key($localeNames);
+        if (!isset($localeNames['en'])) {
+            $localeNames['en'] = $name;
+        }
+
+        $name = $name['name'];
 
     	if (count($depths)) {
     		$depth = array_shift($depths);

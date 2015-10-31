@@ -22,10 +22,10 @@ class RegionsController extends Controller
         $this->authorize('show', $region);
 
         $regions = Region::with(['regionType', 'country'])
-			->where('regions.country_id', 765)
-			//->orderByRelationTranslation('country', 'name')
+			// ->where('regions.country_id', 765)
+			->orderByRelationTranslation('country', 'sortas')
 			->orderBy($region->getQualifiedOrderColumnName())
-			->paginate(250);
+			->paginate(25);
 
         return view('regions.index', compact('regions'));
     }

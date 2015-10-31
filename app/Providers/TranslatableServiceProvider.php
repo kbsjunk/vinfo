@@ -44,8 +44,6 @@ class TranslatableServiceProvider extends ServiceProvider
 
     private function getSortAs($translation)
     {
-        // $coll = collator_create( $translation->locale );
-        // $translation->sortas = collator_get_sort_key($coll, $translation->name);
         $translation->sortas = KitbsCollator::getCollationKey($translation->name, $translation->locale);
     }
 

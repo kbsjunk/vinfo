@@ -37,23 +37,23 @@ trait TranslatableSortable
 			->leftJoin($this->getTranslationsTable(), $this->getTranslationsTable().'.'.$this->getRelationKey(), '=', $this->getTable().'.'.$this->getKeyName())
 			->where(function ($query) use ($withFallback) {
 
-				$query->where($this->getTranslationsTable().'.'.$this->getLocaleKey(), $this->Locale());
+				$query->where($this->getTranslationsTable().'.'.$this->getLocaleKey(), $this->locale());
 
 				if ($withFallback) {
 					$query->orWhere(function (Builder $q) {
-						$q->where($this->getTranslationsTable().'.'.$this->getLocaleKey(), $this->getFallbackLocale($this->Locale()))
+						$q->where($this->getTranslationsTable().'.'.$this->getLocaleKey(), $this->getFallbackLocale($this->locale()))
 							->whereNotIn($this->getTranslationsTable().'.'.$this->getRelationKey(), function (QueryBuilder $q) {
 								$q->select($this->getTranslationsTable().'.'.$this->getRelationKey())
 									->from($this->getTranslationsTable())
-									->where($this->getTranslationsTable().'.'.$this->getLocaleKey(), $this->Locale());
+									->where($this->getTranslationsTable().'.'.$this->getLocaleKey(), $this->locale());
 							});
 					})->orWhere(function (Builder $q) {
 						$q->where($this->getTranslationsTable().'.'.$this->getLocaleKey(), $this->getFallbackLocale())
 							->whereNotIn($this->getTranslationsTable().'.'.$this->getRelationKey(), function (QueryBuilder $q) {
 								$q->select($this->getTranslationsTable().'.'.$this->getRelationKey())
 									->from($this->getTranslationsTable())
-									->where($this->getTranslationsTable().'.'.$this->getLocaleKey(), $this->getFallbackLocale($this->Locale()))
-									->orWhere($this->getTranslationsTable().'.'.$this->getLocaleKey(), $this->Locale());
+									->where($this->getTranslationsTable().'.'.$this->getLocaleKey(), $this->getFallbackLocale($this->locale()))
+									->orWhere($this->getTranslationsTable().'.'.$this->getLocaleKey(), $this->locale());
 							});
 					});
 				}
@@ -61,12 +61,12 @@ trait TranslatableSortable
 
 	}
 
-	public function scopeWithRelatedTranslations(Builder $query, $relation)
+	public function scopeWithRelatedTranslations(Builder $query, $relation, $andFields = [])
 	{
 		$model = $relation->getRelated();
 		$withFallback = $model->usePublicFallback();
 
-		$translatedAttributes = $model->translatedAttributes;
+		$translatedAttributes = array_merge($model->translatedAttributes, $andFields);
 		$translatedAttributes = array_map(function($attribute) use ($model) {
 			return $model->getPublicTranslationsTable().'.'.$attribute . ' AS ' . $model->getPublicTranslationsTable().'_'.$attribute;
 		}, $translatedAttributes);
@@ -133,8 +133,7 @@ trait TranslatableSortable
 		$relation = $this->$relation();
 		$related = $relation->getRelated();
 
-		$field = $related->getPublicTranslationsTable().'_'.$field;
-		return $query->withRelatedTranslations($relation)->orderBy($field, $direction);
+		return $query->withRelatedTranslations($relation, [$field])->orderBy($related->getPublicTranslationsTable().'_'.$field, $direction);
 
 		// $relationQuery = $related->orderByTranslation($field, $direction)->getQuery();
 

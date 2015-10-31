@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
         Model::unguard();
 
         // $this->call(CurrenciesTableSeeder::class);
-        $this->call(CountriesTableSeeder::class);
+        // $this->call(CountriesTableSeeder::class);
         // $this->call(LanguagesTableSeeder::class);
         // $this->call(UsersTableSeeder::class); 
         
@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
         // $this->call(ConsumedReasonsTableSeeder::class);
         // $this->call(RegionTypesTableSeeder::class);
         // $this->call(RegionsTableSeeder::class);
-        // $this->call(RegionsNZTableSeeder::class);
+        $this->call(RegionsNZTableSeeder::class);
         // $this->call(RegionsAUTableSeeder::class);
         // $this->call(RegionsUSTableSeeder::class);
         // $this->call(RegionsATTableSeeder::class);
