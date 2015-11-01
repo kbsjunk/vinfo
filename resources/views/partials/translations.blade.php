@@ -13,7 +13,7 @@
 					<a role="button" data-toggle="collapse" data-parent="#translations_accordion" href="#translations_{{ $translation->locale }}" aria-expanded="true" aria-controls="collapseOne">
 						{{ Punic\Language::getName($translation->locale, $translation->locale) }}
 					</a>
-					<small><span class="text-muted">{{ $translation->locale }}</span></small>
+					&nbsp;<small><span class="text-muted">{{ $translation->locale }}</span></small>
 				</h4>
 			</div>
 			<div id="translations_{{ $translation->locale }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading_{{ $translation->locale }}">
@@ -46,7 +46,7 @@
 					<a role="button" data-toggle="collapse" data-parent="#translations_accordion" href="#translations_{{ $locale }}" aria-expanded="true" aria-controls="collapseOne" lang="{{ $locale }}">
 						{{ Punic\Language::getName($locale, $locale) }}
 					</a>
-					<small><span class="text-muted">{{ $locale }}</span></small>
+					&nbsp;<small><span class="text-muted">{{ $locale }}</span></small>
 				</h4>
 			</div>
 			<div id="translations_{{ $locale }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading_{{ $locale }}">
@@ -80,7 +80,7 @@
 					<a role="button" data-toggle="collapse" data-parent="#translations_accordion" href="#translations_{{ $locale }}" aria-expanded="true" aria-controls="collapseOne" lang="{{ $locale }}">
 						{{ Punic\Language::getName($locale, $locale) }}
 					</a>
-					<small><span class="text-muted">{{ $locale }}</span></small>
+					&nbsp;<small><span class="text-muted">{{ $locale }}</span></small>
 				</h4>
 			</div>
 			<div id="translations_{{ $locale }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading_{{ $locale }}">

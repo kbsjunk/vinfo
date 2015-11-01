@@ -15,4 +15,5 @@ return array (
   'region_types' => 'Region Types',
   'avatar' => 'Profile Picture',
   'geometries' => 'Geometries',
+  'regions' => 'Regions',
 );

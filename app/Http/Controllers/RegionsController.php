@@ -6,10 +6,20 @@ use Illuminate\Http\Request;
 use Vinfo\Http\Requests\RegionsFormRequest;
 use Vinfo\Http\Controllers\Controller;
 use Vinfo\Region;
+use Vinfo\RegionType;
 use Vinfo\Country;
 
 class RegionsController extends Controller
 {
+
+    private function getDropdowns()
+    {
+        $countries = Country::withTranslation()->whereIsActive()->orderByTranslation('sortas')->get()->lists('name', 'id');
+        $region_types = RegionType::withTranslation()->orderByTranslation('sortas')->get()->lists('name', 'id');
+
+        view()->share('countries', $countries);
+        view()->share('region_types', $region_types);
+    }
 
     /**
      * Display a listing of the resource.
@@ -59,7 +69,11 @@ class RegionsController extends Controller
 
         $this->authorize('create', $region);
 
-        return view('regions.create', compact('region'));
+        $this->getDropdowns();
+
+        $mode = 'create';
+
+        return view('regions.create', compact('region', 'mode'));
     }
 
     /**
@@ -112,7 +126,11 @@ class RegionsController extends Controller
 
         $this->authorize('update', $region);
 
-        return view('regions.edit', compact('region'));
+        $this->getDropdowns();
+
+        $mode = 'edit';
+
+        return view('regions.edit', compact('region', 'mode'));
     }
 
     /**

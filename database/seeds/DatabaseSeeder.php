@@ -23,8 +23,8 @@ class DatabaseSeeder extends Seeder
         // $this->call(ConsumedReasonsTableSeeder::class);
         // $this->call(RegionTypesTableSeeder::class);
         // $this->call(RegionsTableSeeder::class);
-        $this->call(RegionsNZTableSeeder::class);
-        // $this->call(RegionsAUTableSeeder::class);
+        // $this->call(RegionsNZTableSeeder::class);
+        $this->call(RegionsAUTableSeeder::class);
         // $this->call(RegionsUSTableSeeder::class);
         // $this->call(RegionsATTableSeeder::class);
         // $this->call(RegionsCATableSeeder::class);

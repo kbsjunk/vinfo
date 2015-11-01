@@ -7,6 +7,7 @@ use Baum\Node;
 use Illuminate\Database\Eloquent\SoftDeletes;
 /* use Dimsav\Translatable\Translatable; */
 use Vinfo\Traits\TranslatableSortable;
+use Vinfo\Transformers\RegionTransformer;
 
 class Region extends Node {
 
@@ -63,9 +64,14 @@ class Region extends Node {
 		return $this->belongsTo('Vinfo\Country');
 	}
 
+	public function shortcut()
+	{
+		return $this->belongsTo('Vinfo\Region', 'shortcut_id');
+	}
+
 	public function geometries()
 	{
-		return $this->morphMany('Vinfo\Geometry', 'geometried');
+		return $this->morphMany('Vinfo\Geometry', 'gzeometried');
 	}
 
     public function getAttribute($key)
@@ -102,5 +108,42 @@ class Region extends Node {
 	{
 		return $this->translations()->where('is_native', true);
 	}
+
+    public function getParentIdSelectAttribute()
+    {
+        if ($this->parent) {
+
+            $transformer = new RegionTransformer;
+
+            return json_encode($transformer->transform($this->parent));
+        }
+
+        return '';
+    }
+
+    public function getShortcutIdSelectAttribute()
+    {
+        if ($this->shortcut) {
+
+            $transformer = new RegionTransformer;
+
+            return json_encode($transformer->transform($this->parent));
+        }
+
+        return '';
+    }
+
+    public static function getSelect($id)
+    {
+        if ($id) {
+
+            $transformer = new RegionTransformer;
+            $selected = Region::find($id);
+
+            return json_encode($transformer->transform($selected));
+        }
+
+        return '';
+    }
 
 }

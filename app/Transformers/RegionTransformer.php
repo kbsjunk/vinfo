@@ -11,7 +11,7 @@ class RegionTransformer extends TransformerAbstract
 	    return [
 			'id'      => (int) $region->id,
 			'name'    => $region->name.', '.$region->country->name,
-			'subname'    => $region->regionType->name,
+			'subname' => $region->regionType->name,
 			'links'   => [
                 [
                     'rel' => 'self',

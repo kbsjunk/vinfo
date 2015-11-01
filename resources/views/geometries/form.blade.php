@@ -174,7 +174,7 @@
 @parent
 <script src="{{ asset('js/addrow.js') }}" type="text/javascript"></script>
 <script>
-
+	
 	$('[data-selectize="geometried_type"]').selectize({
 		create: false,
 		onChange: function(value) {
@@ -185,8 +185,6 @@
 			}
 		}
 	});
-
-
 
 	$('[data-selectize="geometried_id"]').selectize({
 		valueField: 'id',

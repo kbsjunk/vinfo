@@ -35,9 +35,9 @@ class RegionsAUTableSeeder extends RegionsTableSeeder
 		$southWestAustralia = 'en:South West Australia|de:Südwestaustralien|zh:澳大利亚西南部|es:Suroeste de Australia|fr:Sud-ouest de l\'Australie|ru:Юго-западная Австралия';
 		$southernNsw        = 'en:Southern New South Wales|de:Südliches Neusüdwales|fr:Partie sud de la Nouvelle-Galles du Sud|es:Parte sur de Nueva Gales del Sur|it:Parte sur de Nueva Gales del Sur|zh:新南威尔士州南部';
 		$centralVictoria    = 'en:Central Victoria|zh:维多利亚州中部|ru:Центральный Виктория|de:Zentral-Victoria|fr:Centre de Victoria';
-		$northEastVictoria  = 'en:North East Victoria|zh:维多利亚州东北部|ru:Северо-восточный Виктория|de:Nordost-Victoria|fr:Partie nord-est de Victoria|es:Parte noreste de Victoria|it:Parte noreste de Victoria';
-		$northWestVictoria  = 'en:North West Victoria|zh:维多利亚州西北部|ru:Северо-западный Виктория|de:Nordwest-Victoria|fr:Partie nord-ouest de Victoria|es:Parte noroeste de Victoria|it:Parte noroeste de Victoria';
-		$westernVictoria    = 'en:Western Victoria|zh:维多利亚州西部|ru:Западный Виктория|de:West-Victoria|fr:Partie nord-ouest de Victoria|es:Parte noroeste de Victoria|it:Parte noroeste de Victoria';
+		$northEastVictoria  = 'en:North East Victoria|zh:维多利亚州东北部|ru:Северо-восточный Виктория|de:Nordost-Victoria|fr:Partie nord-est de Victoria|es:Parte noreste de Victoria|it:Parte nord-orientale de Victoria';
+		$northWestVictoria  = 'en:North West Victoria|zh:维多利亚州西北部|ru:Северо-западный Виктория|de:Nordwest-Victoria|fr:Partie nord-ouest de Victoria|es:Parte noroeste de Victoria|it:Parte nord-occidentale de Victoria';
+		$westernVictoria    = 'en:Western Victoria|zh:维多利亚州西部|ru:Западный Виктория|de:West-Victoria|fr:Partie nord-ouest de Victoria|es:Parte noroeste de Victoria|it:Parte nord-occidentale de Victoria';
 		$southCoast         = 'en:South Coast|ru:Южное побережье|zh:南海岸|es:Costa meridionale|it:Costa sur|de:Südküste|fr:Côte sud';
 		$peninsulas         = 'en:The Peninsulas|es:Las penínsulas|it:Le peninsule|fr:Les péninsules|ru:Полуостровов|de:Die Halbinseln|zh:半岛';
 
